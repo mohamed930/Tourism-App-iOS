@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D3767E67248D336E0090CE19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E66248D336E0090CE19 /* AppDelegate.swift */; };
-		D3767E69248D336E0090CE19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E68248D336E0090CE19 /* SceneDelegate.swift */; };
 		D3767E6B248D336E0090CE19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E6A248D336E0090CE19 /* ViewController.swift */; };
 		D3767E6E248D336E0090CE19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3767E6C248D336E0090CE19 /* Main.storyboard */; };
 		D3767E70248D338C0090CE19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3767E6F248D338C0090CE19 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		D3767E63248D336E0090CE19 /* Tourism System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tourism System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3767E66248D336E0090CE19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3767E68248D336E0090CE19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D3767E6A248D336E0090CE19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3767E6D248D336E0090CE19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3767E6F248D338C0090CE19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,15 +54,46 @@
 		D3767E65248D336E0090CE19 /* Tourism System */ = {
 			isa = PBXGroup;
 			children = (
-				D3767E66248D336E0090CE19 /* AppDelegate.swift */,
-				D3767E68248D336E0090CE19 /* SceneDelegate.swift */,
-				D3767E6A248D336E0090CE19 /* ViewController.swift */,
-				D3767E6C248D336E0090CE19 /* Main.storyboard */,
-				D3767E6F248D338C0090CE19 /* Assets.xcassets */,
-				D3767E71248D338C0090CE19 /* LaunchScreen.storyboard */,
-				D3767E74248D338C0090CE19 /* Info.plist */,
+				D3767E7A248D34740090CE19 /* AppDelegate */,
+				D3767E7B248D347F0090CE19 /* Controlllers */,
+				D3767E7C248D348F0090CE19 /* Views */,
+				D3767E7D248D349A0090CE19 /* Resources */,
 			);
 			path = "Tourism System";
+			sourceTree = "<group>";
+		};
+		D3767E7A248D34740090CE19 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D3767E66248D336E0090CE19 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D3767E7B248D347F0090CE19 /* Controlllers */ = {
+			isa = PBXGroup;
+			children = (
+				D3767E6A248D336E0090CE19 /* ViewController.swift */,
+			);
+			path = Controlllers;
+			sourceTree = "<group>";
+		};
+		D3767E7C248D348F0090CE19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3767E6C248D336E0090CE19 /* Main.storyboard */,
+				D3767E71248D338C0090CE19 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D3767E7D248D349A0090CE19 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D3767E6F248D338C0090CE19 /* Assets.xcassets */,
+				D3767E74248D338C0090CE19 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +169,6 @@
 			files = (
 				D3767E6B248D336E0090CE19 /* ViewController.swift in Sources */,
 				D3767E67248D336E0090CE19 /* AppDelegate.swift in Sources */,
-				D3767E69248D336E0090CE19 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +314,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NBM9PQRD2;
-				INFOPLIST_FILE = "Tourism System/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tourism System/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +323,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "MyCompany199.Tourism-System";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,7 +333,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NBM9PQRD2;
-				INFOPLIST_FILE = "Tourism System/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tourism System/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "MyCompany199.Tourism-System";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
