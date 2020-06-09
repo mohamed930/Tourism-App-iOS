@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "UmrahCover.png",
+      "filename" : "HajjCell.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "UmrahCover@2x.png",
+      "filename" : "HajjCell@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "UmrahCover@3x.png",
+      "filename" : "HajjCell@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

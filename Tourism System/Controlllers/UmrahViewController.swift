@@ -13,8 +13,7 @@ class UmrahViewController: UIViewController {
     
     // MARK:- TODO:- This Sektion For Intialize varibles here.
     @IBOutlet weak var collectionView:GeminiCollectionView!
-    var ImageArray = ["UmrahCover","HajjCover"]
-    var Title = ["Umrah","Hajj"]
+    var ImageArray = ["UmrahCell","HajjCell"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +39,6 @@ extension UmrahViewController: UICollectionViewDataSource {
         let cell : SektionCellUmrah = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SektionCellUmrah
         
         self.collectionView.animateCell(cell)
-        cell.travelTitleLabel.text = Title[indexPath.row]
         cell.travelCover.image = UIImage(named: ImageArray[indexPath.row])
         return cell
     }
