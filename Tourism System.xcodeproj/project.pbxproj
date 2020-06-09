@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		49325DA69790699453E314EA /* Pods_Tourism_System.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB346EA953FE4C21AD069485 /* Pods_Tourism_System.framework */; };
+		D3271AFE248E91E3003B6158 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271AFD248E91E2003B6158 /* ProfileView.swift */; };
+		D3271B00248E9265003B6158 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271AFF248E9265003B6158 /* ProfileViewController.swift */; };
+		D3271B02248EC160003B6158 /* SektionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B01248EC160003B6158 /* SektionViewController.swift */; };
+		D3271B04248EC9F8003B6158 /* InternalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B03248EC9F8003B6158 /* InternalViewController.swift */; };
+		D3271B07248EDC48003B6158 /* SektionCellUmrah.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B05248EDC48003B6158 /* SektionCellUmrah.swift */; };
+		D3271B08248EDC48003B6158 /* SektionCellUmrah.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3271B06248EDC48003B6158 /* SektionCellUmrah.xib */; };
+		D3271B0B248EE01C003B6158 /* UmrahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B0A248EE01C003B6158 /* UmrahViewController.swift */; };
+		D3271B0E248F02B4003B6158 /* MapButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B0C248F02B4003B6158 /* MapButtonCell.swift */; };
+		D3271B0F248F02B4003B6158 /* MapButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3271B0D248F02B4003B6158 /* MapButtonCell.xib */; };
+		D3271B12248F042E003B6158 /* ExternalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B11248F042E003B6158 /* ExternalViewController.swift */; };
 		D3767E67248D336E0090CE19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E66248D336E0090CE19 /* AppDelegate.swift */; };
 		D3767E6B248D336E0090CE19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E6A248D336E0090CE19 /* LoginViewController.swift */; };
 		D3767E6E248D336E0090CE19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3767E6C248D336E0090CE19 /* Main.storyboard */; };
@@ -25,6 +35,16 @@
 		A1557D6B3879FB830984AC64 /* Pods-Tourism System.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourism System.debug.xcconfig"; path = "Target Support Files/Pods-Tourism System/Pods-Tourism System.debug.xcconfig"; sourceTree = "<group>"; };
 		B00DFB91E4066E5C5D833BA6 /* Pods-Tourism System.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourism System.release.xcconfig"; path = "Target Support Files/Pods-Tourism System/Pods-Tourism System.release.xcconfig"; sourceTree = "<group>"; };
 		CB346EA953FE4C21AD069485 /* Pods_Tourism_System.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tourism_System.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3271AFD248E91E2003B6158 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D3271AFF248E9265003B6158 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D3271B01248EC160003B6158 /* SektionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SektionViewController.swift; sourceTree = "<group>"; };
+		D3271B03248EC9F8003B6158 /* InternalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalViewController.swift; sourceTree = "<group>"; };
+		D3271B05248EDC48003B6158 /* SektionCellUmrah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SektionCellUmrah.swift; sourceTree = "<group>"; };
+		D3271B06248EDC48003B6158 /* SektionCellUmrah.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SektionCellUmrah.xib; sourceTree = "<group>"; };
+		D3271B0A248EE01C003B6158 /* UmrahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmrahViewController.swift; sourceTree = "<group>"; };
+		D3271B0C248F02B4003B6158 /* MapButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonCell.swift; sourceTree = "<group>"; };
+		D3271B0D248F02B4003B6158 /* MapButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButtonCell.xib; sourceTree = "<group>"; };
+		D3271B11248F042E003B6158 /* ExternalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalViewController.swift; sourceTree = "<group>"; };
 		D3767E63248D336E0090CE19 /* Tourism System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tourism System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3767E66248D336E0090CE19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3767E6A248D336E0090CE19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +87,24 @@
 				B00DFB91E4066E5C5D833BA6 /* Pods-Tourism System.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D3271B09248EDFF9003B6158 /* Cell1 */ = {
+			isa = PBXGroup;
+			children = (
+				D3271B05248EDC48003B6158 /* SektionCellUmrah.swift */,
+				D3271B06248EDC48003B6158 /* SektionCellUmrah.xib */,
+			);
+			path = Cell1;
+			sourceTree = "<group>";
+		};
+		D3271B10248F02E1003B6158 /* Cell2 */ = {
+			isa = PBXGroup;
+			children = (
+				D3271B0C248F02B4003B6158 /* MapButtonCell.swift */,
+				D3271B0D248F02B4003B6158 /* MapButtonCell.xib */,
+			);
+			path = Cell2;
 			sourceTree = "<group>";
 		};
 		D3767E5A248D336E0090CE19 = {
@@ -116,6 +154,12 @@
 				D3767E85248D7B5C0090CE19 /* SignupViewController.swift */,
 				D3767E8D248DBED90090CE19 /* LocationMapViewController.swift */,
 				D3767E8F248DBF190090CE19 /* LocationMapView.swift */,
+				D3271AFD248E91E2003B6158 /* ProfileView.swift */,
+				D3271AFF248E9265003B6158 /* ProfileViewController.swift */,
+				D3271B01248EC160003B6158 /* SektionViewController.swift */,
+				D3271B03248EC9F8003B6158 /* InternalViewController.swift */,
+				D3271B0A248EE01C003B6158 /* UmrahViewController.swift */,
+				D3271B11248F042E003B6158 /* ExternalViewController.swift */,
 				D3767E87248DAE7F0090CE19 /* Cell */,
 			);
 			path = Controlllers;
@@ -150,6 +194,8 @@
 		D3767E87248DAE7F0090CE19 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D3271B09248EDFF9003B6158 /* Cell1 */,
+				D3271B10248F02E1003B6158 /* Cell2 */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -215,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3767E73248D338C0090CE19 /* LaunchScreen.storyboard in Resources */,
+				D3271B0F248F02B4003B6158 /* MapButtonCell.xib in Resources */,
 				D3767E70248D338C0090CE19 /* Assets.xcassets in Resources */,
 				D3767E6E248D336E0090CE19 /* Main.storyboard in Resources */,
+				D3271B08248EDC48003B6158 /* SektionCellUmrah.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,13 +318,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3767E86248D7B5C0090CE19 /* SignupViewController.swift in Sources */,
+				D3271AFE248E91E3003B6158 /* ProfileView.swift in Sources */,
+				D3271B00248E9265003B6158 /* ProfileViewController.swift in Sources */,
 				D3767E80248D63810090CE19 /* Tools.swift in Sources */,
 				D3767E90248DBF190090CE19 /* LocationMapView.swift in Sources */,
 				D3767E6B248D336E0090CE19 /* LoginViewController.swift in Sources */,
 				D3767E82248D64B80090CE19 /* LoginView.swift in Sources */,
+				D3271B0E248F02B4003B6158 /* MapButtonCell.swift in Sources */,
 				D3767E8E248DBED90090CE19 /* LocationMapViewController.swift in Sources */,
+				D3271B12248F042E003B6158 /* ExternalViewController.swift in Sources */,
+				D3271B02248EC160003B6158 /* SektionViewController.swift in Sources */,
 				D3767E67248D336E0090CE19 /* AppDelegate.swift in Sources */,
 				D3767E84248D7B410090CE19 /* SignupView.swift in Sources */,
+				D3271B07248EDC48003B6158 /* SektionCellUmrah.swift in Sources */,
+				D3271B0B248EE01C003B6158 /* UmrahViewController.swift in Sources */,
+				D3271B04248EC9F8003B6158 /* InternalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

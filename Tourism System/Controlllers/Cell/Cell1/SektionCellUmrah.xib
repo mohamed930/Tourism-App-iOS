@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="SektionCellUmrah" customModule="Tourism_System" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="358"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="358"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Srz-ZZ-crP">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="358"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UmrahCover" translatesAutoresizingMaskIntoConstraints="NO" id="H15-NE-74e">
+                                <rect key="frame" x="-2" y="0.0" width="348" height="312"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="312" id="4GP-q1-dBk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Umrah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpX-aw-oib">
+                                <rect key="frame" x="0.0" y="294" width="343" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Z3Y-gw-QPi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="H15-NE-74e" secondAttribute="trailing" constant="-3" id="M2R-9K-fcY"/>
+                            <constraint firstAttribute="bottom" secondItem="zpX-aw-oib" secondAttribute="bottom" id="Xlt-HA-ZKj"/>
+                            <constraint firstItem="zpX-aw-oib" firstAttribute="leading" secondItem="Srz-ZZ-crP" secondAttribute="leading" id="XxN-I6-PHl"/>
+                            <constraint firstAttribute="trailing" secondItem="zpX-aw-oib" secondAttribute="trailing" id="o54-vH-QI1"/>
+                            <constraint firstItem="H15-NE-74e" firstAttribute="leading" secondItem="Srz-ZZ-crP" secondAttribute="leading" constant="-2" id="swt-My-ImD"/>
+                            <constraint firstItem="H15-NE-74e" firstAttribute="top" secondItem="Srz-ZZ-crP" secondAttribute="top" id="zI4-rs-rlW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Srz-ZZ-crP" secondAttribute="trailing" id="BLA-yp-X14"/>
+                <constraint firstAttribute="bottom" secondItem="Srz-ZZ-crP" secondAttribute="bottom" id="VTf-Om-IYd"/>
+                <constraint firstItem="Srz-ZZ-crP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fZN-dE-hsz"/>
+                <constraint firstItem="Srz-ZZ-crP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="r4e-gT-cHm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="237" height="257"/>
+            <connections>
+                <outlet property="ContainerView" destination="Srz-ZZ-crP" id="EA2-8Y-i4s"/>
+                <outlet property="ImageHight" destination="4GP-q1-dBk" id="2r7-L8-2gK"/>
+                <outlet property="LabelHight" destination="Z3Y-gw-QPi" id="Dhc-CF-J8C"/>
+                <outlet property="travelCover" destination="H15-NE-74e" id="V98-mb-Cmn"/>
+                <outlet property="travelTitleLabel" destination="zpX-aw-oib" id="Fci-z8-n3u"/>
+            </connections>
+            <point key="canvasLocation" x="97.826086956521749" y="81.696428571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="UmrahCover" width="358" height="339"/>
+    </resources>
+</document>

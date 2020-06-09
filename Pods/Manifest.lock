@@ -1,20 +1,24 @@
 PODS:
   - DropDown (2.3.13)
+  - Gemini (1.4.0)
   - MarqueeLabel/Swift (3.2.1)
 
 DEPENDENCIES:
   - DropDown
+  - Gemini
   - MarqueeLabel/Swift
 
 SPEC REPOS:
   trunk:
     - DropDown
+    - Gemini
     - MarqueeLabel
 
 SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Gemini: 4ad915cca8805577fe3021e02feeca2b77dcdbfc
   MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
 
-PODFILE CHECKSUM: d08adad0c4382d578dc650b569d9eac95f8078d7
+PODFILE CHECKSUM: d8fe54028c74fd4b313fd6254688e243cca91b46
 
 COCOAPODS: 1.9.1

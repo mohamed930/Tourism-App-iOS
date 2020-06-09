@@ -7,5 +7,6 @@ target 'Tourism System' do
   # Pods for Tourism System
   pod 'MarqueeLabel/Swift'
   pod 'DropDown'
-
+  pod 'Gemini'
+  
 end
