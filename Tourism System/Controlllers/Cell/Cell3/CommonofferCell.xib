@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="CommonofferCell" customModule="Tourism_System" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="190" height="256"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="190" height="256"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6Q-yD-A2D">
+                        <rect key="frame" x="0.0" y="0.0" width="190" height="256"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlexCover" translatesAutoresizingMaskIntoConstraints="NO" id="45X-dF-zFx">
+                                <rect key="frame" x="0.0" y="0.0" width="190" height="242"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jj" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXf-j4-Uig">
+                                <rect key="frame" x="0.0" y="184" width="190" height="72"/>
+                                <color key="backgroundColor" red="0.58039215690000001" green="0.23137254900000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="SGO-KD-QOX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="MXf-j4-Uig" secondAttribute="bottom" id="1J8-Ot-lv3"/>
+                            <constraint firstAttribute="trailing" secondItem="MXf-j4-Uig" secondAttribute="trailing" id="INI-ws-XDk"/>
+                            <constraint firstAttribute="trailing" secondItem="45X-dF-zFx" secondAttribute="trailing" id="Si1-Ta-Wvt"/>
+                            <constraint firstAttribute="bottom" secondItem="45X-dF-zFx" secondAttribute="bottom" constant="14" id="rBN-X9-ZKk"/>
+                            <constraint firstItem="45X-dF-zFx" firstAttribute="top" secondItem="E6Q-yD-A2D" secondAttribute="top" id="uUe-3A-zwl"/>
+                            <constraint firstItem="45X-dF-zFx" firstAttribute="leading" secondItem="E6Q-yD-A2D" secondAttribute="leading" id="xa8-go-UOM"/>
+                            <constraint firstItem="MXf-j4-Uig" firstAttribute="leading" secondItem="E6Q-yD-A2D" secondAttribute="leading" id="zqR-Ky-PqD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="E6Q-yD-A2D" secondAttribute="bottom" id="BjR-6f-kMX"/>
+                <constraint firstAttribute="trailing" secondItem="E6Q-yD-A2D" secondAttribute="trailing" id="Gdm-Po-MAT"/>
+                <constraint firstItem="E6Q-yD-A2D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eY3-Ik-0fL"/>
+                <constraint firstItem="E6Q-yD-A2D" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tR7-EG-1xd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="ContainerView" destination="E6Q-yD-A2D" id="MNv-Pm-uxG"/>
+                <outlet property="TravelCover" destination="45X-dF-zFx" id="wn2-Zb-nrQ"/>
+                <outlet property="TravelNameLabel" destination="MXf-j4-Uig" id="voN-ew-VuD"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="106.47321428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="AlexCover" width="358" height="339"/>
+    </resources>
+</document>
