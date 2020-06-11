@@ -8,5 +8,10 @@ target 'Tourism System' do
   pod 'MarqueeLabel/Swift'
   pod 'DropDown'
   pod 'Gemini'
-  
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'RappleProgressHUD'
 end

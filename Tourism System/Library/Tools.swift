@@ -25,4 +25,12 @@ class Tools {
         MyLabel.trailingBuffer = 20.0
         MyLabel.restartLabel()
     }
+    
+    public static func createAlert (Title:String , Mess:String , ob:UIViewController)
+    {
+        let alert = UIAlertController(title: Title , message:Mess
+            , preferredStyle:UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title:"OK",style:UIAlertAction.Style.default,handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        ob.present(alert,animated:true,completion: nil)
+    }
 }

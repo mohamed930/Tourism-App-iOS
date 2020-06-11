@@ -10,6 +10,7 @@ import UIKit
 
 class SignupViewController: UIViewController , UINavigationControllerDelegate {
     
+    // MARK:- TODO:- This Sektion is for initialize varible.
     var signupview: SignupView! {
         guard isViewLoaded else {return nil}
         return (view as! SignupView)
@@ -21,13 +22,15 @@ class SignupViewController: UIViewController , UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // MARK:- TODO:- This Sektion for Design launching
+        // -----------------------------------------
         Tools.setMarqueeOption(MyLabel: signupview.MarqueeLabel)
         
         signupview.Scroll.keyboardDismissMode = .interactive
         //put this where you initialize your scroll view
         let theTap = UITapGestureRecognizer(target: self, action: #selector(scrollViewTapped))
         signupview.Scroll.addGestureRecognizer(theTap)
+        // -----------------------------------------
     }
     
     // MARK:- TODO:- This Action Method For PickImageOne.
@@ -64,10 +67,49 @@ class SignupViewController: UIViewController , UINavigationControllerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK:- TODO:- This Action Method For Save Button.
+    @IBAction func BTNSave (_ sender:Any) {
+        SaveData()
+    }
+    
+    func SaveData () {
+        
+        if signupview.NameText.text == "" || signupview.EmailText.text == "" || signupview.TelephoneText.text == "" || signupview.Password.text == "" || signupview.ConfirmPassword.text == "" || signupview.Image1.image == UIImage(named: "load_image") || self.image1 == nil || self.image2 == nil {
+            Tools.createAlert(Title: "Error", Mess: "Please, Fill All Fiedls", ob: self)
+        }
+        else {
+            if signupview.Password.text != signupview.ConfirmPassword.text {
+                
+                Tools.createAlert(Title: "Error", Mess: "You must confirm Password!", ob: self)
+                signupview.Password.text = ""
+                signupview.ConfirmPassword.text = ""
+                signupview.Password.becomeFirstResponder()
+                
+            }
+            else {
+                
+                // Add Data To DataBase.
+                let ssnUrl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image1 , Name: signupview.EmailText.text!)
+                let PassportUrl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image2 , Name: signupview.EmailText.text!)
+                
+                let UserData = [
+                                  "Name":signupview.NameText.text!,
+                                  "Email":signupview.EmailText.text!,
+                                  "Telephone":signupview.TelephoneText.text!,
+                                  "Address":"nil",
+                                  "ssnUrl":ssnUrl,
+                                  "PassportUrl":PassportUrl
+                               ]
+                FireBase.createAccount(Email: signupview.EmailText.text!, Password: signupview.Password.text!, collectionName: "Users", data: UserData)
+                
+            }
+        }
+    }
+    
     @objc func scrollViewTapped(recognizer: UIGestureRecognizer) {
         signupview.Scroll.endEditing(true)
     }
-    
+    // MARK:- TODO:- This method for dismissing keypad when touch on screen view.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

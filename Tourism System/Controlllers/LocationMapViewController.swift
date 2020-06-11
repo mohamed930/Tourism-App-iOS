@@ -35,8 +35,11 @@ class LocationMapViewController: UIViewController {
         else if location_mapview.CityNameLabel.text == "London City" {
             self.flag = 2
         }
-        else {
+        else if location_mapview.CityNameLabel.text == "Abu Zabi City" {
             self.flag = 3
+        }
+        else {
+            self.flag = 1
         }
         self.performSegue(withIdentifier: "ShowMap", sender: self)
     }
