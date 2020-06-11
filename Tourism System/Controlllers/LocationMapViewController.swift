@@ -17,12 +17,35 @@ class LocationMapViewController: UIViewController {
     }
     
     var menu:DropDown!
+    var flag = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         MakeDropDown()
+    }
+    
+    // MARK:- TODO:- This Action Method For Preview Map.
+    @IBAction func ShowMap (_ sender:Any) {
+        
+        if location_mapview.CityNameLabel.text == "Portsaid City" {
+            self.flag = 1
+        }
+        else if location_mapview.CityNameLabel.text == "London City" {
+            self.flag = 2
+        }
+        else {
+            self.flag = 3
+        }
+        self.performSegue(withIdentifier: "ShowMap", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowMap" {
+            let vc = segue.destination as! MapViewController
+            vc.flag = self.flag
+        }
     }
     
     func MakeDropDown() {

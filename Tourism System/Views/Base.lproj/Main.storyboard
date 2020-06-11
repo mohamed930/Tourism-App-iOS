@@ -446,7 +446,7 @@
                                     <constraint firstAttribute="height" constant="241" id="f3y-jb-oK5"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzK-hc-k0d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protfouad, new build in front of see" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzK-hc-k0d">
                                 <rect key="frame" x="16" y="507" width="343" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="JFu-h0-OcY"/>
@@ -458,6 +458,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQH-Oa-5N9">
                                 <rect key="frame" x="96" y="641" width="183" height="68"/>
                                 <state key="normal" backgroundImage="Google Maps Location"/>
+                                <connections>
+                                    <action selector="ShowMap:" destination="D0E-Cv-BTQ" eventType="touchUpInside" id="Ggn-uJ-wXx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1M People" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeV-3Z-Ng9">
                                 <rect key="frame" x="37" y="220" width="115" height="30"/>
@@ -506,10 +509,13 @@
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Maps" id="jdM-jM-XN4"/>
+                    <connections>
+                        <segue destination="CC6-SF-r1Q" kind="presentation" identifier="ShowMap" modalPresentationStyle="fullScreen" id="Xhn-Gm-cFr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JU-Mh-jhx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696.8" y="803.94088669950747"/>
+            <point key="canvasLocation" x="1577" y="804"/>
         </scene>
         <!--Sektion View Controller-->
         <scene sceneID="CEM-B3-RqL">
@@ -597,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y3I-PE-13n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037.5999999999999" y="803.94088669950747"/>
+            <point key="canvasLocation" x="-98" y="804"/>
         </scene>
         <!--Travels View Controller-->
         <scene sceneID="Kzc-Mr-wwR">
@@ -624,7 +630,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="g3s-Cl-6j0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -665,7 +671,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kN5-r2-hyM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98.400000000000006" y="2205.6650246305421"/>
+            <point key="canvasLocation" x="-1239" y="2217"/>
         </scene>
         <!--Internal View Controller-->
         <scene sceneID="JyW-sC-Zjc">
@@ -769,7 +775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFs-Eb-qIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-97" y="1507"/>
+            <point key="canvasLocation" x="-1238" y="1507"/>
         </scene>
         <!--Umrah View Controller-->
         <scene sceneID="60w-zC-gOV">
@@ -835,7 +841,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0t-l7-YqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037.5999999999999" y="1506.6502463054187"/>
+            <point key="canvasLocation" x="-220" y="1507"/>
         </scene>
         <!--External View Controller-->
         <scene sceneID="ER3-yz-khU">
@@ -970,7 +976,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vG4-Y6-uTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292" y="1506.6502463054187"/>
+            <point key="canvasLocation" x="641" y="1507"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="hzk-H4-6yo">
+            <objects>
+                <viewController id="CC6-SF-r1Q" customClass="MapViewController" customModule="Tourism_System" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xG0-qa-cZN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mct-qq-YFB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkO-sb-yJO">
+                                <rect key="frame" x="26" y="702" width="50" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Nd2-vS-i12"/>
+                                    <constraint firstAttribute="width" constant="50" id="iM8-R5-XFj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" backgroundImage="Button Directions"/>
+                                <connections>
+                                    <action selector="ShowDurection:" destination="CC6-SF-r1Q" eventType="touchUpInside" id="dw5-Hq-vk5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mct-qq-YFB" firstAttribute="bottom" secondItem="qbi-Bf-ZRp" secondAttribute="bottom" constant="34" id="6uh-11-bLb"/>
+                            <constraint firstItem="qbi-Bf-ZRp" firstAttribute="trailing" secondItem="mct-qq-YFB" secondAttribute="trailing" id="8hg-tA-gRM"/>
+                            <constraint firstItem="FkO-sb-yJO" firstAttribute="leading" secondItem="qbi-Bf-ZRp" secondAttribute="leading" constant="26" id="Mik-tW-nBi"/>
+                            <constraint firstItem="qbi-Bf-ZRp" firstAttribute="bottom" secondItem="FkO-sb-yJO" secondAttribute="bottom" constant="24" id="jVk-ia-NDz"/>
+                            <constraint firstItem="qbi-Bf-ZRp" firstAttribute="top" secondItem="mct-qq-YFB" secondAttribute="top" constant="44" id="tiJ-Ig-XBs"/>
+                            <constraint firstItem="mct-qq-YFB" firstAttribute="leading" secondItem="qbi-Bf-ZRp" secondAttribute="leading" id="xtE-wG-Hln"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qbi-Bf-ZRp"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="mct-qq-YFB" id="FHz-cT-Kep"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RYd-eU-zqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8" y="1506.6502463054187"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="pxn-o2-o3X">
@@ -1163,6 +1212,7 @@
         <image name="Alex" width="414" height="255.66667175292969"/>
         <image name="BTNBack" width="51" height="52"/>
         <image name="BTNSave" width="51" height="52"/>
+        <image name="Button Directions" width="92" height="85"/>
         <image name="Cairo" width="415" height="255.66667175292969"/>
         <image name="DrobArrow" width="11.333333015441895" height="6.6666665077209473"/>
         <image name="Egpt,PortSaid" width="743" height="495"/>
