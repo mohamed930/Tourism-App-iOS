@@ -29,8 +29,19 @@ class LoginViewController: UIViewController {
     
     // MARK:- TODO:- This Action For Making Login Method.
     @IBAction func BTNLogin(_ sender:Any) {
-        self.performSegue(withIdentifier: "GoToHome", sender: self)
+        // self.performSegue(withIdentifier: "GoToHome", sender: self)
+        
+        let f = FireBase()
+        f.MakeLogin(Email: loginview.EmailText.text!, Password: loginview.PasswordText.text!) { (flag) in
+            if flag == "Success" {
+                self.performSegue(withIdentifier: "GoToHome", sender: self)
+            }
+            else {
+                self.loginview.PasswordText.text = ""
+            }
+        }
     }
+    
 
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

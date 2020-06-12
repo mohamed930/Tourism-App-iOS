@@ -89,8 +89,8 @@ class SignupViewController: UIViewController , UINavigationControllerDelegate {
             else {
                 
                 // Add Data To DataBase.
-                let ssnUrl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image1 , Name: signupview.EmailText.text!)
-                let PassportUrl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image2 , Name: signupview.EmailText.text!)
+                let ssnUrl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image1 , Name: "\(signupview.EmailText.text!)11")
+                let PassportUrl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image2 , Name: "\(signupview.EmailText.text!)22")
                 
                 let UserData = [
                                   "Name":signupview.NameText.text!,

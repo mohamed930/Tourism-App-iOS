@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import RappleProgressHUD
 
 class ProfileViewController: UIViewController , UINavigationControllerDelegate {
     
@@ -18,11 +20,14 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate {
     var flag = 1
     var image1:UIImage!
     var image2:UIImage!
+    var userid:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
+        // MARK:- These Method For Making design on page.
+        // ----------------------------------------------
         SSNImageTouch()
         PassportImageTouch()
         profileview.AddressText.layer.cornerRadius = 26.0
@@ -33,7 +38,78 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate {
         tab.numberOfTouchesRequired = 1
         profileview.Scroll.addGestureRecognizer(tab)
         profileview.Scroll.keyboardDismissMode = .interactive
+        // ----------------------------------------------
         
+        // MARK:- This Call Method for Getting Data from DataBase.
+        getProfileData()
+    }
+    
+    var f : [String:String]!
+    
+    @IBAction func BTNUpdate (_ sender:Any) {
+        
+        if image1 == nil && image2 == nil {
+            f = [
+                   "Name": profileview.NameText.text!,
+                   "Email": profileview.EmailText.text!,
+                   "Telephone":profileview.TelehponeText.text!,
+                   "Address":profileview.AddressText.text!
+                ]
+        }
+        else if image1 != nil && image2 == nil {
+            let ssnurl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image1, Name: "\(profileview.EmailText.text!)11")
+            f = [
+               "Name": profileview.NameText.text!,
+               "Email": profileview.EmailText.text!,
+               "Telephone":profileview.TelehponeText.text!,
+               "Address":profileview.AddressText.text!,
+               "ssnUrl": ssnurl
+            ]
+        }
+        else if image1 == nil && image2 != nil {
+            let passporturl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image2, Name: "\(profileview.EmailText.text!)22")
+            f = [
+               "Name": profileview.NameText.text!,
+               "Email": profileview.EmailText.text!,
+               "Telephone":profileview.TelehponeText.text!,
+               "Address":profileview.AddressText.text!,
+               "PassportUrl": passporturl
+            ]
+        }
+        else {
+            let ssnurl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image1, Name: "\(profileview.EmailText.text!)11")
+            let passporturl = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: image2, Name: "\(profileview.EmailText.text!)22")
+            f = [
+               "Name": profileview.NameText.text!,
+               "Email": profileview.EmailText.text!,
+               "Telephone":profileview.TelehponeText.text!,
+               "Address":profileview.AddressText.text!,
+               "ssnUrl": ssnurl,
+               "PassportUrl": passporturl
+            ]
+        }
+        
+        FireBase.updateDocumnt(collectionName: "Users", documntId: self.userid! , data: f)
+        
+    }
+    
+    // MARK:- TODO:- This mathod for Getting Data.
+    func getProfileData() {
+        FireBase.readWithWhereCondtion(collectionName: "Users", Email: (Auth.auth().currentUser?.email!)!) { (quary) in
+            
+            for q in quary.documents {
+                
+                self.userid = q.documentID
+                self.profileview.EmailText.text = (q.get("Email") as! String)
+                self.profileview.NameText.text = (q.get("Name") as! String)
+                self.profileview.TelehponeText.text = (q.get("Telephone") as! String)
+                self.profileview.AddressText.text = (q.get("Address") as! String)
+                FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com/UsersImages", ImageURL: (q.get("ssnUrl") as! String), ImageView: self.profileview.SSNImage)
+                FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com/UsersImages", ImageURL: (q.get("PassportUrl") as! String), ImageView: self.profileview.PassportImage)
+                
+            }
+            RappleActivityIndicatorView.stopAnimation()
+        }
     }
     
     // MARK:- TODO:- This Method for make tab geuster to SSNImage.

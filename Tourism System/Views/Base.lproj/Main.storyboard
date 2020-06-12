@@ -1118,6 +1118,9 @@
                                                     <constraint firstAttribute="width" constant="75" id="dbi-Kv-uL1"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="Save"/>
+                                                <connections>
+                                                    <action selector="BTNUpdate:" destination="5NT-AD-99X" eventType="touchUpInside" id="pxw-uz-FIS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
