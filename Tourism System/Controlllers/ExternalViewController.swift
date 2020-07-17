@@ -24,6 +24,8 @@ class ExternalViewController: UIViewController {
     @IBOutlet weak var collectionView:UICollectionView!
     @IBOutlet weak var collectionView2:UICollectionView!
     
+    var screenedge : UIScreenEdgePanGestureRecognizer!
+    
     var TravelList = Array<OffersData>()
 
     override func viewDidLoad() {
@@ -38,11 +40,20 @@ class ExternalViewController: UIViewController {
         TravelList.append(OffersData(travelImage: "AlexCover", travelName: "Alex3"))
         collectionView2.reloadData()
         
+        // MARK:- TODO:- This Line for adding Geusters.
+               screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+               screenedge.edges = .left
+               view.addGestureRecognizer(screenedge)
+        
     }
     
     @IBAction func BTNBack(_ sender:Any){
-        self.dismiss(animated: true, completion: nil)
+        Tools.makeNiceBackTransition(ob: self)
     }
+    
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+         Tools.makeNiceBackTransition(ob: self)
+   }
 }
 
 extension ExternalViewController:UICollectionViewDataSource {

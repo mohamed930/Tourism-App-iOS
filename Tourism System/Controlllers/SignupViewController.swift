@@ -18,6 +18,7 @@ class SignupViewController: UIViewController , UINavigationControllerDelegate {
     var flag = 1
     var image1:UIImage!
     var image2:UIImage!
+    var screenedge : UIScreenEdgePanGestureRecognizer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,11 @@ class SignupViewController: UIViewController , UINavigationControllerDelegate {
         let theTap = UITapGestureRecognizer(target: self, action: #selector(scrollViewTapped))
         signupview.Scroll.addGestureRecognizer(theTap)
         // -----------------------------------------
+        
+        // MARK:- TODO:- This Line for adding Geusters.
+        screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+        screenedge.edges = .left
+        view.addGestureRecognizer(screenedge)
     }
     
     // MARK:- TODO:- This Action Method For PickImageOne.
@@ -64,7 +70,7 @@ class SignupViewController: UIViewController , UINavigationControllerDelegate {
     
     // MARK:- TODO:- This Action Method For Button Back.
     @IBAction func BTNBack (_ sender:Any) {
-        self.dismiss(animated: true, completion: nil)
+        Tools.makeNiceBackTransition(ob: self)
     }
     
     // MARK:- TODO:- This Action Method For Save Button.
@@ -108,6 +114,12 @@ class SignupViewController: UIViewController , UINavigationControllerDelegate {
     
     @objc func scrollViewTapped(recognizer: UIGestureRecognizer) {
         signupview.Scroll.endEditing(true)
+    }
+    // MARK:- TODO:- This Method For Add GuesterAction
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+        
+       Tools.makeNiceBackTransition(ob: self)
+        
     }
     // MARK:- TODO:- This method for dismissing keypad when touch on screen view.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

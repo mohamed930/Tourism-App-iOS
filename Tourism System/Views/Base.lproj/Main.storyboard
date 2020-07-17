@@ -987,7 +987,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mct-qq-YFB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="2" y="0.0" width="373" height="812"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkO-sb-yJO">
                                 <rect key="frame" x="26" y="702" width="50" height="52"/>
@@ -1004,12 +1004,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mct-qq-YFB" firstAttribute="bottom" secondItem="qbi-Bf-ZRp" secondAttribute="bottom" constant="34" id="6uh-11-bLb"/>
-                            <constraint firstItem="qbi-Bf-ZRp" firstAttribute="trailing" secondItem="mct-qq-YFB" secondAttribute="trailing" id="8hg-tA-gRM"/>
+                            <constraint firstItem="mct-qq-YFB" firstAttribute="top" secondItem="xG0-qa-cZN" secondAttribute="top" id="8vY-Cq-pbx"/>
+                            <constraint firstAttribute="bottom" secondItem="mct-qq-YFB" secondAttribute="bottom" id="9bE-gN-I1W"/>
                             <constraint firstItem="FkO-sb-yJO" firstAttribute="leading" secondItem="qbi-Bf-ZRp" secondAttribute="leading" constant="26" id="Mik-tW-nBi"/>
+                            <constraint firstItem="mct-qq-YFB" firstAttribute="leading" secondItem="qbi-Bf-ZRp" secondAttribute="leading" constant="2" id="cBI-Ct-ze3"/>
                             <constraint firstItem="qbi-Bf-ZRp" firstAttribute="bottom" secondItem="FkO-sb-yJO" secondAttribute="bottom" constant="24" id="jVk-ia-NDz"/>
-                            <constraint firstItem="qbi-Bf-ZRp" firstAttribute="top" secondItem="mct-qq-YFB" secondAttribute="top" constant="44" id="tiJ-Ig-XBs"/>
-                            <constraint firstItem="mct-qq-YFB" firstAttribute="leading" secondItem="qbi-Bf-ZRp" secondAttribute="leading" id="xtE-wG-Hln"/>
+                            <constraint firstItem="mct-qq-YFB" firstAttribute="trailing" secondItem="qbi-Bf-ZRp" secondAttribute="trailing" id="zic-ld-smN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qbi-Bf-ZRp"/>
                     </view>

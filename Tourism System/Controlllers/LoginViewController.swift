@@ -57,6 +57,16 @@ extension LoginViewController: UITextFieldDelegate {
         }
         else {
             // Make Login Operation.
+            self.view.endEditing(true)
+            let f = FireBase()
+            f.MakeLogin(Email: loginview.EmailText.text!, Password: loginview.PasswordText.text!) { (flag) in
+                if flag == "Success" {
+                    self.performSegue(withIdentifier: "GoToHome", sender: self)
+                }
+                else {
+                    self.loginview.PasswordText.text = ""
+                }
+            }
         }
         return true
     }

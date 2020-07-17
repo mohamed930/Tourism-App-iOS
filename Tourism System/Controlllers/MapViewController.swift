@@ -13,6 +13,7 @@ import CoreLocation
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView:MKMapView!
+    var screenedge : UIScreenEdgePanGestureRecognizer!
     
     let location = CLLocationManager()
     
@@ -42,6 +43,12 @@ class MapViewController: UIViewController {
         default:
             break
         }
+        
+       // MARK:- TODO:- This Line for adding Geusters.
+       screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+       screenedge.edges = .left
+       view.addGestureRecognizer(screenedge)
+
     }
     
     // MARK:- TODO:- This Method For Making a Pin in Map.
@@ -67,6 +74,10 @@ class MapViewController: UIViewController {
         location.requestWhenInUseAuthorization()
         location.startUpdatingLocation()
     }
+    
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+        Tools.makeNiceBackTransition(ob: self)
+   }
     
 }
 

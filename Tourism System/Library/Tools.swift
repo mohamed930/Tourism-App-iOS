@@ -33,4 +33,14 @@ class Tools {
         alert.addAction(UIAlertAction(title:"OK",style:UIAlertAction.Style.default,handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
         ob.present(alert,animated:true,completion: nil)
     }
+    
+    public static func makeNiceBackTransition(ob:UIViewController) {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        ob.view.window!.layer.add(transition, forKey: nil)
+        ob.dismiss(animated: false, completion: nil)
+    }
 }

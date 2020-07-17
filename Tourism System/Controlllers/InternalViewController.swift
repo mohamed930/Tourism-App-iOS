@@ -17,6 +17,8 @@ class InternalViewController: UIViewController {
     @IBOutlet weak var LoxourTravels:UIImageView!
     @IBOutlet weak var SharmTravels:UIImageView!
     
+    var screenedge : UIScreenEdgePanGestureRecognizer!
+    
     var flag = 0
     
     override func viewDidLoad() {
@@ -27,11 +29,16 @@ class InternalViewController: UIViewController {
         setInternalMove(Image: AlexTravels)
         setInternalMove(Image: LoxourTravels)
         setInternalMove(Image: SharmTravels)
+        
+        // MARK:- TODO:- This Line for adding Geusters.
+        screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+        screenedge.edges = .left
+        view.addGestureRecognizer(screenedge)
     }
     
     // MARK:- TODO:- This Action Button Back.
     @IBAction func BTNBack(_ sender:Any) {
-        self.dismiss(animated: true, completion: nil)
+        Tools.makeNiceBackTransition(ob: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,5 +93,11 @@ class InternalViewController: UIViewController {
     @objc func gotoSharm(tapGestureRecognizer: UITapGestureRecognizer) {
         self.flag = 4
         self.performSegue(withIdentifier: "GoToCairoTravels", sender: self)
+    }
+    
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+           
+          Tools.makeNiceBackTransition(ob: self)
+           
     }
 }

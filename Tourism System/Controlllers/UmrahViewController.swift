@@ -14,6 +14,7 @@ class UmrahViewController: UIViewController {
     // MARK:- TODO:- This Sektion For Intialize varibles here.
     @IBOutlet weak var collectionView:GeminiCollectionView!
     var ImageArray = ["UmrahCell","HajjCell"]
+    var screenedge : UIScreenEdgePanGestureRecognizer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,19 @@ class UmrahViewController: UIViewController {
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName: "SektionCellUmrah", bundle: nil), forCellWithReuseIdentifier: "Cell")
         configureAnimation()
+        
+        // MARK:- TODO:- This Line for adding Geusters.
+               screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+               screenedge.edges = .left
+               view.addGestureRecognizer(screenedge)
     }
 
     @IBAction func BTNBack(_ sender:Any) {
-        self.dismiss(animated: true, completion: nil)
+        Tools.makeNiceBackTransition(ob: self)
+    }
+    
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+        Tools.makeNiceBackTransition(ob: self)
     }
 }
 
