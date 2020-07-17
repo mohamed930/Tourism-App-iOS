@@ -268,7 +268,6 @@
                             <outlet property="Password" destination="jmd-HJ-9Iw" id="Lhg-pI-Zoe"/>
                             <outlet property="Scroll" destination="KCo-r5-UwC" id="ETp-oc-pNq"/>
                             <outlet property="TelephoneText" destination="B7N-O2-RAB" id="5JW-vM-ZCi"/>
-                            <outlet property="ViewButtom" destination="jD9-3q-b45" id="sjh-2c-x7b"/>
                         </connections>
                     </view>
                 </viewController>
@@ -1090,7 +1089,7 @@
                                                             <constraint firstAttribute="height" constant="48" id="kQF-mv-Uee"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="5NT-AD-99X" id="iGP-7G-xfd"/>
                                                         </connections>

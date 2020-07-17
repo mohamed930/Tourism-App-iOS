@@ -117,23 +117,6 @@ class SignupViewController: UIViewController , UINavigationControllerDelegate {
 
 extension SignupViewController:UITextFieldDelegate {
     
-    //TODO: Declare textFieldDidEndEditing here:
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        UIView.animate(withDuration: 0.5) {
-            self.signupview.ViewButtom.constant = 34
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-           
-           UIView.animate(withDuration: 0.5) {
-               self.signupview.ViewButtom.constant = 200
-               self.view.layoutIfNeeded()
-           }
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case signupview.NameText:

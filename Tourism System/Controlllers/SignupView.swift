@@ -19,6 +19,4 @@ class SignupView: UIView {
     @IBOutlet weak var Password:UITextField!
     @IBOutlet weak var ConfirmPassword:UITextField!
     @IBOutlet weak var Scroll:UIScrollView!
-    //@IBOutlet weak var ScrollButtom: NSLayoutConstraint!
-    @IBOutlet weak var ViewButtom: NSLayoutConstraint!
 }

@@ -14,4 +14,5 @@ target 'Tourism System' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'RappleProgressHUD'
+  pod 'IQKeyboardManagerSwift'
 end

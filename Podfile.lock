@@ -340,6 +340,7 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.4.0)
+  - IQKeyboardManagerSwift (6.5.5)
   - leveldb-library (1.22)
   - MarqueeLabel/Swift (3.2.1)
   - nanopb (1.30905.0):
@@ -358,6 +359,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - Gemini
+  - IQKeyboardManagerSwift
   - MarqueeLabel/Swift
   - RappleProgressHUD
 
@@ -384,6 +386,7 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - IQKeyboardManagerSwift
     - leveldb-library
     - MarqueeLabel
     - nanopb
@@ -412,12 +415,13 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   RappleProgressHUD: f29bc5dc5f9834c2caa9c2ae21ba11f3ff2b5a85
 
-PODFILE CHECKSUM: f4b71a744fd61688807d482462459fac3bbdec51
+PODFILE CHECKSUM: 2bbf3d4bc7215c74fe6cda729e6a9493a1a4c5f1
 
 COCOAPODS: 1.9.1
