@@ -29,8 +29,6 @@ class LoginViewController: UIViewController {
     
     // MARK:- TODO:- This Action For Making Login Method.
     @IBAction func BTNLogin(_ sender:Any) {
-        // self.performSegue(withIdentifier: "GoToHome", sender: self)
-        
         let f = FireBase()
         f.MakeLogin(Email: loginview.EmailText.text!, Password: loginview.PasswordText.text!) { (flag) in
             if flag == "Success" {
@@ -46,10 +44,23 @@ class LoginViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        loginview.line1.backgroundColor = UIColor().hexStringToUIColor(hex: "#FFFFFF")
+        loginview.line2.backgroundColor = UIColor().hexStringToUIColor(hex: "#FFFFFF")
     }
 }
 
 extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.tag == 1 {
+            loginview.line1.backgroundColor = UIColor().hexStringToUIColor(hex: "#03DAC5")
+            loginview.line2.backgroundColor = UIColor().hexStringToUIColor(hex: "#FFFFFF")
+        }
+        else {
+            loginview.line2.backgroundColor = UIColor().hexStringToUIColor(hex: "#03DAC5")
+            loginview.line1.backgroundColor = UIColor().hexStringToUIColor(hex: "#FFFFFF")
+        }
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == loginview.EmailText{

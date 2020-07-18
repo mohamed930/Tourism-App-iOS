@@ -14,5 +14,7 @@ class LoginView: UIView {
     @IBOutlet weak var EmailText:UITextField!
     @IBOutlet weak var PasswordText:UITextField!
     @IBOutlet weak var MarqueeLabel:MarqueeLabel!
+    @IBOutlet weak var line1:UIView!
+    @IBOutlet weak var line2:UIView!
 
 }

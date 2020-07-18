@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Password.png",
+      "filename" : "EmailIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Password@2x.png",
+      "filename" : "EmailIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Password@3x.png",
+      "filename" : "EmailIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
