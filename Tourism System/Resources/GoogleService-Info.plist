@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>475766271581-1j3vprb12qtjfa3l6c5jhbhlponir6fa.apps.googleusercontent.com</string>
+	<string>475766271581-9o7bb1aq8httl93d27rb189lpk5urr6j.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.475766271581-1j3vprb12qtjfa3l6c5jhbhlponir6fa</string>
+	<string>com.googleusercontent.apps.475766271581-9o7bb1aq8httl93d27rb189lpk5urr6j</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>475766271581-cq00g6qaq5mfhis0se3ms9pl1o0k64o1.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>ios</string>
+	<string>MyCompany199.Tourism-System</string>
 	<key>PROJECT_ID</key>
 	<string>tourist-company</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:475766271581:ios:5d73fb9d1f4e9f378de7b4</string>
+	<string>1:475766271581:ios:0df0a12aea8b68318de7b4</string>
 	<key>DATABASE_URL</key>
 	<string>https://tourist-company.firebaseio.com</string>
 </dict>

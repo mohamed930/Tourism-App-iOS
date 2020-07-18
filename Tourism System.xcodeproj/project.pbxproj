@@ -18,12 +18,12 @@
 		D3271B0E248F02B4003B6158 /* MapButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B0C248F02B4003B6158 /* MapButtonCell.swift */; };
 		D3271B0F248F02B4003B6158 /* MapButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3271B0D248F02B4003B6158 /* MapButtonCell.xib */; };
 		D3271B12248F042E003B6158 /* ExternalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B11248F042E003B6158 /* ExternalViewController.swift */; };
+		D33A51E124C35486006CCAE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D33A51E024C35485006CCAE2 /* GoogleService-Info.plist */; };
 		D33BD6942492A50E0067406C /* FireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD6932492A50E0067406C /* FireBase.swift */; };
 		D33BD6992492A82F0067406C /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D33BD6962492A82A0067406C /* ProgressHUD.m */; };
 		D33BD69A2492A82F0067406C /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D33BD6982492A82E0067406C /* ProgressHUD.bundle */; };
 		D33ECEF124905687005F2AD3 /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33ECEF024905687005F2AD3 /* color.swift */; };
 		D34FB4E02491C059005C7D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FB4DF2491C058005C7D59 /* Assets.xcassets */; };
-		D362EEB324927A07002C79B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D362EEB224927A07002C79B8 /* GoogleService-Info.plist */; };
 		D3767E67248D336E0090CE19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E66248D336E0090CE19 /* AppDelegate.swift */; };
 		D3767E6B248D336E0090CE19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E6A248D336E0090CE19 /* LoginViewController.swift */; };
 		D3767E6E248D336E0090CE19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3767E6C248D336E0090CE19 /* Main.storyboard */; };
@@ -56,6 +56,7 @@
 		D3271B0C248F02B4003B6158 /* MapButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonCell.swift; sourceTree = "<group>"; };
 		D3271B0D248F02B4003B6158 /* MapButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButtonCell.xib; sourceTree = "<group>"; };
 		D3271B11248F042E003B6158 /* ExternalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalViewController.swift; sourceTree = "<group>"; };
+		D33A51E024C35485006CCAE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D33BD6932492A50E0067406C /* FireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBase.swift; sourceTree = "<group>"; };
 		D33BD6952492A80C0067406C /* Tourism System-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tourism System-Bridging-Header.h"; sourceTree = "<group>"; };
 		D33BD6962492A82A0067406C /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		D33BD6982492A82E0067406C /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		D33ECEF024905687005F2AD3 /* color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
 		D34FB4DF2491C058005C7D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D362EEB224927A07002C79B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3767E63248D336E0090CE19 /* Tourism System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tourism System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3767E66248D336E0090CE19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3767E6A248D336E0090CE19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -216,8 +216,8 @@
 				D33BD6972492A82C0067406C /* ProgressHUD.h */,
 				D33BD6962492A82A0067406C /* ProgressHUD.m */,
 				D34FB4DF2491C058005C7D59 /* Assets.xcassets */,
-				D362EEB224927A07002C79B8 /* GoogleService-Info.plist */,
 				D3767E74248D338C0090CE19 /* Info.plist */,
+				D33A51E024C35485006CCAE2 /* GoogleService-Info.plist */,
 				D33BD6952492A80C0067406C /* Tourism System-Bridging-Header.h */,
 			);
 			path = Resources;
@@ -323,8 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3767E73248D338C0090CE19 /* LaunchScreen.storyboard in Resources */,
-				D362EEB324927A07002C79B8 /* GoogleService-Info.plist in Resources */,
 				D3271B0F248F02B4003B6158 /* MapButtonCell.xib in Resources */,
+				D33A51E124C35486006CCAE2 /* GoogleService-Info.plist in Resources */,
 				D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */,
 				D3AC1DBF249000DA0036EF6D /* CommonofferCell.xib in Resources */,
 				D33BD69A2492A82F0067406C /* ProgressHUD.bundle in Resources */,

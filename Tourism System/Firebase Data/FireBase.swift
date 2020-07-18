@@ -80,6 +80,21 @@ class FireBase {
         }
     }
     
+    // MARK:- TODO:- This Method for Read Data from Firebase with condtion in public.
+    public static func publicreadWithWhereCondtion (collectionName:String , key:String , value:String , complention: @escaping (QuerySnapshot) -> ()) {
+        
+        RappleActivityIndicatorView.startAnimatingWithLabel("loading", attributes: RappleModernAttributes)
+        Firestore.firestore().collection(collectionName).whereField(key, isEqualTo: value).getDocuments { (quary, error) in
+            if error != nil {
+                RappleActivityIndicatorView.stopAnimation()
+                ProgressHUD.showError("We Can't Find Your Data!")
+            }
+            else {
+                complention(quary!)
+            }
+        }
+    }
+    
     // MARK:- TODO:- This Method For Update Data from Firebase.
     public static func updateDocumnt (collectionName:String,documntId:String,data:[String:Any]) {
         

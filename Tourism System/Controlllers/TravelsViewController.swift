@@ -8,6 +8,7 @@
 
 import UIKit
 import Gemini
+import RappleProgressHUD
 
 class TravelsData {
     var Image:String!
@@ -26,18 +27,45 @@ class TravelsViewController: UIViewController {
     @IBOutlet weak var collectionView:GeminiCollectionView!
     var List = Array<TravelsData>()
     
+    var screenedge : UIScreenEdgePanGestureRecognizer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         LoadData()
+        
+        // MARK:- TODO:- This Line for adding Geusters.
+        screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+        screenedge.edges = .left
+        view.addGestureRecognizer(screenedge)
     }
     
     
     // MARK:- TODO:- This Action Method For Button Back.
     @IBAction func BTNBack(_ sender:Any){
-        self.dismiss(animated: true, completion: nil)
+        Tools.makeNiceBackTransition(ob: self)
+    }
+    
+    // MARK:- TODO:- This Method For Add GuesterAction
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+       Tools.makeNiceBackTransition(ob: self)
+    }
+    
+    // MARK:- TODO:- This Method For Download Data From Firebase.
+    func DownloadData(k:String,v:String) {
+        List.removeAll()
+        RappleActivityIndicatorView.startAnimatingWithLabel("loading", attributes: RappleModernAttributes)
+        FireBase.publicreadWithWhereCondtion(collectionName: "OffersInternal", key: k, value: v) { (query) in
+            for doc in query.documents {
+                let ob = TravelsData(Image: doc.get("fileref") as! String, Name: doc.get("title") as! String)
+                self.List.append(ob)
+                self.collectionView.reloadData()
+                self.configureAnimation()
+            }
+            RappleActivityIndicatorView.stopAnimation()
+        }
     }
     
     // MARK:- TODO:- This Method That Worked on load page.
@@ -48,41 +76,23 @@ class TravelsViewController: UIViewController {
         switch f {
         case 1:
             self.TitleLabel.text = "Cairo Travels"
-            List.append(TravelsData(Image: "CairoTravel", Name: "Cairo (1)"))
-            List.append(TravelsData(Image: "CairoTravel", Name: "Cairo (2)"))
-            List.append(TravelsData(Image: "CairoTravel", Name: "Cairo (3)"))
-            List.append(TravelsData(Image: "CairoTravel", Name: "Cairo (4)"))
-            List.append(TravelsData(Image: "CairoTravel", Name: "Cairo (5)"))
+            self.DownloadData(k: "to", v: "Cairo")
             break
         case 2:
             self.TitleLabel.text = "Alexandria Travels"
-            List.append(TravelsData(Image: "AlexCover", Name: "Alex (1)"))
-            List.append(TravelsData(Image: "AlexCover", Name: "Alex (2)"))
-            List.append(TravelsData(Image: "AlexCover", Name: "Alex (3)"))
-            List.append(TravelsData(Image: "AlexCover", Name: "Alex (4)"))
-            List.append(TravelsData(Image: "AlexCover", Name: "Alex (5)"))
+            self.DownloadData(k: "to", v: "Alex")
             break
         case 3:
             self.TitleLabel.text = "Loxour & Aswan Travels"
-            List.append(TravelsData(Image: "LoxourCover", Name: "Loxour (1)"))
-            List.append(TravelsData(Image: "LoxourCover", Name: "Loxour (2)"))
-            List.append(TravelsData(Image: "LoxourCover", Name: "Loxour (3)"))
-            List.append(TravelsData(Image: "LoxourCover", Name: "Loxour (4)"))
-            List.append(TravelsData(Image: "LoxourCover", Name: "Loxour (5)"))
+            self.DownloadData(k: "to", v: "Loxour")
             break
         case 4:
             self.TitleLabel.text = "Sharm el-sheikh Travels"
-            List.append(TravelsData(Image: "SharmCover", Name: "Sharm (1)"))
-            List.append(TravelsData(Image: "SharmCover", Name: "Sharm (2)"))
-            List.append(TravelsData(Image: "SharmCover", Name: "Sharm (3)"))
-            List.append(TravelsData(Image: "SharmCover", Name: "Sharm (4)"))
-            List.append(TravelsData(Image: "SharmCover", Name: "Sharm (5)"))
+            self.DownloadData(k: "to", v: "Sharm")
             break
         default:
             print("Error!")
         }
-        self.collectionView.reloadData()
-        configureAnimation()
     }
 }
 
@@ -95,8 +105,8 @@ extension TravelsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : TravelCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TravelCell
         self.collectionView.animateCell(cell)
-        cell.TravelCover.image = UIImage(named: List[indexPath.row].Image!)
         cell.TravelNameLabel.text = List[indexPath.row].Name!
+        FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com/", ImageURL: List[indexPath.row].Image, ImageView: cell.TravelCover)
         
         switch f {
         case 1:
