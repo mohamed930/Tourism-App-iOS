@@ -152,7 +152,8 @@ extension TravelsViewController: UICollectionViewDelegate {
     
     // Make Transection.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TabBarViewController.tag = 1
+        first_view.pickData = List[indexPath.row]
+        first_view.type = 1
         Tools.MakeTransion(StoryName: "Main2", ViewName: "first", ob: self)
     }
 

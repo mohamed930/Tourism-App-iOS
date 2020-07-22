@@ -12,6 +12,8 @@ class first_view: UIViewController {
     
     var data:[String:Any] = [:]
      var timer : Timer?
+    public static var type = 0
+    public static var pickData:TravelsData?
     
      @IBOutlet weak var programm: UITextView!
      @IBOutlet weak var Time: UILabel!
@@ -25,22 +27,27 @@ class first_view: UIViewController {
         super.viewDidLoad()
         
         fornt_end_init()
-      //  TabeViewCell.layer.frame.size.height = tableView.layer.frame.size.height
-       // TabeViewCell.layer.frame.size.width = tableView.layer.frame.size.width
-        //ButtonButtonConstraint.constant = 2.0
-          //timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(loading), userInfo: nil, repeats: true)
+        
+        print("tocken: \(first_view.type)")
+        if first_view.type == 0 {
+            self.first_label.text = data["title"] as? String
+            self.Cost.text = data["OfferPrice"] as? String
+            self.Time.text = data["Time"] as? String //wrong needs to change
+            self.programm.text = data["OfferDetails"] as? String
+            self.iamge.image = data["image"] as? UIImage
+        }
+        else if first_view.type == 1 {
+            FireBase.publicreadWithWhereCondtion(collectionName: "OffersInternal", key: "title", value: first_view.pickData!.Name) { (quary) in
+                for doc in quary.documents {
+                    self.first_label.text = first_view.pickData!.Name
+                    self.Cost.text = (doc.get("price") as! String)
+                    self.Time.text = (doc.get("date") as! String)
+                    self.programm.text = (doc.get("content") as! String)
+                    FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com", ImageURL: doc.get("fileref2") as! String, ImageView: self.iamge)
+                }
+            }
+        }
           
-         
-         // print("the data is \(data)")
-        //  print(type(of: data!))
-        /*  self.activaty.startAnimating()
-          self.activaty.stopAnimating()
-          self.activaty.hidesWhenStopped = true*/
-          self.first_label.text = data["title"] as? String
-          self.Cost.text = data["OfferPrice"] as? String
-          self.Time.text = data["Time"] as? String //wrong needs to change
-          self.programm.text = data["OfferDetails"] as? String
-          self.iamge.image = data["image"] as? UIImage
 
     }
     
