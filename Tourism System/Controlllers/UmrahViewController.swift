@@ -24,9 +24,9 @@ class UmrahViewController: UIViewController {
         configureAnimation()
         
         // MARK:- TODO:- This Line for adding Geusters.
-               screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
-               screenedge.edges = .left
-               view.addGestureRecognizer(screenedge)
+        screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+        screenedge.edges = .left
+        view.addGestureRecognizer(screenedge)
     }
 
     @IBAction func BTNBack(_ sender:Any) {
@@ -73,6 +73,16 @@ extension UmrahViewController: UICollectionViewDelegate {
         if let cell = cell as? GeminiCell {
             self.collectionView.animateCell(cell)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            TabBarViewController.tag = 2
+        }
+        else {
+            TabBarViewController.tag = 3
+        }
+        Tools.MakeTransion(StoryName: "Main2", ViewName: "Umrah", ob: self)
     }
 }
 

@@ -43,4 +43,11 @@ class Tools {
         ob.view.window!.layer.add(transition, forKey: nil)
         ob.dismiss(animated: false, completion: nil)
     }
+    
+    public static func MakeTransion (StoryName:String,ViewName:String,ob:UIViewController) {
+        let story : UIStoryboard = UIStoryboard(name: StoryName, bundle: nil)
+        let result = story.instantiateViewController(withIdentifier: ViewName)
+        result.modalPresentationStyle = .fullScreen
+        ob.present(result, animated: true, completion: nil)
+    }
 }

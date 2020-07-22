@@ -132,23 +132,31 @@ extension TravelsViewController: UICollectionViewDataSource {
 extension TravelsViewController: UICollectionViewDelegate {
     
     // Configure animation and properties
-       func configureAnimation() {
-           collectionView.gemini
-           .scaleAnimation()
-           .scale(0.75)
-           .scaleEffect(.scaleUp) // or .scaleDown
-       }
+   func configureAnimation() {
+       collectionView.gemini
+       .scaleAnimation()
+       .scale(0.75)
+       .scaleEffect(.scaleUp) // or .scaleDown
+   }
        
-       // Call animation function
-       func scrollViewDidScroll(_ scrollView: UIScrollView) {
-           collectionView.animateVisibleCells()
-       }
+   // Call animation function
+   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       collectionView.animateVisibleCells()
+   }
 
-       func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-           if let cell = cell as? GeminiCell {
-               self.collectionView.animateCell(cell)
-           }
+   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+       if let cell = cell as? GeminiCell {
+           self.collectionView.animateCell(cell)
        }
+   }
+    
+    // Make Transection.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //TabBarViewController.tag = 1
+        Tools.MakeTransion(StoryName: "Main2", ViewName: "first", ob: self)
+    }
+
+    
 }
 
 extension TravelsViewController: UICollectionViewDelegateFlowLayout {
