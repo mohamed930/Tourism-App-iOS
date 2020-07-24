@@ -22,7 +22,6 @@
 		D3271B0E248F02B4003B6158 /* MapButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B0C248F02B4003B6158 /* MapButtonCell.swift */; };
 		D3271B0F248F02B4003B6158 /* MapButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3271B0D248F02B4003B6158 /* MapButtonCell.xib */; };
 		D3271B12248F042E003B6158 /* ExternalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3271B11248F042E003B6158 /* ExternalViewController.swift */; };
-		D33A51E124C35486006CCAE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D33A51E024C35485006CCAE2 /* GoogleService-Info.plist */; };
 		D33BD6942492A50E0067406C /* FireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BD6932492A50E0067406C /* FireBase.swift */; };
 		D33BD6992492A82F0067406C /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D33BD6962492A82A0067406C /* ProgressHUD.m */; };
 		D33BD69A2492A82F0067406C /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D33BD6982492A82E0067406C /* ProgressHUD.bundle */; };
@@ -53,6 +52,7 @@
 		D3AC1DC524904D9C0036EF6D /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DC324904D9C0036EF6D /* TravelCell.swift */; };
 		D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AC1DC424904D9C0036EF6D /* TravelCell.xib */; };
 		D3FF7DD624C881ED0063B97E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FF7DD524C881EC0063B97E /* TabBarViewController.swift */; };
+		DCA6F2CC24C90EC8008CD497 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCA6F2CB24C90EC8008CD497 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +73,6 @@
 		D3271B0C248F02B4003B6158 /* MapButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonCell.swift; sourceTree = "<group>"; };
 		D3271B0D248F02B4003B6158 /* MapButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButtonCell.xib; sourceTree = "<group>"; };
 		D3271B11248F042E003B6158 /* ExternalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalViewController.swift; sourceTree = "<group>"; };
-		D33A51E024C35485006CCAE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D33BD6932492A50E0067406C /* FireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBase.swift; sourceTree = "<group>"; };
 		D33BD6952492A80C0067406C /* Tourism System-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tourism System-Bridging-Header.h"; sourceTree = "<group>"; };
 		D33BD6962492A82A0067406C /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		D3AC1DC324904D9C0036EF6D /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		D3AC1DC424904D9C0036EF6D /* TravelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelCell.xib; sourceTree = "<group>"; };
 		D3FF7DD524C881EC0063B97E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		DCA6F2CB24C90EC8008CD497 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,9 +259,9 @@
 				D33BD6982492A82E0067406C /* ProgressHUD.bundle */,
 				D33BD6972492A82C0067406C /* ProgressHUD.h */,
 				D33BD6962492A82A0067406C /* ProgressHUD.m */,
+				DCA6F2CB24C90EC8008CD497 /* GoogleService-Info.plist */,
 				D34FB4DF2491C058005C7D59 /* Assets.xcassets */,
 				D3767E74248D338C0090CE19 /* Info.plist */,
-				D33A51E024C35485006CCAE2 /* GoogleService-Info.plist */,
 				D33BD6952492A80C0067406C /* Tourism System-Bridging-Header.h */,
 			);
 			path = Resources;
@@ -388,9 +388,9 @@
 				D3767E73248D338C0090CE19 /* LaunchScreen.storyboard in Resources */,
 				D3271B0F248F02B4003B6158 /* MapButtonCell.xib in Resources */,
 				D3230F6724C7C53B0096B06D /* UmrahOrHajj Cell.xib in Resources */,
-				D33A51E124C35486006CCAE2 /* GoogleService-Info.plist in Resources */,
 				D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */,
 				D3AC1DBF249000DA0036EF6D /* CommonofferCell.xib in Resources */,
+				DCA6F2CC24C90EC8008CD497 /* GoogleService-Info.plist in Resources */,
 				D3230F6D24C7C5760096B06D /* Accompying Cell.xib in Resources */,
 				D33BD69A2492A82F0067406C /* ProgressHUD.bundle in Resources */,
 				D34FB4E02491C059005C7D59 /* Assets.xcassets in Resources */,

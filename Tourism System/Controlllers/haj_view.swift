@@ -17,8 +17,8 @@ import Firebase
 let db2 = Firestore.firestore()
 
 class haj_view: UIViewController {
-    static var big_arr2:[Any] = []
-    static var big_images2: [UIImage] = []
+     var big_arr2:[Any] = []
+     var big_images2: [UIImage] = []
     
     @IBOutlet weak var my_table: UITableView!
     var screenedge : UIScreenEdgePanGestureRecognizer!
@@ -46,9 +46,10 @@ class haj_view: UIViewController {
                 for item in snapshot!.documents{
                     
                     if(item.data()["type"] as? String == "haj"){
-                        haj_view.big_arr2.append(item.data())
+                        self.big_arr2.append(item.data())
                        // images_arr2.append("haj.jpg")
-                        self.get_image_storage(x: item.data()["image"] as! String )
+                        self.get_image_storage(x: item.data()["fileref"] as! String )
+                        
                     }
             
                 }
@@ -67,7 +68,7 @@ class haj_view: UIViewController {
         let photos_folder = storage_Ref.child(x)
         
         
-        photos_folder.getData(maxSize: 1 * 800 * 600) { (Data, Error) in
+        photos_folder.getData(maxSize: 8 * 1024 * 768) { (Data, Error) in
             
             if let err = Error{
                 print("an error has occured 2020 : \(err)")
@@ -76,7 +77,7 @@ class haj_view: UIViewController {
                 
                 let data = Data
                 let image = UIImage(data: data!)
-                haj_view.big_images2.append(image!)
+                self.big_images2.append(image!)
                 print("done downloading image")
                 self.my_table.reloadData()
             }
@@ -103,58 +104,40 @@ extension haj_view : UITableViewDelegate,UITableViewDataSource{
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return haj_view.big_images2.count
+        return self.big_images2.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UmrahOrHajj_Cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! UmrahOrHajj_Cell
         
-        // Configure the cell...
-        //  print(big_arr[0])
-        //let imagee = cell.viewWithTag(2) as! UIImageView
-        //imagee.image = UIImage(named: images_arr2[indexPath.row])
-        
-        cell.CoverImage.image = haj_view.big_images2[indexPath.row]
-        
-        
-        // imagee.image = try! UIImage.init(data: NSData.init(contentsOf: URL.init(string: big_arr[0])!) as Data)
+ 
+        cell.CoverImage.image = self.big_images2[indexPath.row]
+
+       
         return cell
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        // let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+
         return 229;
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print(images_arr[indexPath.row])
+     
         
         print("inside did seleect")
-        // selected_row = indexPath.row
-        // performSegue(withIdentifier: "first", sender: self)
+        
+        first_view.data = self.big_arr2[indexPath.row] as! [String : Any]
+        first_view.data["image"] = self.big_images2[indexPath.row]
+        
+     
         
         let story : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
         let first = story.instantiateViewController(withIdentifier: "first") as! first_view
-        print("the index path is \(big_arr.count)")
-        first.data = haj_view.big_arr2[indexPath.row] as! [String : Any]
-        //  data.init(bigArr: big_arr2[indexPath.row] as! [String : Any])
-        first.data["image"] = haj_view.big_images2[indexPath.row]
         first.modalPresentationStyle = .fullScreen
         self.present(first, animated: true, completion: nil)
     }
     
-    /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if(segue.identifier == "first"){
-     
-     let first = segue.destination as! first_view
-     var indexPathForSelectedRow: IndexPath?
-     
-     print("inside prepare at \(IndexPath.)")
-     // first.data = big_arr[indexPathForSelectedRow?.row]
-     
-     
-     // first.data = big_arr[IndexPath.Index]
-     }
-     }*/
+
 }

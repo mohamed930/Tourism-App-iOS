@@ -57,7 +57,7 @@ class SektionViewController: UIViewController {
     }
     // ----------------------------------------------------------------
     
-    // MARK:- TODO:- This Sektion For Make one Segue to External Trips.
+    // MARK:- TODO:- This Section For Make one Segue to External Trips.
     // ----------------------------------------------------------------
     func setExternalMove() {
         

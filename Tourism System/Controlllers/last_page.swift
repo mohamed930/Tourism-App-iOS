@@ -22,8 +22,8 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
     @IBAction func BTNBack(_ sender:Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
         let company3 = storyBoard.instantiateViewController(withIdentifier: "third") as! company
-        //company.Big_company = last_page.big_arr
         
+       
         if(company.Big_company.count != 0){
             for i in 0...company.Big_company.count-1{
                 Seat_reg.registered.append(contentsOf:company.Big_company[i]["registered"] as! [Int])
@@ -69,12 +69,13 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-          let arr =  company.Big_company[indexPath.row]["registered"] as! [Int]
-            print(arr)
-            for y in 0...arr.count-1{
+          let x =  company.Big_company[indexPath.row]["registered"] as! Int
+            print(x)
+            Seat_reg.registered =  Seat_reg.registered.filter {$0 != x}
+            /*for y in 0...arr.count-1{
                 print("the y is " , arr[y])
                 Seat_reg.registered =  Seat_reg.registered.filter {$0 != arr[y]}
-            }
+            }*/
             company.Big_company.remove(at: indexPath.row)
             
             tableView.reloadData()

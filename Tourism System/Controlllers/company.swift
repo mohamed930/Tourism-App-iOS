@@ -11,7 +11,7 @@ import UIKit
 class company: UIViewController {
     
   //  static var registered:[Int] = []
-    var new_reg:[Int] = []
+    var new_reg:Int = 0
     static var Big_company:[NSDictionary] = []
     var green:UIColor?
     var comapny_names:[String] = []
@@ -95,7 +95,7 @@ class company: UIViewController {
         if(my_label?.backgroundColor == green){
             my_label?.backgroundColor = UIColor.red
             flag = true
-            new_reg.append((my_label?.tag)!)
+            new_reg = ((my_label?.tag)!)
             
             print(new_reg)
         }else{
@@ -109,6 +109,7 @@ class company: UIViewController {
     @IBAction func company_list(_ sender: Any) {
         let last = self.storyboard?.instantiateViewController(withIdentifier: "last") as! last_page
        // last.big_arr = Big_company
+        last.modalPresentationStyle = .fullScreen
         present(last , animated: true)
     }
     
@@ -131,12 +132,17 @@ class company: UIViewController {
                 "passport" : self.my_passport.image!
                 
             ]
-            
-            
-            //   print(company)
-            //company.Big_company.append(company)
+
             company.Big_company.append(company2)
-            self.new_reg.removeAll()
+            let label = self.view.viewWithTag(self.new_reg) as! UILabel
+            label.backgroundColor = UIColor.purple
+            Seat_reg.registered.append(self.new_reg)
+            self.new_reg = 0
+            self.name.text = ""
+            self.SSN.text = ""
+            flag = false
+            image_flag = false
+            
         }
        
      //   print("the new reg is " , self.new_reg)
@@ -144,7 +150,10 @@ class company: UIViewController {
     
     
     @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let second = storyboard?.instantiateViewController(withIdentifier: "second") as! Seat_reg
+        second.modalPresentationStyle = .fullScreen
+        self.present(second, animated: true, completion: nil)
+       // self.dismiss(animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -159,8 +168,7 @@ extension company:UIImagePickerControllerDelegate,UINavigationControllerDelegate
         image_picker23.delegate = self
         image_picker23.sourceType = .photoLibrary
         present(image_picker23,animated: true)
-        
-        print("ay7aga")
+     
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

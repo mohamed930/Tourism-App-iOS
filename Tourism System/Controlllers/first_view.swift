@@ -10,9 +10,10 @@ import UIKit
 
 class first_view: UIViewController {
     
-    var data:[String:Any] = [:]
+    static var data:[String:Any] = [:]
+    static var flag = false
      var timer : Timer?
-    public static var type = 0
+    public static var type = "Offers"
     public static var pickData:TravelsData?
     
      @IBOutlet weak var programm: UITextView!
@@ -29,24 +30,20 @@ class first_view: UIViewController {
         fornt_end_init()
         
         print("tocken: \(first_view.type)")
-        if first_view.type == 0 {
-            self.first_label.text = data["title"] as? String
-            self.Cost.text = data["OfferPrice"] as? String
-            self.Time.text = data["Time"] as? String //wrong needs to change
-            self.programm.text = data["OfferDetails"] as? String
-            self.iamge.image = data["image"] as? UIImage
-        }
-        else if first_view.type == 1 {
-            FireBase.publicreadWithWhereCondtion(collectionName: "OffersInternal", key: "title", value: first_view.pickData!.Name) { (quary) in
+    
+            FireBase.publicreadWithWhereCondtion(collectionName: first_view.type, key: "title", value: first_view.data["title"] as! String) { (quary) in
                 for doc in quary.documents {
-                    self.first_label.text = first_view.pickData!.Name
-                    self.Cost.text = (doc.get("price") as! String)
-                    self.Time.text = (doc.get("date") as! String)
-                    self.programm.text = (doc.get("content") as! String)
+                    self.first_label.text = first_view.data["title"] as? String
+                    self.Cost.text = first_view.data["price"] as? String
+                    self.Time.text = first_view.data["date"] as? String
+                    self.programm.text = first_view.data["content"] as? String
                     FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com", ImageURL: doc.get("fileref2") as! String, ImageView: self.iamge)
+                    
                 }
             }
-        }
+        
+       
+       
           
 
     }
@@ -62,48 +59,32 @@ class first_view: UIViewController {
     }
     
     @IBAction func back(_ sender: Any) {
-        print("deleting data")
-        data.removeAll()
+        print("better fixes")
+        first_view.data.removeAll()
         Seat_reg.data2.removeAll()
         Seat_reg.registered.removeAll()
-        haj_view.big_arr2.removeAll()
-        haj_view.big_images2.removeAll()
         company.Big_company.removeAll()
-       // self.navigationController?.popViewController(animated: true)
-    //    let second = storyboard?.instantiateViewController(withIdentifier: "second") as! Seat_reg
-        
-        
-      //  self.present(second, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil) //needs further fixing
+
     }
-    func get_image_storage(x : String){
-        
-        let photos_folder = storage_Ref.child(x)
-        
-        
-        
-        photos_folder.getData(maxSize: 1 * 800 * 600) { (Data, Error) in
-            
-            if let err = Error{
-                print("an error has occured : \(err)")
-                return
-            }else{
-                
-                let data = Data
-                let image = UIImage(data: data!)
-                big_images.append(image!)
-                print("done downloading image")
-            }
-        }
-    }
+
     
     @IBAction func next(_ sender: Any) {
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
         let second = storyBoard.instantiateViewController(withIdentifier: "second") as! Seat_reg
         print("i am in first")
-        Seat_reg.data2 = data
-        Seat_reg.registered.append(contentsOf:  data["reg"] as! [Int]) //remove redundant data
+        Seat_reg.data2 = first_view.data
+        let registered_now = first_view.data["reg"] as? [Int]
+        if((registered_now) != nil && !first_view.flag){
+            
+        Seat_reg.registered.append(contentsOf:  (first_view.data["reg"] as? [Int])!) //remove redundant data
+            first_view.flag = true
+            
         
+        }
+        
+        print(Seat_reg.registered)
         second.modalPresentationStyle = .fullScreen
         self.present(second, animated: true, completion: nil)
     }

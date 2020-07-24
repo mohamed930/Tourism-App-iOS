@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,13 +11,13 @@
         <!--Umrah view-->
         <scene sceneID="NIb-vY-3xP">
             <objects>
-                <viewController id="cGT-3C-PHy" customClass="Umrah_view" customModule="Tourism_System" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="umrah_trips" id="cGT-3C-PHy" customClass="Umrah_view" customModule="Tourism_System" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NJP-sn-tLU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yi0-Yl-4a2">
-                                <rect key="frame" x="0.0" y="167" width="375" height="562"/>
+                                <rect key="frame" x="0.0" y="167" width="375" height="611"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -55,7 +55,7 @@
         <!--First view-->
         <scene sceneID="3Rb-YZ-UcE">
             <objects>
-                <viewController storyboardIdentifier="first" id="NaL-u6-D4R" customClass="first_view" customModule="Tourism_System" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="first" modalTransitionStyle="flipHorizontal" id="NaL-u6-D4R" customClass="first_view" customModule="Tourism_System" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MLx-8b-jOe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,10 +77,9 @@
                                         </state>
                                         <connections>
                                             <action selector="back:" destination="NaL-u6-D4R" eventType="touchUpInside" id="edK-qx-pFQ"/>
-                                            <segue destination="Kg3-fA-ibd" kind="presentation" modalPresentationStyle="fullScreen" id="4Ku-zG-HZF"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="2" highlightedImage="2" translatesAutoresizingMaskIntoConstraints="NO" id="HxU-BS-15x">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Loading images" translatesAutoresizingMaskIntoConstraints="NO" id="HxU-BS-15x">
                                         <rect key="frame" x="12" y="163" width="323" height="181"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="181" id="Y2i-wZ-jU5"/>
@@ -868,10 +867,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hcD-iA-9fC">
-                                <rect key="frame" x="36" y="293" width="303" height="76"/>
+                                <rect key="frame" x="36" y="293" width="303" height="78"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-ag-rXq">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="35"/>
                                         <color key="backgroundColor" red="1" green="0.50108330800000001" blue="0.96195591920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -880,10 +879,10 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write Your SSN" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXX-ES-pqa">
-                                        <rect key="frame" x="0.0" y="42" width="303" height="34"/>
+                                        <rect key="frame" x="0.0" y="43" width="303" height="35"/>
                                         <color key="backgroundColor" red="1" green="0.50108330800000001" blue="0.96195591920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" textContentType="postal-code"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="postal-code"/>
                                         <connections>
                                             <outlet property="delegate" destination="Iuk-Tj-jNd" id="WAg-4J-e9Y"/>
                                         </connections>
@@ -949,7 +948,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqK-We-g59">
-                                <rect key="frame" x="0.0" y="394" width="377" height="200"/>
+                                <rect key="frame" x="0.0" y="396" width="377" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="fxo-cx-sep">
                                         <rect key="frame" x="8" y="8" width="355" height="184"/>
@@ -1638,13 +1637,13 @@
         <!--Haj view-->
         <scene sceneID="lvJ-p3-LpH">
             <objects>
-                <viewController id="EuL-bO-8Pp" customClass="haj_view" customModule="Tourism_System" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hajj_trips" id="EuL-bO-8Pp" customClass="haj_view" customModule="Tourism_System" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f6c-4v-puG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hHk-ke-7fQ">
-                                <rect key="frame" x="0.0" y="176" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="176" width="375" height="602"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -1679,25 +1678,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dta-87-MLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1900" y="956.89655172413802"/>
-        </scene>
-        <!--Tab Bar View Controller-->
-        <scene sceneID="VRC-6e-EMa">
-            <objects>
-                <tabBarController storyboardIdentifier="Umrah" automaticallyAdjustsScrollViewInsets="NO" id="Kg3-fA-ibd" customClass="TabBarViewController" customModule="Tourism_System" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="EAS-8i-qN5">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="ae2-th-ixm" kind="relationship" relationship="viewControllers" id="tED-Dm-dYd"/>
-                        <segue destination="PQH-X0-U3h" kind="relationship" relationship="viewControllers" id="6oF-7X-fQq"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YsE-LW-Utu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="575" y="162"/>
         </scene>
         <!--Item-->
         <scene sceneID="CP1-y7-zKN">
@@ -1739,19 +1719,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFa-wa-eqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3996" y="899.10044977511257"/>
+            <point key="canvasLocation" x="2908" y="957"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5GT-6W-I7c"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="2" width="368" height="520"/>
         <image name="Accompanuing Show" width="327" height="59"/>
         <image name="BTNAcc" width="51" height="52"/>
         <image name="BTNBack" width="51" height="52"/>
         <image name="Book Your Offer" width="254" height="59"/>
         <image name="Details For Offer" width="279" height="59"/>
+        <image name="Loading images" width="194" height="242"/>
         <image name="ay7aga" width="800" height="788"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="5GT-6W-I7c"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -83,7 +83,7 @@ class FireBase {
     // MARK:- TODO:- This Method for Read Data from Firebase with condtion in public.
     public static func publicreadWithWhereCondtion (collectionName:String , key:String , value:String , complention: @escaping (QuerySnapshot) -> ()) {
         
-        RappleActivityIndicatorView.startAnimatingWithLabel("loading", attributes: RappleModernAttributes)
+      //  RappleActivityIndicatorView.startAnimatingWithLabel("loading", attributes: RappleModernAttributes)
         Firestore.firestore().collection(collectionName).whereField(key, isEqualTo: value).getDocuments { (quary, error) in
             if error != nil {
                 RappleActivityIndicatorView.stopAnimation()
@@ -145,7 +145,7 @@ class FireBase {
         let StorageRef = Storage.storage().reference(forURL: ReferenceURL)
         let islandRef = StorageRef.child(ImageURL)
         
-        islandRef.getData(maxSize: 8*1024*1024) { (data, error) in
+        islandRef.getData(maxSize: 8*1024*768) { (data, error) in 
             if let error = error {
                 print(error)
             } else {

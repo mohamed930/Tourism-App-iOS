@@ -71,7 +71,7 @@ class Seat_reg: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
         let result = storyBoard.instantiateViewController(withIdentifier: "first") as! first_view
         print("i am here man")
-        result.data = Seat_reg.data2
+        first_view.data = Seat_reg.data2
         result.modalPresentationStyle = .fullScreen
         
         self.present(result,animated: true,completion: nil)
