@@ -42,10 +42,10 @@ class company: UIViewController {
             
             label?.addGestureRecognizer(tap)
         }
-        for y in Seat_reg.registered{
+      /*  for y in Seat_reg.registered{
             let label = self.view.viewWithTag(y) as? UILabel
             label?.backgroundColor = UIColor.purple
-        }
+        }*/
         
         
         
@@ -65,6 +65,20 @@ class company: UIViewController {
         }*/
        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+       for y in Seat_reg.registered{
+            let label = self.view.viewWithTag(y) as? UILabel
+            label?.backgroundColor = UIColor.purple
+        }
+    }
+    
+  /*  override func viewWillAppear(_ animated: Bool) {
+        for y in Seat_reg.registered{
+            let label = self.view.viewWithTag(y) as? UILabel
+            label?.backgroundColor = UIColor.purple
+        }
+    }*/
     
     @objc func tap_me_once(){
         print("here")
