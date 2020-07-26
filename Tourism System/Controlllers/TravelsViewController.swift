@@ -153,6 +153,7 @@ extension TravelsViewController: UICollectionViewDelegate {
     // Make Transection.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         first_view.pickData = List[indexPath.row]
+        first_view.data["title"] = first_view.pickData?.Name
         first_view.type = "OffersInternal"
         Tools.MakeTransion(StoryName: "Main2", ViewName: "first", ob: self)
     }

@@ -29,23 +29,10 @@ class company: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // self.SSN.keyboardType = .numberPad
-      //  self.name.layer.cornerRadius = 20
-      //  print(self.my_passport.image!)
         self.add_company.layer.cornerRadius = 20
         self.finish.layer.cornerRadius = 20
-        for i in 1...41{
-            let label = self.view.viewWithTag(i) as? UILabel
-            green = UIColor.init(red: 0.269042, green: 1, blue: 0.624691, alpha: 1)
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.labler))
-            label?.backgroundColor = green
-            
-            label?.addGestureRecognizer(tap)
-        }
-        for y in Seat_reg.registered{
-            let label = self.view.viewWithTag(y) as? UILabel
-            label?.backgroundColor = UIColor.purple
-        }
+        
+
         
         
         
@@ -54,45 +41,39 @@ class company: UIViewController {
         
         self.my_passport.addGestureRecognizer(tap)
         
-        /*for i in 40...41{
-            let label = self.view.viewWithTag(i) as! UILabel
-            
-         //   let tap_2 = UITapGestureRecognizer(target: self, action: #selector(self.tap_me_twice))
-            
-         //   label.addGestureRecognizer(tap_2)
-            
-            
-        }*/
+    
        
     }
     
-   
+    
+    override func viewWillAppear(_ animated: Bool) {
+         print("mody \(Seat_reg.registered)")
+        
+        for i in 1...41{
+            let label = self.view.viewWithTag(i) as? UILabel
+            green = UIColor.init(red: 0.269042, green: 1, blue: 0.624691, alpha: 1)
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.labler))
+            label?.backgroundColor = green
+            
+            label?.addGestureRecognizer(tap)
+        }
+           for y in Seat_reg.registered{
+               let label = self.view.viewWithTag(y) as? UILabel
+               label?.backgroundColor = UIColor.purple
+           }
+    }
     
     @objc func tap_me_once(){
         print("here")
         image_picker()
     }
     
-    /*@objc func tap_me_twice( sender:UITapGestureRecognizer){
-        let my_label = sender.view as! UILabel
-        print("shame on you")
-        let alert = UIAlertController(title: "Enter Data", message: nil, preferredStyle: .alert)
-        alert.addTextField { (field) in
-            print("i am here in field")
-        }
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
-            my_label.text = alert.textFields![0].text
-           
-        }))
-        present(alert,animated: true)
-        
-    }*/
+  
     
     @objc func labler(sender:UITapGestureRecognizer){
-        
+        print("ssda is \(flag)")
         let my_label = sender.view as? UILabel
-        //let green = UIColor.init(red: 0.269042, green: 1, blue: 0.624691, alpha: 1)
-        //  print("the tag is \(my_label?.backgroundColor) and the color is \(green)")
+      
         if(!flag){
         if(my_label?.backgroundColor == green){
             my_label?.backgroundColor = UIColor.red
@@ -112,6 +93,7 @@ class company: UIViewController {
         let last = self.storyboard?.instantiateViewController(withIdentifier: "last") as! last_page
        // last.big_arr = Big_company
         last.modalPresentationStyle = .fullScreen
+        flag = false
         present(last , animated: true)
     }
     
@@ -146,16 +128,15 @@ class company: UIViewController {
             image_flag = false
             
         }
-       
-     //   print("the new reg is " , self.new_reg)
+
     }
     
     
     @IBAction func back(_ sender: Any) {
-        let second = storyboard?.instantiateViewController(withIdentifier: "second") as! Seat_reg
+      /*  let second = storyboard?.instantiateViewController(withIdentifier: "second") as! Seat_reg
         second.modalPresentationStyle = .fullScreen
-        self.present(second, animated: true, completion: nil)
-       // self.dismiss(animated: true, completion: nil)
+        self.present(second, animated: true, completion: nil)*/
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

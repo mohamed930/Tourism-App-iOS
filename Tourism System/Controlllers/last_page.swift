@@ -20,19 +20,16 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
     }
     
     @IBAction func BTNBack(_ sender:Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
+      /*  let storyBoard : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
         let company3 = storyBoard.instantiateViewController(withIdentifier: "third") as! company
         
        
-        if(company.Big_company.count != 0){
-            for i in 0...company.Big_company.count-1{
-                Seat_reg.registered.append(contentsOf:company.Big_company[i]["registered"] as! [Int])
-            }
-        }
+     
         
         print("in herer " , company.Big_company.count)
         company3.modalPresentationStyle = .fullScreen
-        self.present(company3 , animated: true)
+        self.present(company3 , animated: true)*/
+        self.dismiss(animated: true, completion: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,6 +74,12 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
                 Seat_reg.registered =  Seat_reg.registered.filter {$0 != arr[y]}
             }*/
             company.Big_company.remove(at: indexPath.row)
+            
+            if(company.Big_company.count != 0){
+                 for i in 0...company.Big_company.count-1{
+                     Seat_reg.registered.append(company.Big_company[i]["registered"] as! Int)
+                 }
+             }
             
             tableView.reloadData()
             print("record no#\(indexPath.row) deleted")

@@ -28,18 +28,23 @@ class Seat_reg: UIViewController {
        
         self.adder.layer.cornerRadius = 20
         self.finish.layer.cornerRadius = 20
+       
+      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         for i in 1...41{
-            let label = self.view.viewWithTag(i) as? UILabel
-            green = UIColor.init(red: 0.269042, green: 1, blue: 0.624691, alpha: 1)
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.labler))
-            label?.backgroundColor = green
-          
-            label?.addGestureRecognizer(tap)
-        }
-        for y in Seat_reg.registered{
-            let label = self.view.viewWithTag(y) as? UILabel
-            label?.backgroundColor = UIColor.purple
-        }
+                   let label = self.view.viewWithTag(i) as? UILabel
+                   green = UIColor.init(red: 0.269042, green: 1, blue: 0.624691, alpha: 1)
+                   let tap = UITapGestureRecognizer(target: self, action: #selector(self.labler))
+                   label?.backgroundColor = green
+                 
+                   label?.addGestureRecognizer(tap)
+               }
+          for y in Seat_reg.registered{
+                  let label = self.view.viewWithTag(y) as? UILabel
+                  label?.backgroundColor = UIColor.purple
+              }
     }
     
     @objc func labler(_ sender:UITapGestureRecognizer){
@@ -53,6 +58,8 @@ class Seat_reg: UIViewController {
             flag = true
           
             print(new_reg)
+            first_view.data = Seat_reg.data2
+             
         }else{
             print("not equal")
         }
@@ -68,13 +75,14 @@ class Seat_reg: UIViewController {
     
     @IBAction func back(_ sender: Any) {
         //self.navigationController?.popViewController(animated: true)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
+       /* let storyBoard : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
         let result = storyBoard.instantiateViewController(withIdentifier: "first") as! first_view
         print("i am here man")
-        first_view.data = Seat_reg.data2
+        
         result.modalPresentationStyle = .fullScreen
         
-        self.present(result,animated: true,completion: nil)
+        self.present(result,animated: true,completion: nil)*/
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

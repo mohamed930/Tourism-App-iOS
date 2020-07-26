@@ -12,14 +12,16 @@ import Firebase
 
 
 
-var big_arr:[Any] = []
-var big_images: [UIImage] = []
+
 
 
 let db = Firestore.firestore()
 let storage_Ref = Storage.storage().reference()
 
 class Umrah_view: UIViewController {
+    
+    var big_arr:[Any] = []
+    var big_images: [UIImage] = []
     
     @IBOutlet weak var my_table: UITableView!
     var screenedge : UIScreenEdgePanGestureRecognizer!
@@ -33,8 +35,8 @@ class Umrah_view: UIViewController {
         screenedge.edges = .left
         view.addGestureRecognizer(screenedge)
         
-        //let size = CGSize(width: UIScreen.main.bounds.size.width, height: 10)
-        //self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+          let size = CGSize(width: UIScreen.main.bounds.size.width, height: 10)
+          self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         
         
         
@@ -54,27 +56,27 @@ class Umrah_view: UIViewController {
         self.my_table.dataSource = self
         self.my_table.register(UINib(nibName: "UmrahOrHajj Cell", bundle: nil), forCellReuseIdentifier: "Cell")
         
-        db.collection("Offers").getDocuments(){ (snapshot , err) in
-            if let err2 = err{
-                print("An error has occured => \(err2)")
-            }else{
-                for item in snapshot!.documents{
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+         db.collection("Offers").getDocuments(){ (snapshot , err) in
+                   if let err2 = err{
+                       print("An error has occured => \(err2)")
+                   }else{
+                       for item in snapshot!.documents{
+                           
+                           if(item.data()["type"] as? String == "umrah"){
+                            self.big_arr.append(item.data())
                     
-                    if(item.data()["type"] as? String == "umrah"){
-                        big_arr.append(item.data())
-             
-                        self.get_image_storage(x: item.data()["image"] as! String )
-                    }
-                    
-                    
-                }
-                self.my_table.reloadData()
-            }
-            
-        }
-       
-            
-        
+                               self.get_image_storage(x: item.data()["fileref"] as! String )
+                           }
+                           
+                           
+                       }
+                       self.my_table.reloadData()
+                   }
+                   
+               }
     }
     
     func get_image_storage(x : String){
@@ -91,7 +93,7 @@ class Umrah_view: UIViewController {
                 
                 let data = Data
                 let image = UIImage(data: data!)
-                big_images.append(image!)
+                self.big_images.append(image!)
                 print("done downloading image")
                 
                 self.my_table.reloadData()
@@ -104,6 +106,8 @@ class Umrah_view: UIViewController {
     }
     
     @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+      
+       
            Tools.makeNiceBackTransition(ob: self)
        }
     
@@ -143,9 +147,12 @@ extension Umrah_view : UITableViewDelegate,UITableViewDataSource{
         
         let story : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
         let first = story.instantiateViewController(withIdentifier: "first") as! first_view
-        print("the index path is \(big_arr.count)")
+        
         first_view.data = big_arr[indexPath.row] as! [String : Any]
         first_view.data["image"] = big_images[indexPath.row]
+        first_view.type = "Offers"
+        self.big_arr.removeAll()
+        self.big_images.removeAll()
         first.modalPresentationStyle = .fullScreen
         self.present(first, animated: true, completion: nil)
     }

@@ -39,6 +39,14 @@ class haj_view: UIViewController {
         self.my_table.register(UINib(nibName: "UmrahOrHajj Cell", bundle: nil), forCellReuseIdentifier: "Cell")
  
         
+        
+        
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
         db2.collection("Offers").getDocuments(){ (snapshot , err) in
             if let err2 = err{
                 print("An error has occured => \(err2)")
@@ -57,11 +65,7 @@ class haj_view: UIViewController {
             }
             
         }
-        
-        
-        
     }
-    
     
     func get_image_storage(x : String){
         
@@ -130,13 +134,16 @@ extension haj_view : UITableViewDelegate,UITableViewDataSource{
         
         first_view.data = self.big_arr2[indexPath.row] as! [String : Any]
         first_view.data["image"] = self.big_images2[indexPath.row]
+        first_view.type = "Offers"
         
-     
+     self.big_arr2.removeAll()
+     self.big_images2.removeAll()
         
         let story : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
         let first = story.instantiateViewController(withIdentifier: "first") as! first_view
         first.modalPresentationStyle = .fullScreen
         self.present(first, animated: true, completion: nil)
+        
     }
     
 

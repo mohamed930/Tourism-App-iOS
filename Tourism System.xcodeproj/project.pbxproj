@@ -37,6 +37,7 @@
 		D3767E86248D7B5C0090CE19 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E85248D7B5C0090CE19 /* SignupViewController.swift */; };
 		D3767E8E248DBED90090CE19 /* LocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E8D248DBED90090CE19 /* LocationMapViewController.swift */; };
 		D3767E90248DBF190090CE19 /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E8F248DBF190090CE19 /* LocationMapView.swift */; };
+		D37AB3C324CDD8AB00D074FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37AB3C224CDD8AB00D074FD /* GoogleService-Info.plist */; };
 		D38A07A72491457F00C87CD5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A07A62491457F00C87CD5 /* MapViewController.swift */; };
 		D398604424C7C312009B1A6C /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D398604324C7C312009B1A6C /* Main2.storyboard */; };
 		D398604724C7C38A009B1A6C /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398604624C7C38A009B1A6C /* data.swift */; };
@@ -52,7 +53,6 @@
 		D3AC1DC524904D9C0036EF6D /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DC324904D9C0036EF6D /* TravelCell.swift */; };
 		D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AC1DC424904D9C0036EF6D /* TravelCell.xib */; };
 		D3FF7DD624C881ED0063B97E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FF7DD524C881EC0063B97E /* TabBarViewController.swift */; };
-		DCA6F2CE24CB7CF2008CD497 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCA6F2CD24CB7CF2008CD497 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +92,7 @@
 		D3767E85248D7B5C0090CE19 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		D3767E8D248DBED90090CE19 /* LocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewController.swift; sourceTree = "<group>"; };
 		D3767E8F248DBF190090CE19 /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
+		D37AB3C224CDD8AB00D074FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Documents/Graduate Project/Tourism-App-iOS/Tourism System/Resources/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D38A07A62491457F00C87CD5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D398604324C7C312009B1A6C /* Main2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
 		D398604624C7C38A009B1A6C /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		D3AC1DC324904D9C0036EF6D /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		D3AC1DC424904D9C0036EF6D /* TravelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelCell.xib; sourceTree = "<group>"; };
 		D3FF7DD524C881EC0063B97E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		DCA6F2CD24CB7CF2008CD497 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,9 +259,9 @@
 				D33BD6982492A82E0067406C /* ProgressHUD.bundle */,
 				D33BD6972492A82C0067406C /* ProgressHUD.h */,
 				D33BD6962492A82A0067406C /* ProgressHUD.m */,
-				DCA6F2CD24CB7CF2008CD497 /* GoogleService-Info.plist */,
 				D34FB4DF2491C058005C7D59 /* Assets.xcassets */,
 				D3767E74248D338C0090CE19 /* Info.plist */,
+				D37AB3C224CDD8AB00D074FD /* GoogleService-Info.plist */,
 				D33BD6952492A80C0067406C /* Tourism System-Bridging-Header.h */,
 			);
 			path = Resources;
@@ -390,7 +390,7 @@
 				D3230F6724C7C53B0096B06D /* UmrahOrHajj Cell.xib in Resources */,
 				D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */,
 				D3AC1DBF249000DA0036EF6D /* CommonofferCell.xib in Resources */,
-				DCA6F2CE24CB7CF2008CD497 /* GoogleService-Info.plist in Resources */,
+				D37AB3C324CDD8AB00D074FD /* GoogleService-Info.plist in Resources */,
 				D3230F6D24C7C5760096B06D /* Accompying Cell.xib in Resources */,
 				D33BD69A2492A82F0067406C /* ProgressHUD.bundle in Resources */,
 				D34FB4E02491C059005C7D59 /* Assets.xcassets in Resources */,
@@ -628,14 +628,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6NBM9PQRD2;
+				DEVELOPMENT_TEAM = 9PD4BTPDF4;
 				INFOPLIST_FILE = "$(SRCROOT)/Tourism System/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MyCompany199.Tourism-System";
+				PRODUCT_BUNDLE_IDENTIFIER = "MyCompany198.Tourism-System";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tourism System/Resources/Tourism System-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -651,14 +651,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6NBM9PQRD2;
+				DEVELOPMENT_TEAM = 9PD4BTPDF4;
 				INFOPLIST_FILE = "$(SRCROOT)/Tourism System/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MyCompany199.Tourism-System";
+				PRODUCT_BUNDLE_IDENTIFIER = "MyCompany198.Tourism-System";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tourism System/Resources/Tourism System-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
