@@ -53,7 +53,6 @@
 		D3AC1DC2249043F00036EF6D /* TravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DC1249043EF0036EF6D /* TravelsViewController.swift */; };
 		D3AC1DC524904D9C0036EF6D /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DC324904D9C0036EF6D /* TravelCell.swift */; };
 		D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AC1DC424904D9C0036EF6D /* TravelCell.xib */; };
-		D3FF7DD624C881ED0063B97E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FF7DD524C881EC0063B97E /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,7 +108,6 @@
 		D3AC1DC1249043EF0036EF6D /* TravelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelsViewController.swift; sourceTree = "<group>"; };
 		D3AC1DC324904D9C0036EF6D /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		D3AC1DC424904D9C0036EF6D /* TravelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelCell.xib; sourceTree = "<group>"; };
-		D3FF7DD524C881EC0063B97E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,7 +231,6 @@
 				D3271B0A248EE01C003B6158 /* UmrahViewController.swift */,
 				D3271B11248F042E003B6158 /* ExternalViewController.swift */,
 				D3AC1DC1249043EF0036EF6D /* TravelsViewController.swift */,
-				D3FF7DD524C881EC0063B97E /* TabBarViewController.swift */,
 				D398604B24C7C3AF009B1A6C /* Umrah_view.swift */,
 				D398604824C7C3A8009B1A6C /* haj_view.swift */,
 				D398604D24C7C3B8009B1A6C /* first_view.swift */,
@@ -466,7 +463,6 @@
 				D3767E6B248D336E0090CE19 /* LoginViewController.swift in Sources */,
 				D33BD6992492A82F0067406C /* ProgressHUD.m in Sources */,
 				D3767E82248D64B80090CE19 /* LoginView.swift in Sources */,
-				D3FF7DD624C881ED0063B97E /* TabBarViewController.swift in Sources */,
 				D398605324C7C3B9009B1A6C /* first_view.swift in Sources */,
 				D3AC1DC2249043F00036EF6D /* TravelsViewController.swift in Sources */,
 				D398605124C7C3B9009B1A6C /* Umrah_view.swift in Sources */,
