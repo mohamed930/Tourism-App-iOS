@@ -12,6 +12,7 @@ class Seat_reg: UIViewController {
     
     @IBOutlet weak var adder: UIButton!
     @IBOutlet weak var finish: UIButton!
+    var screenedge : UIScreenEdgePanGestureRecognizer!
     
     static var registered:[Int] = []
     static var data2:[String:Any] = [:]
@@ -29,6 +30,10 @@ class Seat_reg: UIViewController {
         self.adder.layer.cornerRadius = 20
         self.finish.layer.cornerRadius = 20
        
+        // MARK:- TODO:- This Line for adding Geusters.
+        screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+        screenedge.edges = .left
+        view.addGestureRecognizer(screenedge)
       
     }
     
@@ -82,7 +87,12 @@ class Seat_reg: UIViewController {
         result.modalPresentationStyle = .fullScreen
         
         self.present(result,animated: true,completion: nil)*/
-        self.dismiss(animated: true, completion: nil)
+        Tools.makeNiceBackTransition(ob: self)
+    }
+    
+    // MARK:- TODO:- This Method For Add GuesterAction
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+       Tools.makeNiceBackTransition(ob: self)
     }
 
 }

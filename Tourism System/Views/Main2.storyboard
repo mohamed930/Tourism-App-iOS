@@ -800,7 +800,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Wrd-Qn-HJJ" kind="presentation" id="8bW-VS-OBF"/>
+                                            <segue destination="Wrd-Qn-HJJ" kind="presentation" modalPresentationStyle="fullScreen" id="8bW-VS-OBF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1580,16 +1580,16 @@
             </objects>
             <point key="canvasLocation" x="1810" y="1730"/>
         </scene>
-        <!--View Controller-->
+        <!--Correct View Controller-->
         <scene sceneID="2oo-lV-zul">
             <objects>
-                <viewController storyboardIdentifier="finish" id="Wrd-Qn-HJJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finish" id="Wrd-Qn-HJJ" customClass="CorrectViewController" customModule="Tourism_System" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ceP-CG-fRr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYe-7B-Yq0">
-                                <rect key="frame" x="0.0" y="241" width="375" height="242"/>
+                                <rect key="frame" x="0.0" y="285" width="375" height="252"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Thank You Your Order has Been Placed" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="93W-YL-oVD">
                                         <rect key="frame" x="8" y="156" width="359" height="101"/>
@@ -1732,6 +1732,6 @@
         <image name="ay7aga" width="800" height="788"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5GT-6W-I7c"/>
+        <segue reference="8bW-VS-OBF"/>
     </inferredMetricsTieBreakers>
 </document>

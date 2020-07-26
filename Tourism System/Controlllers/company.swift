@@ -17,6 +17,7 @@ class company: UIViewController {
     var comapny_names:[String] = []
     var flag = false
     var image_flag = false
+    var screenedge : UIScreenEdgePanGestureRecognizer!
     
 
     @IBOutlet weak var name: UITextField!
@@ -33,7 +34,10 @@ class company: UIViewController {
         self.finish.layer.cornerRadius = 20
         
 
-        
+        // MARK:- TODO:- This Line for adding Geusters.
+        screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+        screenedge.edges = .left
+        view.addGestureRecognizer(screenedge)
         
         
 
@@ -136,7 +140,12 @@ class company: UIViewController {
       /*  let second = storyboard?.instantiateViewController(withIdentifier: "second") as! Seat_reg
         second.modalPresentationStyle = .fullScreen
         self.present(second, animated: true, completion: nil)*/
-        self.dismiss(animated: true, completion: nil)
+        Tools.makeNiceBackTransition(ob: self)
+    }
+    
+    // MARK:- TODO:- This Method For Add GuesterAction
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+       Tools.makeNiceBackTransition(ob: self)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

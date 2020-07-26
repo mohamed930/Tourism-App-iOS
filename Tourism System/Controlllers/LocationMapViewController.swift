@@ -74,7 +74,7 @@ class LocationMapViewController: UIViewController {
                 self.location_mapview.FlagImage.image = UIImage(named: "flag-400")
                 self.location_mapview.CityNameLabel.text = "Portsaid City"
                 self.location_mapview.CityPopulationLabel.text = "1M People"
-                self.location_mapview.AddressLabel.text = "Protfouad, new build in front of see"
+                self.location_mapview.AddressLabel.text = "Portfouad, new build in front of sea"
                 break
             case "London":
                 self.location_mapview.MapImage.image = UIImage(named: "London")
@@ -86,9 +86,9 @@ class LocationMapViewController: UIViewController {
             default:
                 self.location_mapview.MapImage.image = UIImage(named: "UnitedArabUnited")
                 self.location_mapview.FlagImage.image = UIImage(named: "UAD")
-                self.location_mapview.CityNameLabel.text = "Abu Zabi City"
+                self.location_mapview.CityNameLabel.text = "Abu dhabi City"
                 self.location_mapview.CityPopulationLabel.text = "10M People"
-                self.location_mapview.AddressLabel.text = "Abu Zabi 10th floor in khalifa twor"
+                self.location_mapview.AddressLabel.text = "Abu dhabi 10th floor in khalifa twor"
                 break
             }
         }

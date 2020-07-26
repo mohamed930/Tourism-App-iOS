@@ -22,12 +22,18 @@ class first_view: UIViewController {
      @IBOutlet weak var contin: UIButton!
      @IBOutlet weak var Cost: UILabel!
      @IBOutlet weak var first_label: UILabel!
-    
+
+    var screenedge : UIScreenEdgePanGestureRecognizer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fornt_end_init()
+        
+        // MARK:- TODO:- This Line for adding Geusters.
+        screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+        screenedge.edges = .left
+        view.addGestureRecognizer(screenedge)
         
         print("tocken: \(first_view.type)")
         print(first_view.data["title"] as! String)
@@ -93,7 +99,7 @@ class first_view: UIViewController {
         Seat_reg.data2.removeAll()
         Seat_reg.registered.removeAll()
         company.Big_company.removeAll()
-        self.dismiss(animated: true, completion: nil) //needs further fixing
+        Tools.makeNiceBackTransition(ob: self)
 
     }
 
@@ -105,5 +111,14 @@ class first_view: UIViewController {
         second.modalPresentationStyle = .fullScreen
       
         self.present(second, animated: true, completion: nil)
+    }
+    
+    // MARK:- TODO:- This Method For Add GuesterAction
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+       first_view.data.removeAll()
+       Seat_reg.data2.removeAll()
+       Seat_reg.registered.removeAll()
+       company.Big_company.removeAll()
+       Tools.makeNiceBackTransition(ob: self)
     }
 }

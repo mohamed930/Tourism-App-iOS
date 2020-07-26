@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
         }
         return (view as! LoginView)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,6 +25,8 @@ class LoginViewController: UIViewController {
         Tools.SetLeftPadding(textBox: loginview.EmailText , padding: 90.0)
         Tools.SetLeftPadding(textBox: loginview.PasswordText , padding: 90.0)
         Tools.setMarqueeOption(MyLabel: loginview.MarqueeLabel)
+        
+        checkforUserDefaultpreference()
     }
     
     // MARK:- TODO:- This Action For Making Login Method.
@@ -32,6 +34,8 @@ class LoginViewController: UIViewController {
         let f = FireBase()
         f.MakeLogin(Email: loginview.EmailText.text!, Password: loginview.PasswordText.text!) { (flag) in
             if flag == "Success" {
+                UserDefaults.standard.set(self.loginview.EmailText.text, forKey: "Email")
+                UserDefaults.standard.set(self.loginview.PasswordText.text, forKey: "Password")
                 self.performSegue(withIdentifier: "GoToHome", sender: self)
             }
             else {
@@ -41,6 +45,20 @@ class LoginViewController: UIViewController {
     }
     
 
+    func checkforUserDefaultpreference () {
+//        if let value = UserDefaults.value(forKey: "Email") as? String, let value2 = UserDefaults.value(forKey: "Password") as? String {
+//            loginview.EmailText.text = value
+//            loginview.PasswordText.text = value2
+//        }
+        
+        let value  = UserDefaults.standard.object(forKey: "Email")
+        let value2 = UserDefaults.standard.object(forKey: "Password")
+        
+        if value != nil && value2 != nil {
+            loginview.EmailText.text = value as? String
+            loginview.PasswordText.text = value2 as? String
+        }
+    }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

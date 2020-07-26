@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,7 +52,7 @@
         <!--Signup View Controller-->
         <scene sceneID="f04-87-eJs">
             <objects>
-                <viewController id="fZJ-Bf-Yh7" customClass="SignupViewController" customModule="Tourism_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fZJ-Bf-Yh7" customClass="SignupViewController" customModule="Tourism_System" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c3E-51-bkW" customClass="SignupView" customModule="Tourism_System" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -278,7 +278,7 @@
         <!--Login View Controller-->
         <scene sceneID="LdE-UK-m95">
             <objects>
-                <viewController id="MYm-5U-WT8" customClass="LoginViewController" customModule="Tourism_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MYm-5U-WT8" customClass="LoginViewController" customModule="Tourism_System" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8VC-w4-cfH" customClass="LoginView" customModule="Tourism_System" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,7 +328,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XPa-sg-aic">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="53.666666666666664"/>
                                         <subviews>
-                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="m@g.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcx-YX-9RQ">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcx-YX-9RQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -349,7 +349,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZY9-ZQ-lhF">
                                         <rect key="frame" x="0.0" y="66.666666666666686" width="343" height="53.666666666666657"/>
                                         <subviews>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="q1q1q1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHm-o1-6tq">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHm-o1-6tq">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="PKC-Iv-cW0"/>
@@ -570,7 +570,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chooce Sektion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww2-e7-Xrp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww2-e7-Xrp">
                                 <rect key="frame" x="16" y="64" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="syx-9j-J1j"/>
@@ -841,7 +841,7 @@
                                     <action selector="BTNBack:" destination="d7W-Qp-z9E" eventType="touchUpInside" id="Rus-Hk-pp2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chooce Sektion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8X5-tO-aVI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8X5-tO-aVI">
                                 <rect key="frame" x="16" y="137" width="343" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="GSe-bA-aXG"/>
@@ -1238,7 +1238,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="L0O-gv-zVb">
             <objects>
-                <tabBarController id="sJC-ZZ-qWy" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" id="sJC-ZZ-qWy" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OuG-Ju-55H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

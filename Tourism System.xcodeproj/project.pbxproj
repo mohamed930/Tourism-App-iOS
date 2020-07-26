@@ -37,7 +37,6 @@
 		D3767E86248D7B5C0090CE19 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E85248D7B5C0090CE19 /* SignupViewController.swift */; };
 		D3767E8E248DBED90090CE19 /* LocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E8D248DBED90090CE19 /* LocationMapViewController.swift */; };
 		D3767E90248DBF190090CE19 /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3767E8F248DBF190090CE19 /* LocationMapView.swift */; };
-		D37AB3C324CDD8AB00D074FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37AB3C224CDD8AB00D074FD /* GoogleService-Info.plist */; };
 		D38A07A72491457F00C87CD5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A07A62491457F00C87CD5 /* MapViewController.swift */; };
 		D398604424C7C312009B1A6C /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D398604324C7C312009B1A6C /* Main2.storyboard */; };
 		D398604724C7C38A009B1A6C /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398604624C7C38A009B1A6C /* data.swift */; };
@@ -47,6 +46,8 @@
 		D398605124C7C3B9009B1A6C /* Umrah_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398604B24C7C3AF009B1A6C /* Umrah_view.swift */; };
 		D398605224C7C3B9009B1A6C /* Seat_reg.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398604C24C7C3B7009B1A6C /* Seat_reg.swift */; };
 		D398605324C7C3B9009B1A6C /* first_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398604D24C7C3B8009B1A6C /* first_view.swift */; };
+		D39A61BB24CDE19C0018652F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D39A61BA24CDE19C0018652F /* GoogleService-Info.plist */; };
+		D39A61BD24CDE7DF0018652F /* CorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A61BC24CDE7DF0018652F /* CorrectViewController.swift */; };
 		D3AC1DBE249000DA0036EF6D /* CommonofferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DBC249000D90036EF6D /* CommonofferCell.swift */; };
 		D3AC1DBF249000DA0036EF6D /* CommonofferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AC1DBD249000DA0036EF6D /* CommonofferCell.xib */; };
 		D3AC1DC2249043F00036EF6D /* TravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DC1249043EF0036EF6D /* TravelsViewController.swift */; };
@@ -92,7 +93,6 @@
 		D3767E85248D7B5C0090CE19 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		D3767E8D248DBED90090CE19 /* LocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewController.swift; sourceTree = "<group>"; };
 		D3767E8F248DBF190090CE19 /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
-		D37AB3C224CDD8AB00D074FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Documents/Graduate Project/Tourism-App-iOS/Tourism System/Resources/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D38A07A62491457F00C87CD5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D398604324C7C312009B1A6C /* Main2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
 		D398604624C7C38A009B1A6C /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
@@ -102,6 +102,8 @@
 		D398604B24C7C3AF009B1A6C /* Umrah_view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Umrah_view.swift; sourceTree = "<group>"; };
 		D398604C24C7C3B7009B1A6C /* Seat_reg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seat_reg.swift; sourceTree = "<group>"; };
 		D398604D24C7C3B8009B1A6C /* first_view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = first_view.swift; sourceTree = "<group>"; };
+		D39A61BA24CDE19C0018652F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D39A61BC24CDE7DF0018652F /* CorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectViewController.swift; sourceTree = "<group>"; };
 		D3AC1DBC249000D90036EF6D /* CommonofferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonofferCell.swift; sourceTree = "<group>"; };
 		D3AC1DBD249000DA0036EF6D /* CommonofferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonofferCell.xib; sourceTree = "<group>"; };
 		D3AC1DC1249043EF0036EF6D /* TravelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelsViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				D398604C24C7C3B7009B1A6C /* Seat_reg.swift */,
 				D398604924C7C3AA009B1A6C /* company.swift */,
 				D398604A24C7C3AD009B1A6C /* last_page.swift */,
+				D39A61BC24CDE7DF0018652F /* CorrectViewController.swift */,
 				D3767E87248DAE7F0090CE19 /* Cell */,
 			);
 			path = Controlllers;
@@ -261,7 +264,7 @@
 				D33BD6962492A82A0067406C /* ProgressHUD.m */,
 				D34FB4DF2491C058005C7D59 /* Assets.xcassets */,
 				D3767E74248D338C0090CE19 /* Info.plist */,
-				D37AB3C224CDD8AB00D074FD /* GoogleService-Info.plist */,
+				D39A61BA24CDE19C0018652F /* GoogleService-Info.plist */,
 				D33BD6952492A80C0067406C /* Tourism System-Bridging-Header.h */,
 			);
 			path = Resources;
@@ -390,7 +393,7 @@
 				D3230F6724C7C53B0096B06D /* UmrahOrHajj Cell.xib in Resources */,
 				D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */,
 				D3AC1DBF249000DA0036EF6D /* CommonofferCell.xib in Resources */,
-				D37AB3C324CDD8AB00D074FD /* GoogleService-Info.plist in Resources */,
+				D39A61BB24CDE19C0018652F /* GoogleService-Info.plist in Resources */,
 				D3230F6D24C7C5760096B06D /* Accompying Cell.xib in Resources */,
 				D33BD69A2492A82F0067406C /* ProgressHUD.bundle in Resources */,
 				D34FB4E02491C059005C7D59 /* Assets.xcassets in Resources */,
@@ -450,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3767E86248D7B5C0090CE19 /* SignupViewController.swift in Sources */,
+				D39A61BD24CDE7DF0018652F /* CorrectViewController.swift in Sources */,
 				D398604F24C7C3B9009B1A6C /* company.swift in Sources */,
 				D3271AFE248E91E3003B6158 /* ProfileView.swift in Sources */,
 				D398605024C7C3B9009B1A6C /* last_page.swift in Sources */,

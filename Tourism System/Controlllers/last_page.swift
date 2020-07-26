@@ -11,12 +11,18 @@ import UIKit
 class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource {
     
     @IBOutlet weak var tableView:UITableView!
+    var screenedge : UIScreenEdgePanGestureRecognizer!
   //  static var big_arr:[NSDictionary]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.register(UINib(nibName: "Accompying Cell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        // MARK:- TODO:- This Line for adding Geusters.
+        screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
+        screenedge.edges = .left
+        view.addGestureRecognizer(screenedge)
     }
     
     @IBAction func BTNBack(_ sender:Any) {
@@ -29,7 +35,12 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
         print("in herer " , company.Big_company.count)
         company3.modalPresentationStyle = .fullScreen
         self.present(company3 , animated: true)*/
-        self.dismiss(animated: true, completion: nil)
+        Tools.makeNiceBackTransition(ob: self)
+    }
+    
+    // MARK:- TODO:- This Method For Add GuesterAction
+    @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+       Tools.makeNiceBackTransition(ob: self)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
