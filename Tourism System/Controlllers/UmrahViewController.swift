@@ -21,6 +21,8 @@ class UmrahViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName: "SektionCellUmrah", bundle: nil), forCellWithReuseIdentifier: "Cell")
+        self.collectionView?.backgroundColor = UIColor.clear
+        self.collectionView?.backgroundView = UIView(frame: CGRect.zero)
         configureAnimation()
         
         // MARK:- TODO:- This Line for adding Geusters.

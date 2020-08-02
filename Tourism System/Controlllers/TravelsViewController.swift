@@ -40,6 +40,9 @@ class TravelsViewController: UIViewController {
         screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
         screenedge.edges = .left
         view.addGestureRecognizer(screenedge)
+        
+        self.collectionView?.backgroundColor = UIColor.clear
+        self.collectionView?.backgroundView = UIView(frame: CGRect.zero)
     }
     
     

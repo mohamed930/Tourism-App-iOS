@@ -22,9 +22,16 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        Tools.SetLeftPadding(textBox: loginview.EmailText , padding: 90.0)
-        Tools.SetLeftPadding(textBox: loginview.PasswordText , padding: 90.0)
-        Tools.setMarqueeOption(MyLabel: loginview.MarqueeLabel)
+        loginview.View.layer.cornerRadius = 20.0
+        //loginview.View.layer.masksToBounds = true
+        loginview.View.layer.shadowColor = UIColor.black.cgColor
+        loginview.View.layer.shadowOpacity = 1
+        loginview.View.layer.shadowOffset = .zero
+        loginview.View.layer.shadowRadius = 20.0
+        
+        Tools.SetLeftPadding(textBox: loginview.EmailText , padding: 50.0)
+        Tools.SetLeftPadding(textBox: loginview.PasswordText , padding: 50.0)
+        //Tools.setMarqueeOption(MyLabel: loginview.MarqueeLabel)
         
         checkforUserDefaultpreference()
     }

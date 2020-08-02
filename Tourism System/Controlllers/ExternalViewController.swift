@@ -34,7 +34,14 @@ class ExternalViewController: UIViewController {
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName: "MapButtonCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         
+        self.collectionView?.backgroundColor = UIColor.clear
+        self.collectionView?.backgroundView = UIView(frame: CGRect.zero)
+        
         collectionView2.register(UINib(nibName: "CommonofferCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
+        
+        self.collectionView2?.backgroundColor = UIColor.clear
+        self.collectionView2?.backgroundView = UIView(frame: CGRect.zero)
+        
         TravelList.append(OffersData(travelImage: "AlexCover", travelName: "Alex1"))
         TravelList.append(OffersData(travelImage: "AlexCover", travelName: "Alex2"))
         TravelList.append(OffersData(travelImage: "AlexCover", travelName: "Alex3"))

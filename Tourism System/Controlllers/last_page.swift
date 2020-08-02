@@ -19,6 +19,9 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
 
         tableView.register(UINib(nibName: "Accompying Cell", bundle: nil), forCellReuseIdentifier: "Cell")
         
+        tableView?.backgroundColor = UIColor.clear
+        tableView.backgroundView = UIView(frame: CGRect.zero)
+        
         // MARK:- TODO:- This Line for adding Geusters.
         screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
         screenedge.edges = .left
@@ -59,6 +62,8 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
        // Configure the cell...
        
        //let label = cell.viewWithTag(2) as? UILabel
+        
+        cell.layer.backgroundColor = UIColor.clear.cgColor
        
        cell.NameLabel.text = company.Big_company[indexPath.row]["name"] as? String
        

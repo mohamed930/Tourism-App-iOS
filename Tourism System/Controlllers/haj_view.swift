@@ -39,7 +39,8 @@ class haj_view: UIViewController {
         self.my_table.register(UINib(nibName: "UmrahOrHajj Cell", bundle: nil), forCellReuseIdentifier: "Cell")
  
         
-        
+        my_table?.backgroundColor = UIColor.clear
+        my_table.backgroundView = UIView(frame: CGRect.zero)
         
         
         
@@ -114,6 +115,7 @@ extension haj_view : UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UmrahOrHajj_Cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! UmrahOrHajj_Cell
         
+        cell.layer.backgroundColor = UIColor.clear.cgColor
  
         cell.CoverImage.image = self.big_images2[indexPath.row]
 

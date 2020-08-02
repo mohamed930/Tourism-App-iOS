@@ -16,5 +16,5 @@ class LoginView: UIView {
     @IBOutlet weak var MarqueeLabel:MarqueeLabel!
     @IBOutlet weak var line1:UIView!
     @IBOutlet weak var line2:UIView!
-
+    @IBOutlet weak var View:UIView!
 }

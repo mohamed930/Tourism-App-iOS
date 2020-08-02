@@ -15,6 +15,7 @@ class UmrahOrHajj_Cell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.contentView.layer.backgroundColor = UIColor.clear.cgColor
     }
 
     override func layoutSubviews() {
