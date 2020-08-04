@@ -38,9 +38,6 @@ class Umrah_view: UIViewController {
           let size = CGSize(width: UIScreen.main.bounds.size.width, height: 10)
           self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         
-        my_table?.backgroundColor = UIColor.clear
-        my_table.backgroundView = UIView(frame: CGRect.zero)
-        
         
         
        /* photos_folder.downloadURL { (URL, error) in
@@ -133,7 +130,7 @@ extension Umrah_view : UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UmrahOrHajj_Cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! UmrahOrHajj_Cell
         
-        cell.layer.backgroundColor = UIColor.clear.cgColor
+     
        
         cell.CoverImage.image = big_images[indexPath.row]
      
@@ -142,7 +139,7 @@ extension Umrah_view : UITableViewDelegate,UITableViewDataSource{
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 229.0;
+        return 229;
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

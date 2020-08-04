@@ -27,6 +27,7 @@ class TravelsViewController: UIViewController {
     @IBOutlet weak var collectionView:GeminiCollectionView!
     var List = Array<TravelsData>()
     
+    
     var screenedge : UIScreenEdgePanGestureRecognizer!
     
     
@@ -40,9 +41,6 @@ class TravelsViewController: UIViewController {
         screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
         screenedge.edges = .left
         view.addGestureRecognizer(screenedge)
-        
-        self.collectionView?.backgroundColor = UIColor.clear
-        self.collectionView?.backgroundView = UIView(frame: CGRect.zero)
     }
     
     
@@ -64,6 +62,7 @@ class TravelsViewController: UIViewController {
             for doc in query.documents {
                 let ob = TravelsData(Image: doc.get("fileref") as! String, Name: doc.get("title") as! String)
                 self.List.append(ob)
+              
                 self.collectionView.reloadData()
                 self.configureAnimation()
             }
@@ -155,8 +154,8 @@ extension TravelsViewController: UICollectionViewDelegate {
     
     // Make Transection.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        first_view.pickData = List[indexPath.row]
-        first_view.data["title"] = first_view.pickData?.Name
+        first_view.data["title"] = List[indexPath.row].Name
+       
         first_view.type = "OffersInternal"
         Tools.MakeTransion(StoryName: "Main2", ViewName: "first", ob: self)
     }

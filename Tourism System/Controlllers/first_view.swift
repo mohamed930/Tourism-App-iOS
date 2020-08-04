@@ -11,10 +11,11 @@ import UIKit
 class first_view: UIViewController {
     
     static var data:[String:Any] = [:]
+    static var user_data:[String:Any] = [:]
     static var flag = false
      var timer : Timer?
     public static var type = "Offers"
-    public static var pickData:TravelsData?
+  //  public static var pickData:TravelsData?
     
      @IBOutlet weak var programm: UITextView!
      @IBOutlet weak var Time: UILabel!
@@ -24,6 +25,7 @@ class first_view: UIViewController {
      @IBOutlet weak var first_label: UILabel!
 
     var screenedge : UIScreenEdgePanGestureRecognizer!
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,24 +37,18 @@ class first_view: UIViewController {
         screenedge.edges = .left
         view.addGestureRecognizer(screenedge)
         
-        print("tocken: \(first_view.type)")
-        print(first_view.data["title"] as! String)
-        if(first_view.type == "OffersInternal"){
-            FireBase.publicreadWithWhereCondtion(collectionName: first_view.type, key: "title", value: (first_view.pickData?.Name)!) { (quary) in
-                for doc in quary.documents {
-                    self.first_label.text = doc.get("title") as? String
-                    self.Cost.text = doc.get("price") as? String
-                    self.Time.text = doc.get("date") as? String
-                    self.programm.text = doc.get("content") as? String
-                    FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com", ImageURL: doc.get("fileref2") as! String, ImageView: self.iamge) //gs://tourist-company.appspot.com"
-                    
-                }
+       /* FireBase.publicreadWithWhereCondtion(collectionName: "Users", key: "Email", value: LoginViewController.my_email) { (items) in
+            for item in items.documents{
+                first_view.user_data = item.data()
             }
-            
-            
-        }else{
+        }*/
+        
+        
+        
+    
             FireBase.publicreadWithWhereCondtion(collectionName: first_view.type, key: "title", value: first_view.data["title"] as! String) { (quary) in
                 for doc in quary.documents {
+                    first_view.data = doc.data()
                     self.first_label.text = first_view.data["title"] as? String
                     self.Cost.text = first_view.data["price"] as? String
                     self.Time.text = first_view.data["date"] as? String
@@ -61,7 +57,8 @@ class first_view: UIViewController {
                     
                 }
             }
-        }
+        
+        
         
        
        
@@ -92,19 +89,27 @@ class first_view: UIViewController {
         
     }
     
-    @IBAction func back(_ sender: Any) {
-        print("better fixes")
-        
+    public static func delelte_all(){
         first_view.data.removeAll()
         Seat_reg.data2.removeAll()
         Seat_reg.registered.removeAll()
+        Seat_reg.newly_added.removeAll()
         company.Big_company.removeAll()
+        company.big_images4.removeAll()
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        print("better fixes")
+        
+        first_view.delelte_all()
         Tools.makeNiceBackTransition(ob: self)
 
     }
 
     
     @IBAction func next(_ sender: Any) {
+        
+        
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
         let second = storyBoard.instantiateViewController(withIdentifier: "second") as! Seat_reg

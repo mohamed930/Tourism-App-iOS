@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RappleProgressHUD
 
 class company: UIViewController {
     
   //  static var registered:[Int] = []
     var new_reg:Int = 0
+    
     static var Big_company:[NSDictionary] = []
+    static var big_images4: [UIImage] = []
     var green:UIColor?
     var comapny_names:[String] = []
     var flag = false
@@ -101,35 +104,49 @@ class company: UIViewController {
         present(last , animated: true)
     }
     
+    
+    func reset(){
+        self.new_reg = 0
+        self.name.text = ""
+        self.SSN.text = ""
+        flag = false
+        image_flag = false
+        self.my_passport.image = UIImage(named: "ay7aga.jpg")
+    }
     @IBAction func addcompany(_ sender: Any) {
         //print(self.my_passport.getsiz)
         if((self.name.text?.isEmpty)! || (self.SSN.text?.isEmpty)! || flag == false || image_flag == false){
-            print("not complelete")
+            
             let alert = UIAlertController(title: "missing data", message: "Please Fill The Missing Data", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "return", style: .default, handler: nil))
-          
-            
             self.present(alert, animated: true)
         }
         else{
+            
+            let image = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: self.my_passport.image!, Name: "\(self.SSN.text!)_")
+            company.big_images4.append(self.my_passport.image!)
             let company2: NSDictionary =  [
                 
                 "name" : self.name.text!,
                 "ssn" : self.SSN.text!,
                 "registered" : self.new_reg,
-                "passport" : self.my_passport.image!
+                "passport" : image,
+                "Parent_id" : first_view.user_data["id"]!,
+                "Offer_id" : first_view.data["id"]!
                 
             ]
-
+            
+            Seat_reg.newly_added.append(self.new_reg)
+            
             company.Big_company.append(company2)
             let label = self.view.viewWithTag(self.new_reg) as! UILabel
             label.backgroundColor = UIColor.purple
             Seat_reg.registered.append(self.new_reg)
-            self.new_reg = 0
-            self.name.text = ""
-            self.SSN.text = ""
-            flag = false
-            image_flag = false
+            
+            reset()
+            
+            self.my_passport.image = UIImage(named: "load_image.jpg")
+             RappleActivityIndicatorView.stopAnimation()
             
         }
 
@@ -137,9 +154,7 @@ class company: UIViewController {
     
     
     @IBAction func back(_ sender: Any) {
-      /*  let second = storyboard?.instantiateViewController(withIdentifier: "second") as! Seat_reg
-        second.modalPresentationStyle = .fullScreen
-        self.present(second, animated: true, completion: nil)*/
+
         Tools.makeNiceBackTransition(ob: self)
     }
     
@@ -150,6 +165,73 @@ class company: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    @IBAction func finisher(_ sender: Any) {
+        
+        print("finished")
+            if(Seat_reg.flag){
+              
+                let alert = UIAlertController(title: "Are You Sure", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                
+                  FireBase.updateDocumnt(collectionName: first_view.type, documntId: first_view.data["id"] as! String, data:
+                      [
+                          "reg" : Seat_reg.registered
+                      ])
+                    if(!company.Big_company.isEmpty){
+                        for x in 0...company.Big_company.count-1{
+                             FireBase.addData(collectionName: "Companions", data: company.Big_company[x] as! [String : Any])
+                        }
+                    }
+                    
+                    FireBase.addData(collectionName: "ReservedOffers", data: [
+                    
+                        "fname" : first_view.user_data["Name"]!,
+                        "User_id" : first_view.user_data["id"]!,
+                        "User_seat" : first_view.user_data["Seat_no"]!,
+                        "ReservedOffer" : first_view.data["id"]!,
+                        "phone" : first_view.user_data["Telephone"]!,
+                        "email" : first_view.user_data["Email"]!,
+                        "campany" : company.Big_company.count,
+                        "seats" : Seat_reg.newly_added
+                        
+                    ])
+                   
+                    
+                 
+                    Seat_reg.newly_added.removeAll()
+                    
+                    Seat_reg.flag = false
+                      let storyBoard = UIStoryboard(name: "Main2", bundle: nil)
+                             let correct = storyBoard.instantiateViewController(withIdentifier: "finish")
+                             correct.modalPresentationStyle = .fullScreen
+                             self.present(correct, animated: true, completion: nil)
+                }))
+                
+                 alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+          
+                
+            
+            }else{
+                let alert = UIAlertController(title: "Missing Info", message: "Please Choose Your Seat", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "return", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+          
+          /*  FireBase.publicreadWithWhereCondtion(collectionName: "Users", key: "Email", value: LoginViewController.my_email) { (items) in
+                for item in items.documents{
+                    print(item.data())
+                }
+            }*/
+            print(first_view.user_data)
+            print(company.Big_company)
+            
+           
+        
+        
     }
 }
 

@@ -53,6 +53,7 @@
 		D3AC1DC2249043F00036EF6D /* TravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DC1249043EF0036EF6D /* TravelsViewController.swift */; };
 		D3AC1DC524904D9C0036EF6D /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DC324904D9C0036EF6D /* TravelCell.swift */; };
 		D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AC1DC424904D9C0036EF6D /* TravelCell.xib */; };
+		DCA6F2D624D8EEAF008CD497 /* registrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6F2D524D8EEAF008CD497 /* registrations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		D3AC1DC1249043EF0036EF6D /* TravelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelsViewController.swift; sourceTree = "<group>"; };
 		D3AC1DC324904D9C0036EF6D /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		D3AC1DC424904D9C0036EF6D /* TravelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelCell.xib; sourceTree = "<group>"; };
+		DCA6F2D524D8EEAF008CD497 /* registrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registrations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				D398604D24C7C3B8009B1A6C /* first_view.swift */,
 				D398604C24C7C3B7009B1A6C /* Seat_reg.swift */,
 				D398604924C7C3AA009B1A6C /* company.swift */,
+				DCA6F2D524D8EEAF008CD497 /* registrations.swift */,
 				D398604A24C7C3AD009B1A6C /* last_page.swift */,
 				D39A61BC24CDE7DF0018652F /* CorrectViewController.swift */,
 				D3767E87248DAE7F0090CE19 /* Cell */,
@@ -473,6 +476,7 @@
 				D38A07A72491457F00C87CD5 /* MapViewController.swift in Sources */,
 				D33ECEF124905687005F2AD3 /* color.swift in Sources */,
 				D3271B02248EC160003B6158 /* SektionViewController.swift in Sources */,
+				DCA6F2D624D8EEAF008CD497 /* registrations.swift in Sources */,
 				D398604E24C7C3B9009B1A6C /* haj_view.swift in Sources */,
 				D3767E67248D336E0090CE19 /* AppDelegate.swift in Sources */,
 				D398605224C7C3B9009B1A6C /* Seat_reg.swift in Sources */,

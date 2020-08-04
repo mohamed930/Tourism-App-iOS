@@ -10,7 +10,7 @@ import UIKit
 import MarqueeLabel
 
 class LoginViewController: UIViewController {
-    
+    static var my_email = ""
     var loginview: LoginView! {
         guard isViewLoaded else {
             return nil
@@ -37,19 +37,30 @@ class LoginViewController: UIViewController {
     }
     
     // MARK:- TODO:- This Action For Making Login Method.
-    @IBAction func BTNLogin(_ sender:Any) {
-        let f = FireBase()
-        f.MakeLogin(Email: loginview.EmailText.text!, Password: loginview.PasswordText.text!) { (flag) in
-            if flag == "Success" {
-                UserDefaults.standard.set(self.loginview.EmailText.text, forKey: "Email")
-                UserDefaults.standard.set(self.loginview.PasswordText.text, forKey: "Password")
-                self.performSegue(withIdentifier: "GoToHome", sender: self)
-            }
-            else {
-                self.loginview.PasswordText.text = ""
-            }
-        }
-    }
+     @IBAction func BTNLogin(_ sender:Any) {
+           let f = FireBase()
+           LoginViewController.my_email = loginview.EmailText.text!
+           f.MakeLogin(Email: loginview.EmailText.text!, Password: loginview.PasswordText.text!) { (flag) in
+               if flag == "Success" {
+                   UserDefaults.standard.set(self.loginview.EmailText.text, forKey: "Email")
+                   UserDefaults.standard.set(self.loginview.PasswordText.text, forKey: "Password")
+                   
+                   FireBase.publicreadWithWhereCondtion(collectionName: "Users", key: "Email", value: LoginViewController.my_email) { (items) in
+                              for item in items.documents{
+                               
+                                  first_view.user_data = item.data()
+                               first_view.user_data["id"] = item.documentID
+                              }
+                          }
+                   
+                   
+                   self.performSegue(withIdentifier: "GoToHome", sender: self)
+               }
+               else {
+                   self.loginview.PasswordText.text = ""
+               }
+           }
+       }
     
 
     func checkforUserDefaultpreference () {

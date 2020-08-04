@@ -12,15 +12,11 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
     
     @IBOutlet weak var tableView:UITableView!
     var screenedge : UIScreenEdgePanGestureRecognizer!
-  //  static var big_arr:[NSDictionary]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.register(UINib(nibName: "Accompying Cell", bundle: nil), forCellReuseIdentifier: "Cell")
-        
-        tableView?.backgroundColor = UIColor.clear
-        tableView.backgroundView = UIView(frame: CGRect.zero)
         
         // MARK:- TODO:- This Line for adding Geusters.
         screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
@@ -29,15 +25,7 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
     }
     
     @IBAction func BTNBack(_ sender:Any) {
-      /*  let storyBoard : UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
-        let company3 = storyBoard.instantiateViewController(withIdentifier: "third") as! company
-        
-       
-     
-        
-        print("in herer " , company.Big_company.count)
-        company3.modalPresentationStyle = .fullScreen
-        self.present(company3 , animated: true)*/
+
         Tools.makeNiceBackTransition(ob: self)
     }
     
@@ -51,7 +39,6 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           // #warning Incomplete implementation, return the number of rows
         return (company.Big_company.count)
        }
        
@@ -59,16 +46,13 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
        
        let cell : Accompying_Cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! Accompying_Cell
 
-       // Configure the cell...
-       
-       //let label = cell.viewWithTag(2) as? UILabel
-        
-        cell.layer.backgroundColor = UIColor.clear.cgColor
+    
        
        cell.NameLabel.text = company.Big_company[indexPath.row]["name"] as? String
-       
-       //let imagee = cell.viewWithTag(3) as? UIImageView
-       cell.ImageCover.image = company.Big_company[indexPath.row]["passport"] as? UIImage
+        
+        FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com/UsersImages", ImageURL:company.Big_company[indexPath.row]["passport"] as! String , ImageView: cell.ImageCover)
+
+        cell.ImageCover.image = company.big_images4[indexPath.row]
        
 
        return cell
@@ -79,18 +63,20 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
         return 100.0
     }
     
+    func data_remover(x:Int , index:Int){
+       Seat_reg.registered =  Seat_reg.registered.filter {$0 != x}
+       Seat_reg.newly_added =  Seat_reg.newly_added.filter {$0 != x}
+       company.Big_company.remove(at: index)
+       company.big_images4.remove(at: index)
+                   
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-          let x =  company.Big_company[indexPath.row]["registered"] as! Int
-            print(x)
-            Seat_reg.registered =  Seat_reg.registered.filter {$0 != x}
-            /*for y in 0...arr.count-1{
-                print("the y is " , arr[y])
-                Seat_reg.registered =  Seat_reg.registered.filter {$0 != arr[y]}
-            }*/
-            company.Big_company.remove(at: indexPath.row)
-            
+          let y =  company.Big_company[indexPath.row]["registered"] as! Int
+            print(y)
+            data_remover(x: y, index: indexPath.row)
             if(company.Big_company.count != 0){
                  for i in 0...company.Big_company.count-1{
                      Seat_reg.registered.append(company.Big_company[i]["registered"] as! Int)
@@ -102,4 +88,6 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
         }
         
     }
+    
+    
 }

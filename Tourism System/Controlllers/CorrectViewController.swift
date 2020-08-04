@@ -23,6 +23,8 @@ class CorrectViewController: UIViewController {
     
     // MARK:- TODO:- This Method For Add GuesterAction
     @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
+        first_view.delelte_all()
+             
        Tools.MakeTransion(StoryName: "Main", ViewName: "Home", ob: self)
     }
 }
