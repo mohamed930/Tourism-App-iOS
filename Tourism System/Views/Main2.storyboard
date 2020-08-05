@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -223,7 +223,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="116317118_2729073387194320_1648447351072706295_n" translatesAutoresizingMaskIntoConstraints="NO" id="iol-hU-YSE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick The Seate Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHg-IC-OcV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick The Seat Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHg-IC-OcV">
                                 <rect key="frame" x="0.0" y="218" width="377" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Juv-Gj-fNe"/>
@@ -795,7 +795,7 @@
                                             <constraint firstAttribute="height" constant="48" id="4ld-jv-5hS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Add ACCompanyon">
+                                        <state key="normal" title="Add accompany">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -887,10 +887,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hcD-iA-9fC">
-                                <rect key="frame" x="36" y="293" width="303" height="78"/>
+                                <rect key="frame" x="36" y="293" width="303" height="76"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-ag-rXq">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="34"/>
                                         <color key="backgroundColor" red="1" green="0.50108330800000001" blue="0.96195591920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -899,7 +899,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write Your SSN" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXX-ES-pqa">
-                                        <rect key="frame" x="0.0" y="43" width="303" height="35"/>
+                                        <rect key="frame" x="0.0" y="42" width="303" height="34"/>
                                         <color key="backgroundColor" red="1" green="0.50108330800000001" blue="0.96195591920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="postal-code"/>
@@ -918,7 +918,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="CRL-lK-gvZ"/>
                                         </constraints>
-                                        <state key="normal" title="Add Company">
+                                        <state key="normal" title="Add accompany">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -968,7 +968,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqK-We-g59">
-                                <rect key="frame" x="0.0" y="396" width="377" height="200"/>
+                                <rect key="frame" x="0.0" y="394" width="377" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="fxo-cx-sep">
                                         <rect key="frame" x="8" y="8" width="355" height="184"/>

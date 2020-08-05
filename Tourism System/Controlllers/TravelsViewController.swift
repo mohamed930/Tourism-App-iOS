@@ -41,6 +41,9 @@ class TravelsViewController: UIViewController {
         screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
         screenedge.edges = .left
         view.addGestureRecognizer(screenedge)
+        
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.backgroundView = UIView(frame: CGRect.zero)
     }
     
     
@@ -106,6 +109,7 @@ extension TravelsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : TravelCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TravelCell
+        cell.layer.backgroundColor = UIColor.clear.cgColor
         self.collectionView.animateCell(cell)
         cell.TravelNameLabel.text = List[indexPath.row].Name!
         FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com/", ImageURL: List[indexPath.row].Image, ImageView: cell.TravelCover)

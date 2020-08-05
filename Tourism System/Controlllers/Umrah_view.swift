@@ -55,6 +55,8 @@ class Umrah_view: UIViewController {
         self.my_table.delegate = self
         self.my_table.dataSource = self
         self.my_table.register(UINib(nibName: "UmrahOrHajj Cell", bundle: nil), forCellReuseIdentifier: "Cell")
+        my_table?.backgroundColor = UIColor.clear
+        my_table.backgroundView = UIView(frame: CGRect.zero)
         
     }
     
@@ -133,6 +135,7 @@ extension Umrah_view : UITableViewDelegate,UITableViewDataSource{
      
        
         cell.CoverImage.image = big_images[indexPath.row]
+        cell.layer.backgroundColor = UIColor.clear.cgColor
      
         return cell
     }

@@ -35,7 +35,7 @@ class LocationMapViewController: UIViewController {
         else if location_mapview.CityNameLabel.text == "London City" {
             self.flag = 2
         }
-        else if location_mapview.CityNameLabel.text == "Abu Zabi City" {
+        else if location_mapview.CityNameLabel.text == "Abu dhabi City" {
             self.flag = 3
         }
         else {
@@ -54,7 +54,7 @@ class LocationMapViewController: UIViewController {
     func MakeDropDown() {
         menu = {
             let menu = DropDown()
-            menu.dataSource = ["Portsaid","London","Abu Zabi"]
+            menu.dataSource = ["Portsaid","London","Abu dhabi"]
             return menu
         }()
         menu.anchorView = location_mapview.CompoView
@@ -74,7 +74,7 @@ class LocationMapViewController: UIViewController {
                 self.location_mapview.FlagImage.image = UIImage(named: "flag-400")
                 self.location_mapview.CityNameLabel.text = "Portsaid City"
                 self.location_mapview.CityPopulationLabel.text = "1M People"
-                self.location_mapview.AddressLabel.text = "Portfouad, new build in front of sea"
+                self.location_mapview.AddressLabel.text = "Portfouad, new build in front of see"
                 break
             case "London":
                 self.location_mapview.MapImage.image = UIImage(named: "London")
