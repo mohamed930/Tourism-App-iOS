@@ -68,6 +68,10 @@ class SummaryPayViewController: UIViewController , STPAddCardViewControllerDeleg
     }
     
     @IBAction func finish(_ sender: Any) {
+        
+        if(PayPageViewController.save_flag){
+            print(first_view.user_data)
+        }
         let addcard = STPAddCardViewController()
         addcard.delegate = self
         

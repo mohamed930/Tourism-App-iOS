@@ -10,6 +10,7 @@ import UIKit
 
 class PayPageViewController: UIViewController {
     @IBOutlet weak var card_no: UITextField!
+    static var save_flag = false
     
     var paypage: PayView! {
         guard isViewLoaded else { return nil }
@@ -55,9 +56,11 @@ class PayPageViewController: UIViewController {
         print("Exsist!!")
         if sender.isSelected{
             sender.isSelected = false
+            PayPageViewController.save_flag = false
         }
         else {
             sender.isSelected = true
+            PayPageViewController.save_flag = true
         }
        // sender.setImage(UIImage(named: "Radio Button"),for: UIControl.State.selected)
     }
@@ -65,6 +68,7 @@ class PayPageViewController: UIViewController {
     @IBAction func BTNNext(_ sender:Any) {
         let textfieeld = view.viewWithTag(2) as! UITextField
         let card_no = textfieeld.text
+        first_view.user_data["card_no"] = card_no
         let index = (card_no?.index(card_no!.endIndex, offsetBy: -4))!
         let mySubstring = card_no?.suffix(from: index)// playground
  
@@ -193,6 +197,12 @@ extension PayPageViewController: UITextFieldDelegate {
                //   textField.isEditing = false
                   print("Please Enter Correct Number Card!")
               }
+        }
+         else if textField.tag == 5{
+            if(count! > 3){
+                textField.deleteBackward()
+                print("Done")
+            }
         }
         
         
