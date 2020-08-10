@@ -53,7 +53,7 @@ class first_view: UIViewController {
                     self.Cost.text = first_view.data["price"] as? String
                     self.Time.text = first_view.data["date"] as? String
                     self.programm.text = first_view.data["content"] as? String
-                    FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com", ImageURL: first_view.data["fileref2"] as! String, ImageView: self.iamge) //gs://tourist-company.appspot.com"
+                    FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com", ImageURL: first_view.data["fileref2"] as! String, ImageView: self.iamge) //gs://tourist-company.appspot.com"
                     
                 }
                 Seat_reg.data2 = first_view.data

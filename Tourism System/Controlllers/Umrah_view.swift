@@ -137,7 +137,7 @@ extension Umrah_view : UITableViewDelegate,UITableViewDataSource{
      
        
         //cell.CoverImage.image = big_images[indexPath.row]
-         FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com", ImageURL: self.big_arr[indexPath.row]["fileref"] as! String, ImageView: cell.CoverImage)
+         FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com", ImageURL: self.big_arr[indexPath.row]["fileref"] as! String, ImageView: cell.CoverImage)
         cell.layer.backgroundColor = UIColor.clear.cgColor
      
         return cell

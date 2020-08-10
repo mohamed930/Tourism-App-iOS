@@ -142,7 +142,7 @@ class company: UIViewController {
            
    
         
-            let image = FireBase.uploadImage(LinkImage: "gs://graduation-a0b66.appspot.com/UsersImages", Image: self.my_passport.image!, Name: "\(self.SSN.text!)_")//gs://tourist-company.appspot.com/UsersImages
+            let image = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: self.my_passport.image!, Name: "\(self.SSN.text!)_")//gs://tourist-company.appspot.com/UsersImages
             company.big_images4.append(self.my_passport.image!)
             let company2: NSDictionary =  [
                 

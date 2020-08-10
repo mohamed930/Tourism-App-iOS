@@ -65,7 +65,7 @@
 		DC0E5B3F24E0E3D100BD1A8F /* PickProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3924E0E3CD00BD1A8F /* PickProductViewController.swift */; };
 		DC0E5B4024E0E3D100BD1A8F /* PayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3A24E0E3CF00BD1A8F /* PayView.swift */; };
 		DC0E5B4124E0E3D100BD1A8F /* PayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3B24E0E3D100BD1A8F /* PayPageViewController.swift */; };
-		DC0E5B4324E0E50300BD1A8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0E5B4224E0E50300BD1A8F /* GoogleService-Info.plist */; };
+		DC0E5B4524E133F300BD1A8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0E5B4424E133F300BD1A8F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,7 +133,7 @@
 		DC0E5B3924E0E3CD00BD1A8F /* PickProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickProductViewController.swift; sourceTree = "<group>"; };
 		DC0E5B3A24E0E3CF00BD1A8F /* PayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayView.swift; sourceTree = "<group>"; };
 		DC0E5B3B24E0E3D100BD1A8F /* PayPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayPageViewController.swift; sourceTree = "<group>"; };
-		DC0E5B4224E0E50300BD1A8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DC0E5B4424E133F300BD1A8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,7 +296,7 @@
 				D33BD6962492A82A0067406C /* ProgressHUD.m */,
 				D34FB4DF2491C058005C7D59 /* Assets.xcassets */,
 				D3767E74248D338C0090CE19 /* Info.plist */,
-				DC0E5B4224E0E50300BD1A8F /* GoogleService-Info.plist */,
+				DC0E5B4424E133F300BD1A8F /* GoogleService-Info.plist */,
 				D33BD6952492A80C0067406C /* Tourism System-Bridging-Header.h */,
 			);
 			path = Resources;
@@ -443,7 +443,7 @@
 			files = (
 				D3767E73248D338C0090CE19 /* LaunchScreen.storyboard in Resources */,
 				D3271B0F248F02B4003B6158 /* MapButtonCell.xib in Resources */,
-				DC0E5B4324E0E50300BD1A8F /* GoogleService-Info.plist in Resources */,
+				DC0E5B4524E133F300BD1A8F /* GoogleService-Info.plist in Resources */,
 				D3230F6724C7C53B0096B06D /* UmrahOrHajj Cell.xib in Resources */,
 				D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */,
 				D3AC1DBF249000DA0036EF6D /* CommonofferCell.xib in Resources */,

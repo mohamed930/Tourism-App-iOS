@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>13991890247-483q88ksvkjkacosstspq3lfg58bljjt.apps.googleusercontent.com</string>
+	<string>475766271581-9o7bb1aq8httl93d27rb189lpk5urr6j.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.13991890247-483q88ksvkjkacosstspq3lfg58bljjt</string>
+	<string>com.googleusercontent.apps.475766271581-9o7bb1aq8httl93d27rb189lpk5urr6j</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>475766271581-cq00g6qaq5mfhis0se3ms9pl1o0k64o1.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCGOdBJS5Mp7F-_8h4Ulhg8Ee0vFXIChDU</string>
+	<string>AIzaSyC-x2CJ-skX779pbfA3SzfFSCcxQ6tM-Os</string>
 	<key>GCM_SENDER_ID</key>
-	<string>13991890247</string>
+	<string>475766271581</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>ios</string>
+	<string>MyCompany199.Tourism-System</string>
 	<key>PROJECT_ID</key>
-	<string>graduation-a0b66</string>
+	<string>tourist-company</string>
 	<key>STORAGE_BUCKET</key>
-	<string>graduation-a0b66.appspot.com</string>
+	<string>tourist-company.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:13991890247:ios:08f12bf0966fc9a191d062</string>
+	<string>1:475766271581:ios:0df0a12aea8b68318de7b4</string>
 	<key>DATABASE_URL</key>
-	<string>https://graduation-a0b66.firebaseio.com</string>
+	<string>https://tourist-company.firebaseio.com</string>
 </dict>
 </plist>

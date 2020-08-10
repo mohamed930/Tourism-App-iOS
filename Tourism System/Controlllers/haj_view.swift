@@ -119,7 +119,7 @@ extension haj_view : UITableViewDelegate,UITableViewDataSource{
         cell.layer.backgroundColor = UIColor.clear.cgColor
  
         //cell.CoverImage.image = self.big_images2[indexPath.row]
-        FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com", ImageURL: self.big_arr2[indexPath.row]["fileref"] as! String, ImageView: cell.CoverImage)
+        FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com", ImageURL: self.big_arr2[indexPath.row]["fileref"] as! String, ImageView: cell.CoverImage)
        
         return cell
     }

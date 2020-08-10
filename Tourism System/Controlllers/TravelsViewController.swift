@@ -114,7 +114,7 @@ extension TravelsViewController: UICollectionViewDataSource {
         cell.layer.backgroundColor = UIColor.clear.cgColor
         self.collectionView.animateCell(cell)
         cell.TravelNameLabel.text = List[indexPath.row].Name!
-        FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com/", ImageURL: List[indexPath.row].Image, ImageView: cell.TravelCover)//gs://tourist-company.appspot.com
+        FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com/", ImageURL: List[indexPath.row].Image, ImageView: cell.TravelCover)//gs://tourist-company.appspot.com
         
         switch f {
         case 1:
