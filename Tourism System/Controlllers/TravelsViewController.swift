@@ -13,10 +13,12 @@ import RappleProgressHUD
 class TravelsData {
     var Image:String!
     var Name:String!
+    var Id:String!
     
-    init(Image:String,Name:String) {
+    init(Image:String,Name:String , Id:String) {
         self.Image = Image
         self.Name = Name
+        self.Id = Id
     }
 }
 
@@ -63,9 +65,9 @@ class TravelsViewController: UIViewController {
         RappleActivityIndicatorView.startAnimatingWithLabel("loading", attributes: RappleModernAttributes)
         FireBase.publicreadWithWhereCondtion(collectionName: "OffersInternal", key: k, value: v) { (query) in
             for doc in query.documents {
-                let ob = TravelsData(Image: doc.get("fileref") as! String, Name: doc.get("title") as! String)
+                let ob = TravelsData(Image: doc.get("fileref") as! String, Name: doc.get("title") as! String , Id: doc.get("id") as! String)
                 self.List.append(ob)
-              
+               
                 self.collectionView.reloadData()
                 self.configureAnimation()
             }
@@ -112,7 +114,7 @@ extension TravelsViewController: UICollectionViewDataSource {
         cell.layer.backgroundColor = UIColor.clear.cgColor
         self.collectionView.animateCell(cell)
         cell.TravelNameLabel.text = List[indexPath.row].Name!
-        FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com/", ImageURL: List[indexPath.row].Image, ImageView: cell.TravelCover)
+        FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com/", ImageURL: List[indexPath.row].Image, ImageView: cell.TravelCover)//gs://tourist-company.appspot.com
         
         switch f {
         case 1:
@@ -158,7 +160,7 @@ extension TravelsViewController: UICollectionViewDelegate {
     
     // Make Transection.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        first_view.data["title"] = List[indexPath.row].Name
+        first_view.data["id"] = List[indexPath.row].Id
        
         first_view.type = "OffersInternal"
         Tools.MakeTransion(StoryName: "Main2", ViewName: "first", ob: self)
