@@ -7,6 +7,7 @@ target 'Tourism System' do
   # Pods for Tourism System
   pod 'MarqueeLabel/Swift'
   pod 'DropDown'
+  pod 'KYDrawerController'
   pod 'Gemini'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'

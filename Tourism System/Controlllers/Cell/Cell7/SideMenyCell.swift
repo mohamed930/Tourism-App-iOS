@@ -9,6 +9,9 @@
 import UIKit
 
 class SideMenyCell: UITableViewCell {
+    
+    @IBOutlet weak var logo:UIImageView!
+    @IBOutlet weak var NameTitleLabel:UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

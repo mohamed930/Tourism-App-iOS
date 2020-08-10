@@ -118,7 +118,7 @@ class Seat_reg: UIViewController {
                 
                     "fname" : first_view.user_data["Name"]!,
                     "User_id" : first_view.user_data["id"]!,
-                    "ReservedOffer" : first_view.data["id"]!,
+                    "ReservedOffer" : first_view.data["title"]!,
                     "phone" : first_view.user_data["Telephone"]!,
                     "email" : first_view.user_data["Email"]!,
                     "campany" : company.Big_company.count,

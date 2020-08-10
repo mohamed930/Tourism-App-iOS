@@ -49,11 +49,11 @@ class LoginViewController: UIViewController {
                               for item in items.documents{
                                
                                   first_view.user_data = item.data()
-                               first_view.user_data["id"] = item.documentID
+                                  first_view.user_data["id"] = item.documentID
                               }
                           }
                    
-                   
+                   self.makeConfigure()
                    self.performSegue(withIdentifier: "GoToHome", sender: self)
                }
                else {
@@ -63,6 +63,19 @@ class LoginViewController: UIViewController {
        }
     
 
+    func makeConfigure () {
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        
+        let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+        let menuVC = self.storyboard?.instantiateViewController(withIdentifier: "SideMenyView")
+        
+        appDel.drawerController.mainViewController = mainVC
+        appDel.drawerController.drawerViewController = menuVC
+        
+        appDel.window?.rootViewController = appDel.drawerController
+        appDel.window?.makeKeyAndVisible()
+    }
+    
     func checkforUserDefaultpreference () {
 //        if let value = UserDefaults.value(forKey: "Email") as? String, let value2 = UserDefaults.value(forKey: "Password") as? String {
 //            loginview.EmailText.text = value

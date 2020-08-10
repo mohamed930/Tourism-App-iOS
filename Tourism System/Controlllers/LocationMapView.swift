@@ -10,11 +10,12 @@ import UIKit
 
 class LocationMapView: UIView {
 
-    @IBOutlet weak var PickCity:UILabel!
-    @IBOutlet weak var CompoView:UIView!
+   // @IBOutlet weak var PickCity:UILabel!
+   // @IBOutlet weak var CompoView:UIView!
     @IBOutlet weak var FlagImage:UIImageView!
     @IBOutlet weak var CityNameLabel:UILabel!
     @IBOutlet weak var CityPopulationLabel:UILabel!
     @IBOutlet weak var MapImage:UIImageView!
     @IBOutlet weak var AddressLabel:UILabel!
+    @IBOutlet weak var ButtonMore:UIImageView!
 }

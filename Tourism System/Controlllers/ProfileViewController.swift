@@ -34,10 +34,10 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate {
         profileview.AddressText.text = "Enter Your Address"
         profileview.AddressText.textColor = UIColor.darkGray
         
-        let tab = UITapGestureRecognizer(target: self, action: #selector(ScrollTouched))
-        tab.numberOfTouchesRequired = 1
-        profileview.Scroll.addGestureRecognizer(tab)
-        profileview.Scroll.keyboardDismissMode = .interactive
+        //let tab = UITapGestureRecognizer(target: self, action: #selector(ScrollTouched))
+        //tab.numberOfTouchesRequired = 1
+        //profileview.Scroll.addGestureRecognizer(tab)
+        //profileview.Scroll.keyboardDismissMode = .interactive
         // ----------------------------------------------
         
         // MARK:- This Call Method for Getting Data from DataBase.
@@ -45,6 +45,11 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate {
     }
     
     var f : [String:String]!
+    
+    @IBAction func BTNShowMeni (_ sender:Any){
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        appDel.drawerController.setDrawerState(.opened, animated: true)
+    }
     
     @IBAction func BTNUpdate (_ sender:Any) {
         

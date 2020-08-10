@@ -53,6 +53,9 @@
 		D3AC1DC2249043F00036EF6D /* TravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DC1249043EF0036EF6D /* TravelsViewController.swift */; };
 		D3AC1DC524904D9C0036EF6D /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DC324904D9C0036EF6D /* TravelCell.swift */; };
 		D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AC1DC424904D9C0036EF6D /* TravelCell.xib */; };
+		D3C42B4C24DF7845007E2327 /* SideMenyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C42B4A24DF7838007E2327 /* SideMenyCell.swift */; };
+		D3C42B4D24DF7845007E2327 /* SideMenyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C42B4B24DF7839007E2327 /* SideMenyCell.xib */; };
+		D3C42B4F24DF7CAB007E2327 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C42B4E24DF7CAB007E2327 /* SideMenuViewController.swift */; };
 		DCA6F2D624D8EEAF008CD497 /* registrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6F2D524D8EEAF008CD497 /* registrations.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +112,9 @@
 		D3AC1DC1249043EF0036EF6D /* TravelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelsViewController.swift; sourceTree = "<group>"; };
 		D3AC1DC324904D9C0036EF6D /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		D3AC1DC424904D9C0036EF6D /* TravelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelCell.xib; sourceTree = "<group>"; };
+		D3C42B4A24DF7838007E2327 /* SideMenyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenyCell.swift; sourceTree = "<group>"; };
+		D3C42B4B24DF7839007E2327 /* SideMenyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenyCell.xib; sourceTree = "<group>"; };
+		D3C42B4E24DF7CAB007E2327 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		DCA6F2D524D8EEAF008CD497 /* registrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registrations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +247,7 @@
 				DCA6F2D524D8EEAF008CD497 /* registrations.swift */,
 				D398604A24C7C3AD009B1A6C /* last_page.swift */,
 				D39A61BC24CDE7DF0018652F /* CorrectViewController.swift */,
+				D3C42B4E24DF7CAB007E2327 /* SideMenuViewController.swift */,
 				D3767E87248DAE7F0090CE19 /* Cell */,
 			);
 			path = Controlllers;
@@ -288,6 +295,7 @@
 				D3AC1DC724904DB20036EF6D /* Cell4 */,
 				D398605424C7C485009B1A6C /* Cell5 */,
 				D3230F6924C7C5440096B06D /* Cell6 */,
+				D3C42B4924DF777B007E2327 /* Cell7 */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -325,6 +333,15 @@
 				D3AC1DC424904D9C0036EF6D /* TravelCell.xib */,
 			);
 			path = Cell4;
+			sourceTree = "<group>";
+		};
+		D3C42B4924DF777B007E2327 /* Cell7 */ = {
+			isa = PBXGroup;
+			children = (
+				D3C42B4A24DF7838007E2327 /* SideMenyCell.swift */,
+				D3C42B4B24DF7839007E2327 /* SideMenyCell.xib */,
+			);
+			path = Cell7;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +413,7 @@
 				D39A61BB24CDE19C0018652F /* GoogleService-Info.plist in Resources */,
 				D3230F6D24C7C5760096B06D /* Accompying Cell.xib in Resources */,
 				D33BD69A2492A82F0067406C /* ProgressHUD.bundle in Resources */,
+				D3C42B4D24DF7845007E2327 /* SideMenyCell.xib in Resources */,
 				D34FB4E02491C059005C7D59 /* Assets.xcassets in Resources */,
 				D3767E6E248D336E0090CE19 /* Main.storyboard in Resources */,
 				D398604424C7C312009B1A6C /* Main2.storyboard in Resources */,
@@ -468,6 +486,7 @@
 				D3767E82248D64B80090CE19 /* LoginView.swift in Sources */,
 				D398605324C7C3B9009B1A6C /* first_view.swift in Sources */,
 				D3AC1DC2249043F00036EF6D /* TravelsViewController.swift in Sources */,
+				D3C42B4F24DF7CAB007E2327 /* SideMenuViewController.swift in Sources */,
 				D398605124C7C3B9009B1A6C /* Umrah_view.swift in Sources */,
 				D3271B0E248F02B4003B6158 /* MapButtonCell.swift in Sources */,
 				D3767E8E248DBED90090CE19 /* LocationMapViewController.swift in Sources */,
@@ -477,6 +496,7 @@
 				D33ECEF124905687005F2AD3 /* color.swift in Sources */,
 				D3271B02248EC160003B6158 /* SektionViewController.swift in Sources */,
 				DCA6F2D624D8EEAF008CD497 /* registrations.swift in Sources */,
+				D3C42B4C24DF7845007E2327 /* SideMenyCell.swift in Sources */,
 				D398604E24C7C3B9009B1A6C /* haj_view.swift in Sources */,
 				D3767E67248D336E0090CE19 /* AppDelegate.swift in Sources */,
 				D398605224C7C3B9009B1A6C /* Seat_reg.swift in Sources */,

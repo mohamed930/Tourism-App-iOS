@@ -23,7 +23,7 @@ class LocationMapViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        MakeDropDown()
+         MakeDropDown()
     }
     
     // MARK:- TODO:- This Action Method For Preview Map.
@@ -52,34 +52,38 @@ class LocationMapViewController: UIViewController {
     }
     
     func MakeDropDown() {
+        
+        print("We Start!")
+
         menu = {
             let menu = DropDown()
             menu.dataSource = ["Portsaid","London","Abu dhabi"]
             return menu
         }()
-        menu.anchorView = location_mapview.CompoView
-        
-        let g = UITapGestureRecognizer(target: self, action: #selector(didTapTop))
-        g.numberOfTapsRequired = 1
-        g.numberOfTouchesRequired = 1
-        location_mapview.CompoView.addGestureRecognizer(g)
-        
+        menu.anchorView = location_mapview.ButtonMore
+
+        var tab = UITapGestureRecognizer()
+        tab.numberOfTouchesRequired = 1
+        tab.numberOfTapsRequired = 1
+        location_mapview.ButtonMore.isUserInteractionEnabled = true
+        tab = UITapGestureRecognizer(target: self, action: #selector(didTapTop(tapGestureRecognizer:)))
+        location_mapview.ButtonMore.addGestureRecognizer(tab)
+
         menu.selectionAction = {
             index , title in
-            self.location_mapview.PickCity.text = title
             
-            switch self.location_mapview.PickCity.text {
+            switch title {
             case "Portsaid":
                 self.location_mapview.MapImage.image = UIImage(named: "Egpt,PortSaid")
                 self.location_mapview.FlagImage.image = UIImage(named: "flag-400")
-                self.location_mapview.CityNameLabel.text = "Portsaid City"
+                self.location_mapview.CityNameLabel.text = "      PortSaid City"
                 self.location_mapview.CityPopulationLabel.text = "1M People"
                 self.location_mapview.AddressLabel.text = "Portfouad, new build in front of see"
                 break
             case "London":
                 self.location_mapview.MapImage.image = UIImage(named: "London")
                 self.location_mapview.FlagImage.image = UIImage(named: "England")
-                self.location_mapview.CityNameLabel.text = "London City"
+                self.location_mapview.CityNameLabel.text = "      London City"
                 self.location_mapview.CityPopulationLabel.text = "5.5M People"
                 self.location_mapview.AddressLabel.text = "London, in front of Bigban"
                 break
@@ -94,7 +98,8 @@ class LocationMapViewController: UIViewController {
         }
     }
     
-    @objc func didTapTop() {
+    @objc func didTapTop(tapGestureRecognizer: UITapGestureRecognizer) {
+        print("Hi!")
         menu.show()
     }
     
