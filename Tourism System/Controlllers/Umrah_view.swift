@@ -20,7 +20,7 @@ let storage_Ref = Storage.storage().reference()
 
 class Umrah_view: UIViewController {
     
-    var big_arr:[Any] = []
+    var big_arr:[NSDictionary] = []
     var big_images: [UIImage] = []
     
     @IBOutlet weak var my_table: UITableView!
@@ -67,9 +67,9 @@ class Umrah_view: UIViewController {
                 for item in snapshot!.documents{
                     
                     if(item.data()["type"] as? String == "umrah"){
-                     self.big_arr.append(item.data())
+                        self.big_arr.append(item.data() as NSDictionary)
              
-                        self.get_image_storage(x: item.data()["fileref"] as! String )
+                       // self.get_image_storage(x: item.data()["fileref"] as! String )
                     }
                     
                     
@@ -128,7 +128,7 @@ extension Umrah_view : UITableViewDelegate,UITableViewDataSource{
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return big_images.count
+        return self.big_arr.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -136,7 +136,8 @@ extension Umrah_view : UITableViewDelegate,UITableViewDataSource{
         
      
        
-        cell.CoverImage.image = big_images[indexPath.row]
+        //cell.CoverImage.image = big_images[indexPath.row]
+         FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com", ImageURL: self.big_arr[indexPath.row]["fileref"] as! String, ImageView: cell.CoverImage)
         cell.layer.backgroundColor = UIColor.clear.cgColor
      
         return cell
@@ -154,7 +155,7 @@ extension Umrah_view : UITableViewDelegate,UITableViewDataSource{
         let first = story.instantiateViewController(withIdentifier: "first") as! first_view
         
         first_view.data = big_arr[indexPath.row] as! [String : Any]
-        first_view.data["image"] = big_images[indexPath.row]
+       // first_view.data["image"] = big_images[indexPath.row]
         first_view.type = "Offers"
    //     self.big_arr.removeAll()
       //  self.big_images.removeAll()

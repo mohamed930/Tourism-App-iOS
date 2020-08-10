@@ -17,7 +17,7 @@ import Firebase
 let db2 = Firestore.firestore()
 
 class haj_view: UIViewController {
-     var big_arr2:[Any] = []
+     var big_arr2:[NSDictionary] = []
      var big_images2: [UIImage] = []
     
     @IBOutlet weak var my_table: UITableView!
@@ -50,9 +50,8 @@ class haj_view: UIViewController {
                 for item in snapshot!.documents{
                     
                     if(item.data()["type"] as? String == "haj"){
-                        self.big_arr2.append(item.data())
-                     
-                        self.get_image_storage(x: item.data()["fileref"] as! String )
+                        self.big_arr2.append(item.data() as NSDictionary)
+                      //  self.get_image_storage(x: item.data()["fileref"] as! String )
                         
                     }
             
@@ -111,7 +110,7 @@ extension haj_view : UITableViewDelegate,UITableViewDataSource{
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.big_images2.count
+        return self.big_arr2.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -119,8 +118,8 @@ extension haj_view : UITableViewDelegate,UITableViewDataSource{
         
         cell.layer.backgroundColor = UIColor.clear.cgColor
  
-        cell.CoverImage.image = self.big_images2[indexPath.row]
-
+        //cell.CoverImage.image = self.big_images2[indexPath.row]
+        FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com", ImageURL: self.big_arr2[indexPath.row]["fileref"] as! String, ImageView: cell.CoverImage)
        
         return cell
     }
@@ -137,7 +136,7 @@ extension haj_view : UITableViewDelegate,UITableViewDataSource{
         print("inside did seleect")
         
         first_view.data = self.big_arr2[indexPath.row] as! [String : Any]
-        first_view.data["image"] = self.big_images2[indexPath.row]
+       // first_view.data["image"] = self.big_images2[indexPath.row]
         first_view.type = "Offers"
         
     // self.big_arr2.removeAll()

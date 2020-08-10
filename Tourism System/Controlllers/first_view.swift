@@ -46,14 +46,14 @@ class first_view: UIViewController {
         
         
     
-            FireBase.publicreadWithWhereCondtion(collectionName: first_view.type, key: "title", value: first_view.data["title"] as! String) { (quary) in
+            FireBase.publicreadWithWhereCondtion(collectionName: first_view.type, key: "id", value: first_view.data["id"] as! String) { (quary) in
                 for doc in quary.documents {
                     first_view.data = doc.data()
                     self.first_label.text = first_view.data["title"] as? String
                     self.Cost.text = first_view.data["price"] as? String
                     self.Time.text = first_view.data["date"] as? String
                     self.programm.text = first_view.data["content"] as? String
-                    FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com", ImageURL: doc.get("fileref2") as! String, ImageView: self.iamge) //gs://tourist-company.appspot.com"
+                    FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com", ImageURL: first_view.data["fileref2"] as! String, ImageView: self.iamge) //gs://tourist-company.appspot.com"
                     
                 }
                 Seat_reg.data2 = first_view.data
