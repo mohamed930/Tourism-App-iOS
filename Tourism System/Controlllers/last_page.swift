@@ -49,8 +49,6 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
     
        
        cell.NameLabel.text = company.Big_company[indexPath.row]["name"] as? String
-        
-        FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com/UsersImages", ImageURL:company.Big_company[indexPath.row]["passport"] as! String , ImageView: cell.ImageCover)
 
         cell.ImageCover.image = company.big_images4[indexPath.row]
        
@@ -77,15 +75,11 @@ class last_page :UIViewController , UITableViewDelegate , UITableViewDataSource 
           let y =  company.Big_company[indexPath.row]["registered"] as! Int
             print(y)
             data_remover(x: y, index: indexPath.row)
-            if(company.Big_company.count != 0){
-                 for i in 0...company.Big_company.count-1{
-                     Seat_reg.registered.append(company.Big_company[i]["registered"] as! Int)
-                 }
-             }
-            
-            tableView.reloadData()
             print("record no#\(indexPath.row) deleted")
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
+        
+        
         
     }
     

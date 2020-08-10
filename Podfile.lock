@@ -351,6 +351,7 @@ PODS:
   - nanopb/encode (1.30905.0)
   - PromisesObjC (1.2.9)
   - RappleProgressHUD (4.1)
+  - Stripe (19.3.0)
 
 DEPENDENCIES:
   - DropDown
@@ -364,6 +365,7 @@ DEPENDENCIES:
   - KYDrawerController
   - MarqueeLabel/Swift
   - RappleProgressHUD
+  - Stripe
 
 SPEC REPOS:
   trunk:
@@ -395,6 +397,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - RappleProgressHUD
+    - Stripe
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -425,7 +428,8 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   RappleProgressHUD: f29bc5dc5f9834c2caa9c2ae21ba11f3ff2b5a85
+  Stripe: dd5bfdd5f1daed4f9ddbfb47e9449ec302f9f708
 
-PODFILE CHECKSUM: 828513c3abfe176c4596c1e0fd7cfe67a0ed6769
+PODFILE CHECKSUM: fdb8a13505f4b449f647c1519f5de5590f478ec4
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

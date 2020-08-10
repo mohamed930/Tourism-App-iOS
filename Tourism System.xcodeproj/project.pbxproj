@@ -46,7 +46,6 @@
 		D398605124C7C3B9009B1A6C /* Umrah_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398604B24C7C3AF009B1A6C /* Umrah_view.swift */; };
 		D398605224C7C3B9009B1A6C /* Seat_reg.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398604C24C7C3B7009B1A6C /* Seat_reg.swift */; };
 		D398605324C7C3B9009B1A6C /* first_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398604D24C7C3B8009B1A6C /* first_view.swift */; };
-		D39A61BB24CDE19C0018652F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D39A61BA24CDE19C0018652F /* GoogleService-Info.plist */; };
 		D39A61BD24CDE7DF0018652F /* CorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A61BC24CDE7DF0018652F /* CorrectViewController.swift */; };
 		D3AC1DBE249000DA0036EF6D /* CommonofferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AC1DBC249000D90036EF6D /* CommonofferCell.swift */; };
 		D3AC1DBF249000DA0036EF6D /* CommonofferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AC1DBD249000DA0036EF6D /* CommonofferCell.xib */; };
@@ -56,7 +55,17 @@
 		D3C42B4C24DF7845007E2327 /* SideMenyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C42B4A24DF7838007E2327 /* SideMenyCell.swift */; };
 		D3C42B4D24DF7845007E2327 /* SideMenyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C42B4B24DF7839007E2327 /* SideMenyCell.xib */; };
 		D3C42B4F24DF7CAB007E2327 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C42B4E24DF7CAB007E2327 /* SideMenuViewController.swift */; };
-		DCA6F2D624D8EEAF008CD497 /* registrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6F2D524D8EEAF008CD497 /* registrations.swift */; };
+		DC0E5B2E24E0E1DB00BD1A8F /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B2D24E0E1DB00BD1A8F /* MyAPIClient.swift */; };
+		DC0E5B3224E0E23C00BD1A8F /* Products.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC0E5B3024E0E23A00BD1A8F /* Products.xib */; };
+		DC0E5B3324E0E23C00BD1A8F /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3124E0E23C00BD1A8F /* Products.swift */; };
+		DC0E5B3524E0E39600BD1A8F /* Main3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0E5B3424E0E39600BD1A8F /* Main3.storyboard */; };
+		DC0E5B3C24E0E3D100BD1A8F /* PickProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3624E0E3C600BD1A8F /* PickProductView.swift */; };
+		DC0E5B3D24E0E3D100BD1A8F /* SummaryPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3724E0E3C800BD1A8F /* SummaryPayViewController.swift */; };
+		DC0E5B3E24E0E3D100BD1A8F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3824E0E3CB00BD1A8F /* SummaryView.swift */; };
+		DC0E5B3F24E0E3D100BD1A8F /* PickProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3924E0E3CD00BD1A8F /* PickProductViewController.swift */; };
+		DC0E5B4024E0E3D100BD1A8F /* PayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3A24E0E3CF00BD1A8F /* PayView.swift */; };
+		DC0E5B4124E0E3D100BD1A8F /* PayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5B3B24E0E3D100BD1A8F /* PayPageViewController.swift */; };
+		DC0E5B4324E0E50300BD1A8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0E5B4224E0E50300BD1A8F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,7 +114,6 @@
 		D398604B24C7C3AF009B1A6C /* Umrah_view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Umrah_view.swift; sourceTree = "<group>"; };
 		D398604C24C7C3B7009B1A6C /* Seat_reg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seat_reg.swift; sourceTree = "<group>"; };
 		D398604D24C7C3B8009B1A6C /* first_view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = first_view.swift; sourceTree = "<group>"; };
-		D39A61BA24CDE19C0018652F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D39A61BC24CDE7DF0018652F /* CorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectViewController.swift; sourceTree = "<group>"; };
 		D3AC1DBC249000D90036EF6D /* CommonofferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonofferCell.swift; sourceTree = "<group>"; };
 		D3AC1DBD249000DA0036EF6D /* CommonofferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonofferCell.xib; sourceTree = "<group>"; };
@@ -115,7 +123,17 @@
 		D3C42B4A24DF7838007E2327 /* SideMenyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenyCell.swift; sourceTree = "<group>"; };
 		D3C42B4B24DF7839007E2327 /* SideMenyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenyCell.xib; sourceTree = "<group>"; };
 		D3C42B4E24DF7CAB007E2327 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
-		DCA6F2D524D8EEAF008CD497 /* registrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registrations.swift; sourceTree = "<group>"; };
+		DC0E5B2D24E0E1DB00BD1A8F /* MyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
+		DC0E5B3024E0E23A00BD1A8F /* Products.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Products.xib; sourceTree = "<group>"; };
+		DC0E5B3124E0E23C00BD1A8F /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		DC0E5B3424E0E39600BD1A8F /* Main3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main3.storyboard; sourceTree = "<group>"; };
+		DC0E5B3624E0E3C600BD1A8F /* PickProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickProductView.swift; sourceTree = "<group>"; };
+		DC0E5B3724E0E3C800BD1A8F /* SummaryPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryPayViewController.swift; sourceTree = "<group>"; };
+		DC0E5B3824E0E3CB00BD1A8F /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		DC0E5B3924E0E3CD00BD1A8F /* PickProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickProductViewController.swift; sourceTree = "<group>"; };
+		DC0E5B3A24E0E3CF00BD1A8F /* PayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayView.swift; sourceTree = "<group>"; };
+		DC0E5B3B24E0E3D100BD1A8F /* PayPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayPageViewController.swift; sourceTree = "<group>"; };
+		DC0E5B4224E0E50300BD1A8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				D3767E66248D336E0090CE19 /* AppDelegate.swift */,
+				DC0E5B2D24E0E1DB00BD1A8F /* MyAPIClient.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -244,10 +263,15 @@
 				D398604D24C7C3B8009B1A6C /* first_view.swift */,
 				D398604C24C7C3B7009B1A6C /* Seat_reg.swift */,
 				D398604924C7C3AA009B1A6C /* company.swift */,
-				DCA6F2D524D8EEAF008CD497 /* registrations.swift */,
 				D398604A24C7C3AD009B1A6C /* last_page.swift */,
 				D39A61BC24CDE7DF0018652F /* CorrectViewController.swift */,
 				D3C42B4E24DF7CAB007E2327 /* SideMenuViewController.swift */,
+				DC0E5B3B24E0E3D100BD1A8F /* PayPageViewController.swift */,
+				DC0E5B3A24E0E3CF00BD1A8F /* PayView.swift */,
+				DC0E5B3624E0E3C600BD1A8F /* PickProductView.swift */,
+				DC0E5B3924E0E3CD00BD1A8F /* PickProductViewController.swift */,
+				DC0E5B3724E0E3C800BD1A8F /* SummaryPayViewController.swift */,
+				DC0E5B3824E0E3CB00BD1A8F /* SummaryView.swift */,
 				D3767E87248DAE7F0090CE19 /* Cell */,
 			);
 			path = Controlllers;
@@ -258,6 +282,7 @@
 			children = (
 				D3767E6C248D336E0090CE19 /* Main.storyboard */,
 				D398604324C7C312009B1A6C /* Main2.storyboard */,
+				DC0E5B3424E0E39600BD1A8F /* Main3.storyboard */,
 				D3767E71248D338C0090CE19 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -271,7 +296,7 @@
 				D33BD6962492A82A0067406C /* ProgressHUD.m */,
 				D34FB4DF2491C058005C7D59 /* Assets.xcassets */,
 				D3767E74248D338C0090CE19 /* Info.plist */,
-				D39A61BA24CDE19C0018652F /* GoogleService-Info.plist */,
+				DC0E5B4224E0E50300BD1A8F /* GoogleService-Info.plist */,
 				D33BD6952492A80C0067406C /* Tourism System-Bridging-Header.h */,
 			);
 			path = Resources;
@@ -289,6 +314,7 @@
 		D3767E87248DAE7F0090CE19 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				DC0E5B2F24E0E22500BD1A8F /* Cell8 */,
 				D3271B09248EDFF9003B6158 /* Cell1 */,
 				D3271B10248F02E1003B6158 /* Cell2 */,
 				D3AC1DC0249000FF0036EF6D /* Cell3 */,
@@ -342,6 +368,16 @@
 				D3C42B4B24DF7839007E2327 /* SideMenyCell.xib */,
 			);
 			path = Cell7;
+			sourceTree = "<group>";
+		};
+		DC0E5B2F24E0E22500BD1A8F /* Cell8 */ = {
+			isa = PBXGroup;
+			children = (
+				DC0E5B3124E0E23C00BD1A8F /* Products.swift */,
+				DC0E5B3024E0E23A00BD1A8F /* Products.xib */,
+			);
+			name = Cell8;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,11 +443,13 @@
 			files = (
 				D3767E73248D338C0090CE19 /* LaunchScreen.storyboard in Resources */,
 				D3271B0F248F02B4003B6158 /* MapButtonCell.xib in Resources */,
+				DC0E5B4324E0E50300BD1A8F /* GoogleService-Info.plist in Resources */,
 				D3230F6724C7C53B0096B06D /* UmrahOrHajj Cell.xib in Resources */,
 				D3AC1DC624904D9C0036EF6D /* TravelCell.xib in Resources */,
 				D3AC1DBF249000DA0036EF6D /* CommonofferCell.xib in Resources */,
-				D39A61BB24CDE19C0018652F /* GoogleService-Info.plist in Resources */,
+				DC0E5B3524E0E39600BD1A8F /* Main3.storyboard in Resources */,
 				D3230F6D24C7C5760096B06D /* Accompying Cell.xib in Resources */,
+				DC0E5B3224E0E23C00BD1A8F /* Products.xib in Resources */,
 				D33BD69A2492A82F0067406C /* ProgressHUD.bundle in Resources */,
 				D3C42B4D24DF7845007E2327 /* SideMenyCell.xib in Resources */,
 				D34FB4E02491C059005C7D59 /* Assets.xcassets in Resources */,
@@ -472,6 +510,7 @@
 			files = (
 				D3767E86248D7B5C0090CE19 /* SignupViewController.swift in Sources */,
 				D39A61BD24CDE7DF0018652F /* CorrectViewController.swift in Sources */,
+				DC0E5B3C24E0E3D100BD1A8F /* PickProductView.swift in Sources */,
 				D398604F24C7C3B9009B1A6C /* company.swift in Sources */,
 				D3271AFE248E91E3003B6158 /* ProfileView.swift in Sources */,
 				D398605024C7C3B9009B1A6C /* last_page.swift in Sources */,
@@ -487,22 +526,28 @@
 				D398605324C7C3B9009B1A6C /* first_view.swift in Sources */,
 				D3AC1DC2249043F00036EF6D /* TravelsViewController.swift in Sources */,
 				D3C42B4F24DF7CAB007E2327 /* SideMenuViewController.swift in Sources */,
+				DC0E5B3324E0E23C00BD1A8F /* Products.swift in Sources */,
+				DC0E5B3F24E0E3D100BD1A8F /* PickProductViewController.swift in Sources */,
+				DC0E5B2E24E0E1DB00BD1A8F /* MyAPIClient.swift in Sources */,
 				D398605124C7C3B9009B1A6C /* Umrah_view.swift in Sources */,
 				D3271B0E248F02B4003B6158 /* MapButtonCell.swift in Sources */,
 				D3767E8E248DBED90090CE19 /* LocationMapViewController.swift in Sources */,
 				D33BD6942492A50E0067406C /* FireBase.swift in Sources */,
+				DC0E5B3D24E0E3D100BD1A8F /* SummaryPayViewController.swift in Sources */,
 				D3271B12248F042E003B6158 /* ExternalViewController.swift in Sources */,
 				D38A07A72491457F00C87CD5 /* MapViewController.swift in Sources */,
+				DC0E5B4124E0E3D100BD1A8F /* PayPageViewController.swift in Sources */,
 				D33ECEF124905687005F2AD3 /* color.swift in Sources */,
 				D3271B02248EC160003B6158 /* SektionViewController.swift in Sources */,
-				DCA6F2D624D8EEAF008CD497 /* registrations.swift in Sources */,
 				D3C42B4C24DF7845007E2327 /* SideMenyCell.swift in Sources */,
 				D398604E24C7C3B9009B1A6C /* haj_view.swift in Sources */,
 				D3767E67248D336E0090CE19 /* AppDelegate.swift in Sources */,
+				DC0E5B3E24E0E3D100BD1A8F /* SummaryView.swift in Sources */,
 				D398605224C7C3B9009B1A6C /* Seat_reg.swift in Sources */,
 				D3230F6C24C7C5760096B06D /* Accompying Cell.swift in Sources */,
 				D3230F6824C7C53B0096B06D /* UmrahOrHajj Cell.swift in Sources */,
 				D3767E84248D7B410090CE19 /* SignupView.swift in Sources */,
+				DC0E5B4024E0E3D100BD1A8F /* PayView.swift in Sources */,
 				D3271B07248EDC48003B6158 /* SektionCellUmrah.swift in Sources */,
 				D3271B0B248EE01C003B6158 /* UmrahViewController.swift in Sources */,
 				D3271B04248EC9F8003B6158 /* InternalViewController.swift in Sources */,

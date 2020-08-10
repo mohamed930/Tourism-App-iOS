@@ -58,28 +58,30 @@ class Umrah_view: UIViewController {
         my_table?.backgroundColor = UIColor.clear
         my_table.backgroundView = UIView(frame: CGRect.zero)
         
+        
+        
+        db.collection("Offers").getDocuments(){ (snapshot , err) in
+            if let err2 = err{
+                print("An error has occured => \(err2)")
+            }else{
+                for item in snapshot!.documents{
+                    
+                    if(item.data()["type"] as? String == "umrah"){
+                     self.big_arr.append(item.data())
+             
+                        self.get_image_storage(x: item.data()["fileref"] as! String )
+                    }
+                    
+                    
+                }
+                self.my_table.reloadData()
+            }
+            
+        }
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-         db.collection("Offers").getDocuments(){ (snapshot , err) in
-                   if let err2 = err{
-                       print("An error has occured => \(err2)")
-                   }else{
-                       for item in snapshot!.documents{
-                           
-                           if(item.data()["type"] as? String == "umrah"){
-                            self.big_arr.append(item.data())
-                    
-                               self.get_image_storage(x: item.data()["fileref"] as! String )
-                           }
-                           
-                           
-                       }
-                       self.my_table.reloadData()
-                   }
-                   
-               }
-    }
+ 
     
     func get_image_storage(x : String){
         
@@ -154,8 +156,8 @@ extension Umrah_view : UITableViewDelegate,UITableViewDataSource{
         first_view.data = big_arr[indexPath.row] as! [String : Any]
         first_view.data["image"] = big_images[indexPath.row]
         first_view.type = "Offers"
-        self.big_arr.removeAll()
-        self.big_images.removeAll()
+   //     self.big_arr.removeAll()
+      //  self.big_images.removeAll()
         first.modalPresentationStyle = .fullScreen
         self.present(first, animated: true, completion: nil)
     }

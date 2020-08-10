@@ -53,30 +53,25 @@ class first_view: UIViewController {
                     self.Cost.text = first_view.data["price"] as? String
                     self.Time.text = first_view.data["date"] as? String
                     self.programm.text = first_view.data["content"] as? String
-                    FireBase.DownloadImage(ReferenceURL: "gs://tourist-company.appspot.com", ImageURL: doc.get("fileref2") as! String, ImageView: self.iamge) //gs://tourist-company.appspot.com"
+                    FireBase.DownloadImage(ReferenceURL: "gs://graduation-a0b66.appspot.com", ImageURL: doc.get("fileref2") as! String, ImageView: self.iamge) //gs://tourist-company.appspot.com"
                     
                 }
+                Seat_reg.data2 = first_view.data
+                             let registered_now = first_view.data["reg"] as? [Int]
+                            // print(first_view.flag , "is the falag" )
+                             if((registered_now) != nil && !first_view.flag){
+                         
+                             Seat_reg.registered.append(contentsOf:  (first_view.data["reg"] as? [Int])!) //remove redundant data
             }
         
         
-        
+       
        
        
           
 
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        Seat_reg.data2 = first_view.data
-        let registered_now = first_view.data["reg"] as? [Int]
-       // print(first_view.flag , "is the falag" )
-        if((registered_now) != nil && !first_view.flag){
-            
-        Seat_reg.registered.append(contentsOf:  (first_view.data["reg"] as? [Int])!) //remove redundant data
-          //  first_view.flag = true
-            
-        
-        }
+
     }
     
     func fornt_end_init(){
@@ -96,6 +91,7 @@ class first_view: UIViewController {
         Seat_reg.newly_added.removeAll()
         company.Big_company.removeAll()
         company.big_images4.removeAll()
+        Seat_reg.flag = false
     }
     
     @IBAction func back(_ sender: Any) {

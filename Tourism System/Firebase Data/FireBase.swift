@@ -119,8 +119,8 @@ class FireBase {
         let StorageRef = Storage.storage().reference(forURL: LinkImage)
         
         // convert image to Data
-        var data = Data()
-        data = Image.jpegData(compressionQuality: 0.8)! as Data
+        var data = Foundation.Data()
+        data = (Image.jpegData(compressionQuality: 0.8)! as Foundation.Data)
         let dateFormate = DateFormatter()
         dateFormate.dateFormat = "DD_MM_yy_h_mm_a"
         let imagename = dateFormate.string(from: NSDate() as Date)

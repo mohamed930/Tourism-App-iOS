@@ -80,6 +80,7 @@ extension UmrahViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
            // TabBarViewController.tag = 2
+            
             Tools.MakeTransion(StoryName: "Main2", ViewName: "umrah_trips", ob: self)
         }
         else {

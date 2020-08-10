@@ -36,22 +36,33 @@ class Seat_reg: UIViewController {
         screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(Back(_:)))
         screenedge.edges = .left
         view.addGestureRecognizer(screenedge)
+        
+        
+     
+        
       
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        for i in 1...41{
-                   let label = self.view.viewWithTag(i) as? UILabel
-                   green = UIColor.init(red: 0.269042, green: 1, blue: 0.624691, alpha: 1)
-                   let tap = UITapGestureRecognizer(target: self, action: #selector(self.labler))
-                   label?.backgroundColor = green
-                 
-                   label?.addGestureRecognizer(tap)
-               }
-          for y in Seat_reg.registered{
-                  let label = self.view.viewWithTag(y) as? UILabel
-                  label?.backgroundColor = UIColor.purple
-              }
+        
+     for i in 1...41{
+              let label = self.view.viewWithTag(i) as? UILabel
+              green = UIColor.init(red: 0.269042, green: 1, blue: 0.624691, alpha: 1)
+              let tap = UITapGestureRecognizer(target: self, action: #selector(self.labler))
+              label?.backgroundColor = green
+            
+              label?.addGestureRecognizer(tap)
+          }
+        for y in Seat_reg.registered{
+                let label = self.view.viewWithTag(y) as? UILabel
+                label?.backgroundColor = UIColor.purple
+            }
+        if(Seat_reg.flag){
+            let label = self.view.viewWithTag(first_view.user_data["Seat_no"] as! Int) as? UILabel
+            label?.backgroundColor = UIColor.red
+        }
+        
+      
     }
     
     @objc func labler(_ sender:UITapGestureRecognizer){
@@ -61,17 +72,21 @@ class Seat_reg: UIViewController {
         if(!Seat_reg.flag){
         if(my_label?.backgroundColor == green){
             my_label?.backgroundColor = UIColor.red
-            Seat_reg.registered.append((my_label?.tag)!)
-            Seat_reg.newly_added.append((my_label?.tag)!)
+          
             Seat_reg.flag = true
             first_view.user_data["Seat_no"] = my_label?.tag
-            print(new_reg)
-            first_view.data = Seat_reg.data2
-             
+            
+            }
+            
         }else{
+              my_label?.backgroundColor = UIColor.red
+            let label_not = view.viewWithTag(first_view.user_data["Seat_no"] as! Int)
+            
+            label_not?.backgroundColor = green
+            first_view.user_data["Seat_no"] = my_label?.tag
             print("not equal")
         }
-        }
+        
     }
     @IBAction func booking_continues(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main2", bundle: nil)
@@ -97,68 +112,76 @@ class Seat_reg: UIViewController {
     @objc func Back (_ sender:UIScreenEdgePanGestureRecognizer) {
        Tools.makeNiceBackTransition(ob: self)
     }
-    @IBAction func finish_button(_ sender: Any) {
-        print("finished")
-        if(Seat_reg.flag){
-          
-            let alert = UIAlertController(title: "Are You Sure", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
-            
-              FireBase.updateDocumnt(collectionName: first_view.type, documntId: first_view.data["id"] as! String, data:
-                  [
-                      "reg" : Seat_reg.registered
-                  ])
-                if(!company.Big_company.isEmpty){
-                    for x in 0...company.Big_company.count-1{
-                         FireBase.addData(collectionName: "Companions", data: company.Big_company[x] as! [String : Any])
-                    }
-                }
-                
-                FireBase.addData(collectionName: "ReservedOffers", data: [
-                
-                    "fname" : first_view.user_data["Name"]!,
-                    "User_id" : first_view.user_data["id"]!,
-                    "ReservedOffer" : first_view.data["title"]!,
-                    "phone" : first_view.user_data["Telephone"]!,
-                    "email" : first_view.user_data["Email"]!,
-                    "campany" : company.Big_company.count,
-                    "seats" : Seat_reg.newly_added
-                    
-                ])
+    
+    public static func finish_me(){
+        
+        
+        Seat_reg.registered.append(first_view.user_data["Seat_no"] as! Int)
+        Seat_reg.newly_added.append(first_view.user_data["Seat_no"] as! Int)
+        FireBase.updateDocumnt(collectionName: first_view.type, documntId: first_view.data["id"] as! String, data:
+             [
+                 "reg" : Seat_reg.registered
+             ])
+           if(!company.Big_company.isEmpty){
+               for x in 0...company.Big_company.count-1{
+                    FireBase.addData(collectionName: "Companions", data: company.Big_company[x] as! [String : Any])
+               }
+           }
+           
+           FireBase.addData(collectionName: "ReservedOffers", data: [
+           
+               "fname" : first_view.user_data["Name"]!,
+               "User_seat" : first_view.user_data["Seat_no"]!,
+               "ReservedOffer" : first_view.data["title"]!,
+               "Offer_id" : first_view.data["id"]!,
+               "phone" : first_view.user_data["Telephone"]!,
+               "email" : first_view.user_data["Email"]!,
+               "campany" : company.Big_company.count,
+               "seats" : Seat_reg.newly_added
                
-                
-             
-                Seat_reg.newly_added.removeAll()
-                
-                Seat_reg.flag = false
-                  let storyBoard = UIStoryboard(name: "Main2", bundle: nil)
-                         let correct = storyBoard.instantiateViewController(withIdentifier: "finish")
-                         correct.modalPresentationStyle = .fullScreen
-                         self.present(correct, animated: true, completion: nil)
-            }))
-            
-             alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            
-      
-            
+           ])
+          
+           
         
-        }else{
-            let alert = UIAlertController(title: "Missing Info", message: "Please Choose Your Seat", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "return", style: .default, handler: nil))
-            self.present(alert, animated: true)
-        }
+           Seat_reg.newly_added.removeAll()
+           
+           Seat_reg.flag = false
+         
+                       
+    }
+    @IBAction func finish_button(_ sender: Any) {
       
-      /*  FireBase.publicreadWithWhereCondtion(collectionName: "Users", key: "Email", value: LoginViewController.my_email) { (items) in
-            for item in items.documents{
-                print(item.data())
-            }
-        }*/
+  
+              if(Seat_reg.flag){
+                  
+                  let alert = UIAlertController(title: "Are You Sure", message: "", preferredStyle: .alert)
+                  alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                  
+                    Seat_reg.finish_me()
+                    
+                    let storyBoard = UIStoryboard(name: "Main3", bundle: nil)
+                       let correct = storyBoard.instantiateViewController(withIdentifier: "PayPage")
+                       correct.modalPresentationStyle = .fullScreen
+                       self.present(correct, animated: true, completion: nil)
+                     /*   let storyBoard = UIStoryboard(name: "Main2", bundle: nil)
+                               let correct = storyBoard.instantiateViewController(withIdentifier: "finish")
+                               correct.modalPresentationStyle = .fullScreen
+                               self.present(correct, animated: true, completion: nil)*/
+                  }))
+                  
+                   alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+                  self.present(alert, animated: true, completion: nil)
+
+              }else{
+                  let alert = UIAlertController(title: "Missing Info", message: "Please Choose Your Seat", preferredStyle: .alert)
+                  
+                  alert.addAction(UIAlertAction(title: "return", style: .default, handler: nil))
+                  self.present(alert, animated: true)
+              }
+        
         print(first_view.user_data)
-        print(company.Big_company)
-        
-       
+               print(company.Big_company)
+
     }
     
 }

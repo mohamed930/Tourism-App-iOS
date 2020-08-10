@@ -48,6 +48,12 @@ class company: UIViewController {
         
         self.my_passport.addGestureRecognizer(tap)
         
+        
+        
+       
+               
+           
+           
     
        
     }
@@ -55,7 +61,6 @@ class company: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
          print("mody \(Seat_reg.registered)")
-        
         for i in 1...41{
             let label = self.view.viewWithTag(i) as? UILabel
             green = UIColor.init(red: 0.269042, green: 1, blue: 0.624691, alpha: 1)
@@ -68,6 +73,11 @@ class company: UIViewController {
                let label = self.view.viewWithTag(y) as? UILabel
                label?.backgroundColor = UIColor.purple
            }
+        if(Seat_reg.flag){
+        let label = self.view.viewWithTag(first_view.user_data["Seat_no"] as! Int) as? UILabel
+        label?.backgroundColor = UIColor.purple
+        }
+        
     }
     
     @objc func tap_me_once(){
@@ -88,10 +98,16 @@ class company: UIViewController {
             new_reg = ((my_label?.tag)!)
             
             print(new_reg)
+        }
         }else{
-            print("not equal")
+           my_label?.backgroundColor = UIColor.red
+           let label_not = view.viewWithTag(new_reg)
+           
+           label_not?.backgroundColor = green
+            new_reg = ((my_label?.tag)!)
+           print("not equal")
         }
-        }
+        
         
     }
     
@@ -123,7 +139,10 @@ class company: UIViewController {
         }
         else{
             
-            let image = FireBase.uploadImage(LinkImage: "gs://tourist-company.appspot.com/UsersImages", Image: self.my_passport.image!, Name: "\(self.SSN.text!)_")
+           
+   
+        
+            let image = FireBase.uploadImage(LinkImage: "gs://graduation-a0b66.appspot.com/UsersImages", Image: self.my_passport.image!, Name: "\(self.SSN.text!)_")//gs://tourist-company.appspot.com/UsersImages
             company.big_images4.append(self.my_passport.image!)
             let company2: NSDictionary =  [
                 
@@ -168,67 +187,40 @@ class company: UIViewController {
     }
     @IBAction func finisher(_ sender: Any) {
         
-        print("finished")
-            if(Seat_reg.flag){
-              
-                let alert = UIAlertController(title: "Are You Sure", message: "", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
-                
-                  FireBase.updateDocumnt(collectionName: first_view.type, documntId: first_view.data["id"] as! String, data:
-                      [
-                          "reg" : Seat_reg.registered
-                      ])
-                    if(!company.Big_company.isEmpty){
-                        for x in 0...company.Big_company.count-1{
-                             FireBase.addData(collectionName: "Companions", data: company.Big_company[x] as! [String : Any])
-                        }
-                    }
-                    
-                    FireBase.addData(collectionName: "ReservedOffers", data: [
-                    
-                        "fname" : first_view.user_data["Name"]!,
-                        "User_id" : first_view.user_data["id"]!,
-                        "User_seat" : first_view.user_data["Seat_no"]!,
-                        "ReservedOffer" : first_view.data["id"]!,
-                        "phone" : first_view.user_data["Telephone"]!,
-                        "email" : first_view.user_data["Email"]!,
-                        "campany" : company.Big_company.count,
-                        "seats" : Seat_reg.newly_added
-                        
-                    ])
+         print("finished")
                    
-                    
-                 
-                    Seat_reg.newly_added.removeAll()
-                    
-                    Seat_reg.flag = false
-                      let storyBoard = UIStoryboard(name: "Main2", bundle: nil)
-                             let correct = storyBoard.instantiateViewController(withIdentifier: "finish")
-                             correct.modalPresentationStyle = .fullScreen
-                             self.present(correct, animated: true, completion: nil)
-                }))
-                
-                 alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
-          
-                
-            
-            }else{
-                let alert = UIAlertController(title: "Missing Info", message: "Please Choose Your Seat", preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "return", style: .default, handler: nil))
-                self.present(alert, animated: true)
-            }
-          
-          /*  FireBase.publicreadWithWhereCondtion(collectionName: "Users", key: "Email", value: LoginViewController.my_email) { (items) in
-                for item in items.documents{
-                    print(item.data())
-                }
-            }*/
-            print(first_view.user_data)
-            print(company.Big_company)
-            
+                     
+                     if(Seat_reg.flag){
+                         
+                         let alert = UIAlertController(title: "Are You Sure", message: "", preferredStyle: .alert)
+                         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                         
+                           Seat_reg.finish_me()
+                            
+                            let storyBoard = UIStoryboard(name: "Main3", bundle: nil)
+                            let correct = storyBoard.instantiateViewController(withIdentifier: "PayPage")
+                            correct.modalPresentationStyle = .fullScreen
+                            self.present(correct, animated: true, completion: nil)
+                           
+                              /* let storyBoard = UIStoryboard(name: "Main2", bundle: nil)
+                                      let correct = storyBoard.instantiateViewController(withIdentifier: "finish")
+                                      correct.modalPresentationStyle = .fullScreen
+                                      self.present(correct, animated: true, completion: nil)*/
+                         }))
+                         
+                          alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+                         self.present(alert, animated: true, completion: nil)
+
+                     }else{
+                         let alert = UIAlertController(title: "Missing Info", message: "Please Choose Your Seat", preferredStyle: .alert)
+                         
+                         alert.addAction(UIAlertAction(title: "return", style: .default, handler: nil))
+                         self.present(alert, animated: true)
+                     }
+        
+        
+        print(first_view.user_data)
+        print(company.Big_company)
            
         
         
